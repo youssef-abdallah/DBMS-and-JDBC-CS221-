@@ -1,10 +1,10 @@
 package eg.edu.alexu.csd.oop.db.expressions;
 import java.util.ArrayList;
 
-class Row {
+public class Row {
 	
     private ArrayList<String> cols;
-    Row(ArrayList<String> newCols){
+    public Row(ArrayList<String> newCols){
     	cols = newCols;
     }
     @Override
