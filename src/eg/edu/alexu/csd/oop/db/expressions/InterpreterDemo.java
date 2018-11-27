@@ -62,7 +62,26 @@ public class InterpreterDemo {
         hm7.put("name", "youssef");
         Expression query5 = new Update("people", new Set(hm7, new Where("surname=youssef", "update")));
         List<String> result5 = query5.interpret(ctx);
+        System.out.println(tables.get("people"));
         System.out.println(list.get(1).getCols().get(0));
+        
+        HashMap<String, String> hm8 = new HashMap<>();
+        hm8.put("name", "karim");
+        //hm8.put("surname", "Mohamed");
+        Expression query6 = new Insert("people", new Values(hm8));
+        query6.interpret(ctx);
+        System.out.println(tables.get("people"));
+        
+        query6.interpret(ctx);
+        System.out.println(tables.get("people"));
+        
+        HashMap<String, String> hm9 = new HashMap<>();
+        hm9.put("0", "Youssef");
+        hm9.put("1", "Abdallah");
+        Expression query7 = new Insert("people", new Values(hm9));
+        query7.interpret(ctx);
+        System.out.println(tables.get("people"));
+
         
     }
 }

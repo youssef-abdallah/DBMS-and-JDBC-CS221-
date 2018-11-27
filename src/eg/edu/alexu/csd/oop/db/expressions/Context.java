@@ -67,7 +67,7 @@ class Context {
         whereFilter = matchAnyString;
     }
 
-    List<String> search() {
+    public List<String> search() {
 
         List<String> result = tables.entrySet()
                 .stream()
@@ -84,7 +84,7 @@ class Context {
         return result;
     }
     
-    List<String> update() {
+    public List<String> update() {
 
         List<String> result = new ArrayList<String>();       
         for (Map.Entry<String, List<Row>> entry : tables.entrySet()) {
@@ -107,6 +107,38 @@ class Context {
 
         clear();
         return result;
+    }
+    
+    public List<String> insert() {
+    	
+    	List<String> result = new ArrayList<String>();
+    	for(Map.Entry<String, List<Row>> entry : tables.entrySet()) {
+    		if(entry.getKey().equalsIgnoreCase(table)) {
+    			List<Row> currentTable = entry.getValue();
+    			ArrayList<String> rowContent = new ArrayList<>();
+    			
+    		// if (all columns are given)
+    			if(setStatement.size() == schema.size()) {
+    				for(int i = 0; i<schema.size(); i++) {
+    					rowContent.add(setStatement.get(String.valueOf(i)));
+    				}
+    			} else {
+    				for(int i = 0; i<schema.size(); i++) {
+    					if(setStatement.containsKey(schema.get(i))) {
+    						rowContent.add(setStatement.get(schema.get(i)));
+    					}else {
+    						rowContent.add(null);
+    					}
+    				}
+    			}
+    			Row newRow = new Row(rowContent);
+    			currentTable.add(newRow);
+    			entry.setValue(currentTable);
+    		}
+    	}
+    	
+    	clear();
+    	return result;
     }
 
     /**
