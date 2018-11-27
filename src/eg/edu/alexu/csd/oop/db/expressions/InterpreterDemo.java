@@ -65,14 +65,20 @@ public class InterpreterDemo {
         System.out.println(tables.get("people"));
         System.out.println(list.get(1).getCols().get(0));
         
+        Expression query9 = new Delete("people", new Where("surname=Doe", "delete"));
+        List<String> result6 = query9.interpret(ctx);
+        System.out.println(tables.get("people").size());
+        
         HashMap<String, String> hm8 = new HashMap<>();
         hm8.put("name", "karim");
         //hm8.put("surname", "Mohamed");
         Expression query6 = new Insert("people", new Values(hm8));
         query6.interpret(ctx);
         System.out.println(tables.get("people"));
-        
-        query6.interpret(ctx);
+        HashMap<String, String> hm10 = new HashMap<>();
+        hm10.put("name", "karim");
+        Expression query8 = new Insert("people", new Values(hm10));
+        query8.interpret(ctx);
         System.out.println(tables.get("people"));
         
         HashMap<String, String> hm9 = new HashMap<>();
@@ -81,6 +87,7 @@ public class InterpreterDemo {
         Expression query7 = new Insert("people", new Values(hm9));
         query7.interpret(ctx);
         System.out.println(tables.get("people"));
+        
 
         
     }

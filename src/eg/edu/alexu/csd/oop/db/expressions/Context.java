@@ -127,7 +127,7 @@ class Context {
     					if(setStatement.containsKey(schema.get(i))) {
     						rowContent.add(setStatement.get(schema.get(i)));
     					}else {
-    						rowContent.add(null);
+    						rowContent.add("null");
     					}
     				}
     			}
@@ -139,6 +139,24 @@ class Context {
     	
     	clear();
     	return result;
+    }
+    
+    public List<String> delete() {
+    	List<String> result = new ArrayList<String>();       
+        for (Map.Entry<String, List<Row>> entry : tables.entrySet()) {
+        	if (entry.getKey().equalsIgnoreCase(table)) {
+        		List<Row> currentTable = entry.getValue();
+        		for (int row = 0; row < currentTable.size(); row++) {
+        			if (whereFilter.test(currentTable.get(row).toString())) {
+        				result.add("");
+        				currentTable.remove(currentTable.get(row));
+        				row--;
+        			}
+        		}
+        	}
+        }
+        clear();
+        return result;
     }
 
     /**

@@ -16,7 +16,10 @@ class Where implements Expression {
         ctx.setCondition(condition);
         if (operation.equalsIgnoreCase("select")) {
         	return ctx.search();
-        } else {
+        } else if (operation.equalsIgnoreCase("delete")) {
+        	return ctx.delete();
+        }
+        else {
         	return ctx.update();
         }
     }
