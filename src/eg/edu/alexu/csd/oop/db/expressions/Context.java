@@ -22,6 +22,7 @@ class Context {
     private String table;
     private String column;
     private String condition;
+    private HashMap<String, String> setStatement = new HashMap<>();
 
     /**
      * Default setup, used for clearing the context for next queries.
@@ -48,12 +49,19 @@ class Context {
     	this.condition = condition;
     	setRowMapper();
     }
+    
+    void setSetStatement(HashMap<String, String> setStatement) {
+        this.setStatement = setStatement;
+    }
 
     /**
      * Clears the context to defaults.
      * No filters, match all columns.
      */
     void clear() {
+    	if (setStatement.size() != 0) {
+    		setStatement.clear();
+    	}
         column = "";
         columnMapper = matchAllColumns;
         whereFilter = matchAnyString;
@@ -73,6 +81,31 @@ class Context {
 
         clear();
 
+        return result;
+    }
+    
+    List<String> update() {
+
+        List<String> result = new ArrayList<String>();       
+        for (Map.Entry<String, List<Row>> entry : tables.entrySet()) {
+        	if (entry.getKey().equalsIgnoreCase(table)) {
+        		List<Row> currentTable = entry.getValue();
+        		for (int row = 0; row < currentTable.size(); row++) {
+        			if (whereFilter.test(currentTable.get(row).toString())) {
+        				result.add("");
+        				ArrayList<String> currentColumns = currentTable.get(row).getCols();
+        				for(int i = 0; i < currentColumns.size(); i++) {
+        					String key = schema.get(i);
+        					if (setStatement.containsKey(key)) {
+        						currentTable.get(row).set(i, setStatement.get(key));
+        					}
+        				}
+        			}
+        		}
+        	}
+        }
+
+        clear();
         return result;
     }
 

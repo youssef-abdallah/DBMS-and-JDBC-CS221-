@@ -53,8 +53,16 @@ public class InterpreterDemo {
         }*/
         System.out.println(result2);
 
-        Expression query3 = new Select("name", new From("people", new Where("surname=Doe")));
+        Expression query3 = new Select("name", new From("people", new Where("surname=Doe", "select")));
         List<String> result3 = query3.interpret(ctx);
         System.out.println(result3);
+        
+        
+        HashMap<String, String> hm7 = new HashMap<>();
+        hm7.put("name", "youssef");
+        Expression query5 = new Update("people", new Set(hm7, new Where("surname=youssef", "update")));
+        List<String> result5 = query5.interpret(ctx);
+        System.out.println(list.get(1).getCols().get(0));
+        
     }
 }

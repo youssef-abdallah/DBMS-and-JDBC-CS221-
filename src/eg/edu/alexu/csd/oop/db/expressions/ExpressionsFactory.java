@@ -1,7 +1,5 @@
 package eg.edu.alexu.csd.oop.db.expressions;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Map;
 
 public class ExpressionsFactory {
@@ -14,7 +12,7 @@ public class ExpressionsFactory {
 			if(condition.equals(null)) {
 				exp = new Select(columns, new From(tableName));
 			}else {
-				exp = new Select(columns, new From(tableName, new Where(condition)));
+				exp = new Select(columns, new From(tableName, new Where(condition, "select")));
 			}
 		} else if(operationName.equalsIgnoreCase("insert")) {
 			

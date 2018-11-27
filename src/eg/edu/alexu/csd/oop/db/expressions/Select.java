@@ -7,7 +7,7 @@ class Select implements Expression {
     private From from;
 
     Select(String column, From from) {
-    	column = column.replaceAll(" ", "").replaceAll("[", "").replaceAll("]", "");
+    	column = column.replaceAll(" ", "");
         this.column = column;
         this.from = from;
     }

@@ -6,13 +6,18 @@ class Where implements Expression {
     private String condition;
     private String operation;
 
-    Where(String condition) {
+    Where(String condition, String operation) {
         this.condition = condition;
+        this.operation = operation;
     }
 
     @Override
     public List<String> interpret(Context ctx) {
         ctx.setCondition(condition);
-        return ctx.search();
+        if (operation.equalsIgnoreCase("select")) {
+        	return ctx.search();
+        } else {
+        	return ctx.update();
+        }
     }
 }

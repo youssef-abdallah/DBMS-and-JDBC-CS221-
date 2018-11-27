@@ -7,11 +7,17 @@ public class Row {
     public Row(ArrayList<String> newCols){
     	cols = newCols;
     }
-    @Override
+    public ArrayList<String> getCols() {
+		return cols;
+    }
+	@Override
     public String toString() {
     	StringBuilder sb = new StringBuilder();
     	cols.forEach(x -> sb.append(x + " "));
     	sb.deleteCharAt(sb.length() - 1);
         return sb.toString();
     }
+	public void set(int i, String string) {
+		cols.set(i, string);
+	}
 }
