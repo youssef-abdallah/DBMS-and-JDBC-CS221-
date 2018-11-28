@@ -144,6 +144,18 @@ public class Regex {
 
 	}
 
+	private void parseDrop(String query) {
+		String regex1 = "\\s*drop\\s+database\\s+([a-zA-Z0-9_]+)\\s*";
+		String regex2 = "\\s*drop\\s+table\\s+([a-zA-Z0-9_]+)\\s*";
+		if (validate(regex1, query)) {
+			map.put("operation", "DROP DATABASE");
+			map.put("databaseName", getGroupFromQuery(regex1, query, 1));
+		} else if (validate(regex2, query)) {
+			map.put("operation", "DROP TABLE");
+			map.put("tableName", getGroupFromQuery(regex2, query, 1));
+		}
+	}
+
 	public Map<String, Object> parseQuery(String query) {
 		list.clear();
 		String operation = getGroupFromQuery("([a-zA-Z]+)\\s", query, 1);
@@ -151,6 +163,10 @@ public class Regex {
 		case ("CREATE"):
 			map.put("operation", "CREATE");
 			parseCreate(query);
+			break;
+		case ("DROP"):
+			map.put("operation", "DROP");
+			parseDrop(query);
 			break;
 		case ("SELECT"):
 			map.put("operation", "SELECT");
@@ -172,7 +188,7 @@ public class Regex {
 			System.out.println("wrong first word in query");
 			break;
 		}
-		if (!map.containsKey("tableName")) {
+		if (map.size() < 2) {
 			map.clear();
 		}
 		return map;
