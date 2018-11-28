@@ -19,6 +19,5 @@ public class Drop {
 		if (!files.delete()) {
 			throw new IOException();
 		}
-
 	}
 }
