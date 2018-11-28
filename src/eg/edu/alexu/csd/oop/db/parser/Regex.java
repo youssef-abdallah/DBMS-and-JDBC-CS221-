@@ -130,10 +130,28 @@ public class Regex {
 		}
 	}
 
+	private void parseCreate(String query) {
+		String regex1 = "\\s*create\\s+database\\s+([a-zA-Z0-9_]+)\\s*";
+		String regex2 = "\\s*create\\s+table\\s+([a-zA-Z_0-9]+)\\s*[(]((\\s*([a-zA-Z_0-9]+)\\s+(varchar||int)\\s*\\,?)+)[)]\\s*";
+		if (validate(regex1, query)) {
+			map.put("operation", "CREATE DATABASE");
+			map.put("tableName", getGroupFromQuery(regex1, query, 1));
+		} else if (validate(regex2, query)) {
+			map.put("operation", "CREATE TABLE");
+			map.put("tableName", getGroupFromQuery(regex2, query, 1));
+			fillColMap("\\s*([a-zA-Z_0-9]+)\\s+(varchar||int)\\s*\\,?", getGroupFromQuery(regex2, query, 2).trim());
+		}
+
+	}
+
 	public Map<String, Object> parseQuery(String query) {
 		list.clear();
-		String operation = getGroupFromQuery("([a-zA-Z]{6})\\s", query, 1);
+		String operation = getGroupFromQuery("([a-zA-Z]+)\\s", query, 1);
 		switch (operation.toUpperCase()) {
+		case ("CREATE"):
+			map.put("operation", "CREATE");
+			parseCreate(query);
+			break;
 		case ("SELECT"):
 			map.put("operation", "SELECT");
 			parseSelect(query);
