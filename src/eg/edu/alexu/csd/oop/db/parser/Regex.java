@@ -95,7 +95,6 @@ public class Regex {
 			fillColMap("[^WHERE]\\s([a-zA-Z0-9_]+)\\s*=\\s*(\\'[a-zA-Z0-9_ ]+\\')", query);
 			fillColMap("[^WHERE]\\s([a-zA-Z0-9_]+)\\s*=\\s*([a-zA-Z0-9_]+)", query);
 		}
-
 	}
 
 	private void parseInsert(String query) {// problem with strings with spaces
@@ -111,11 +110,33 @@ public class Regex {
 		}
 	}
 
+	private void parseSelect(String query) {
+		String regex1 = "\\s*select\\s+\\*\\s*from\\s+([a-zA-Z0-9_]+)\\s*";
+		String regex2 = regex1.concat("where\\s+([a-zA-Z=><'0-9 ]+)\\s*");
+		String regex3 = "\\s*select\\s+((\\s*[^from][a-zA-Z0-9_]+\\s*\\,?)+)\\s*from\\s+([a-zA-Z0-9_]+)\\s*";
+		String regex4 = regex3.concat("where\\s+([a-zA-Z=><'0-9 ]+)\\s*");
+		if (validate(regex2, query)) {
+			map.put("tableName", getGroupFromQuery(regex2, query, 1));
+			map.put("where", getGroupFromQuery(regex2, query, 2));
+		} else if (validate(regex1, query)) {
+			map.put("tableName", getGroupFromQuery(regex1, query, 1));
+		} else if (validate(regex3, query)) {
+			map.put("tableName", getGroupFromQuery(regex3, query, 3));
+			fillValuesMap("(([a-zA-Z0-9_]+)\\s*\\,?)+", getGroupFromQuery(regex3, query, 1), true);
+		} else if (validate(regex4, query)) {
+			map.put("tableName", getGroupFromQuery(regex3, query, 3));
+			map.put("where", getGroupFromQuery(regex4, query, 4));
+			fillValuesMap("(([a-zA-Z0-9_]+)\\s*\\,?)+", getGroupFromQuery(regex4, query, 1), true);
+		}
+	}
+
 	public Map<String, Object> parseQuery(String query) {
 		list.clear();
 		String operation = getGroupFromQuery("([a-zA-Z]{6})\\s", query, 1);
 		switch (operation.toUpperCase()) {
 		case ("SELECT"):
+			map.put("operation", "SELECT");
+			parseSelect(query);
 			break;
 		case ("UPDATE"):
 			map.put("operation", "UPDATE");
@@ -132,6 +153,9 @@ public class Regex {
 		default:
 			System.out.println("wrong first word in query");
 			break;
+		}
+		if (!map.containsKey("table_name")) {
+			map.clear();
 		}
 		return map;
 	}
