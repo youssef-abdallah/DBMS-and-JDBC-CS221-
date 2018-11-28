@@ -154,7 +154,7 @@ public class Regex {
 			System.out.println("wrong first word in query");
 			break;
 		}
-		if (!map.containsKey("table_name")) {
+		if (!map.containsKey("tableName")) {
 			map.clear();
 		}
 		return map;
