@@ -94,7 +94,7 @@ public class Facade {
 		String operationName = (String) map.get("operation");
 		if (operationName.equalsIgnoreCase("create database")) {
 			boolean checkDir = false;
-			String path = System.getProperty("file.separator") + "Databases" + System.getProperty("file.separator")
+			String path = "." + System.getProperty("file.separator") + "Databases" + System.getProperty("file.separator")
 					+ map.get("databaseName");
 			try {
 				this.CreateDirectory(path);
