@@ -3,7 +3,10 @@ import eg.edu.alexu.csd.oop.db.expressions.*;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -21,7 +24,11 @@ import org.w3c.dom.NodeList;
 
 public class Xml {
 
-	public void Write(String DataBase, String TableName, Object[][] Data) {
+	public boolean Write(String DataBase, String TableName, Object[][] Data) {
+		File file = new File(DataBase + System.getProperty("file.separator") + TableName + ".xml");
+		if (file.exists()) {
+			return false;
+		}
 		DTD d = new DTD();
 		List<String> ColumnNames = d.read(DataBase, TableName);
 		try {
@@ -50,9 +57,9 @@ public class Xml {
 			transformer.setOutputProperty(OutputKeys.INDENT, "yes");
 			transformer.setOutputProperty(OutputKeys.ENCODING, "ISO-8859-1");
 			DOMSource domSource = new DOMSource(document);
-			File file = new File(DataBase + TableName + ".xml");
-			if (!file.exists()) {
-				file.createNewFile();
+			File file2 = new File(DataBase + System.getProperty("file.separator") + TableName + ".xml");
+			if (!file2.exists()) {
+				file2.createNewFile();
 			}
 			StreamResult streamResult = new StreamResult(file);
 			transformer.transform(domSource, streamResult);
@@ -60,6 +67,7 @@ public class Xml {
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
+		return true;
 	}
 
 	public List<Row> ReadAllFile(String DataBase, String TableName) {
@@ -67,7 +75,7 @@ public class Xml {
 		List<String> ColumnNames = d.read(DataBase, TableName);
 		List<Row> result = new ArrayList<Row>();
 		try {
-			File fXmlFile = new File(DataBase + TableName + ".xml");
+			File fXmlFile = new File(DataBase + System.getProperty("file.separator") + TableName + ".xml");
 			DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
 			DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
 			Document doc = dBuilder.parse(fXmlFile);
@@ -89,6 +97,20 @@ public class Xml {
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
+		return result;
+	}
+	
+	public Map<String, List<Row>> getTables(String DataBase) {
+		Map<String, List<Row>> result = new HashMap<>();
+		File f = new File(DataBase);
+		ArrayList<String> names = new ArrayList<String>(Arrays.asList(f.list()));
+		for (int i = 0; i < names.size(); i++) {
+			if((names.get(i).contains(".xml"))){
+				List<Row> temp = ReadAllFile(DataBase, (names.get(i)).substring(0, ((names.get(i)).length()) - 4));
+				result.put((names.get(i)).substring(0, ((names.get(i)).length()) - 4), temp);
+			}
+		}
+		
 		return result;
 	}
 

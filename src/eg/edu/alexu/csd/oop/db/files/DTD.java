@@ -12,7 +12,7 @@ public class DTD {
 
 	public void Write(String DataBase, String TableName, List<String> ColumnNames) {
 		try {
-			File file = new File(DataBase + TableName + ".dtd");
+			File file = new File(DataBase + System.getProperty("file.separator") + TableName + ".dtd");
 			if (!file.exists()) {
 				file.createNewFile();
 			}
@@ -40,7 +40,7 @@ public class DTD {
 	public ArrayList<String> read(String DataBase, String TableName){
 		ArrayList<String> result = new ArrayList<String>();
 		try {
-			File file = new File(DataBase + TableName + ".dtd");
+			File file = new File(DataBase + System.getProperty("file.separator") + TableName + ".dtd");
 			FileReader fr = new FileReader(file);
 			BufferedReader r = new BufferedReader(fr);
 			String str;

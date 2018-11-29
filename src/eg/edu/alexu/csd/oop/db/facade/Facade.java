@@ -14,6 +14,7 @@ import eg.edu.alexu.csd.oop.db.expressions.Context;
 import eg.edu.alexu.csd.oop.db.expressions.Expression;
 import eg.edu.alexu.csd.oop.db.expressions.ExpressionsFactory;
 import eg.edu.alexu.csd.oop.db.files.DTD;
+import eg.edu.alexu.csd.oop.db.files.Xml;
 import eg.edu.alexu.csd.oop.db.parser.Regex;
 
 public class Facade {
@@ -72,8 +73,9 @@ public class Facade {
 		   DTD dtd = new DTD();
 		   String path = System.getProperty("file.separator") + "Databases" + System.getProperty("file.separator")
 			+ map.get("databaseName");
-		   List<String> schema = dtd.read(path, tableName);
-		   ctx = new Context(schema);
+		   ArrayList<String> schema = dtd.read(path, tableName);
+		   Xml xml = new Xml();
+		   ctx = new Context(xml.getTables(path), schema);
 		   List<String> interpretation = exp.interpret(ctx);
 		   String[] s = interpretation.get(0).split(" ");
 	        int rows = interpretation.size();
