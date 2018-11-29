@@ -73,6 +73,7 @@ public class Facade {
 		parser = new Regex();
 		factory = new ExpressionsFactory();
 		opeartionSuccess = true;
+		currentDatabase = null;
 	}
 
 	public boolean isOpeartionSuccess() {
@@ -120,6 +121,9 @@ public class Facade {
 			}
 			currentDatabase = path;
 		} else if (operationName.equalsIgnoreCase("create table")) {
+			if (currentDatabase == null) {
+				throw new SQLException();
+			}
 			DTD dtdFile = new DTD();
 			HashMap<String, String> colMap = (HashMap<String, String>) map.get("colMap");
 			opeartionSuccess = dtdFile.Write(currentDatabase, (String) map.get("tableName"),
