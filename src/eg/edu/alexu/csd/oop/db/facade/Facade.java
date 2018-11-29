@@ -1,5 +1,6 @@
 package eg.edu.alexu.csd.oop.db.facade;
 
+import java.io.File;
 import java.lang.management.OperatingSystemMXBean;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -29,6 +30,23 @@ public class Facade {
 	private Context ctx;
 	private Object[][] result;
 	private boolean opeartionSuccess;
+	
+	private void CreateDirectory(String path) {
+		File dir = new File(path);
+	    
+	    // create multiple directories at one time
+	    boolean successful = dir.mkdirs();
+	    if (successful)
+	    {
+	      // created the directories successfully
+	      System.out.println("directories were created successfully");
+	    }
+	    else
+	    {
+	      // something failed trying to create the directories
+	      System.out.println("failed trying to create the directories");
+	    }
+	}
 
 	public Object[][] getResult() {
 		return result;
@@ -79,12 +97,7 @@ public class Facade {
 			String path = System.getProperty("file.separator") + "Databases" + System.getProperty("file.separator")
 					+ map.get("databaseName");
 			try {
-				Path xpath = Paths.get(path);
-				checkDir = Files.exists(xpath);
-				if (checkDir) {
-				} else {
-					Files.createDirectory(xpath);
-				}
+				this.CreateDirectory(path);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
