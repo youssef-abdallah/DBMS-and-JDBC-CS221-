@@ -83,20 +83,20 @@ public class Regex {
 
 	private void parseUpdate(String query) {
 		String query2 = query + " ";
-		String regex1 = "update\\s+([a-zA-Z0-9_]+)\\s+set\\s+([a-zA-Z0-9,_]+\\s*=\\s*[a-zA-Z0-9,_ ']+\\s)+\\s*";
+		String regex1 = "update\\s+([a-zA-Z0-9_]+)\\s+set\\s+(\\s*[^WHERE][a-zA-Z0-9_]+\\s*=\\s*[a-zA-Z0-9_']+\\s*\\,?\\s*)+\\s*";
 		String regex2 = regex1.concat("where\\s+([a-zA-Z=><'0-9_ ]+)\\s*");
 		if (validate(regex2, query2)) {
-			map.put("tableName", getGroupFromQuery(regex1, query2, 1));
+			map.put("tableName", getGroupFromQuery(regex1, query2, 1).toLowerCase());
 			map.put("where", getGroupFromQuery(regex2, query2, 3));
 			fillColMap("[^WHERE]\\s([a-zA-Z0-9_]+)\\s*=\\s*(\\'[a-zA-Z0-9_ ]+\\')", query2);
 			fillColMap("[^WHERE]\\s([a-zA-Z0-9_]+)\\s*=\\s*([a-zA-Z0-9_]+)", query2);
 		} else if (validate(regex1, query2)) {
-			map.put("tableName", getGroupFromQuery(regex1, query2, 1));
+			map.put("tableName", getGroupFromQuery(regex1, query2, 1).toLowerCase());
 			map.put("where", null);
 			fillColMap("[^WHERE]\\s([a-zA-Z0-9_]+)\\s*=\\s*(\\'[a-zA-Z0-9_ ]+\\')", query2);
 			fillColMap("[^WHERE]\\s([a-zA-Z0-9_]+)\\s*=\\s*([a-zA-Z0-9_]+)", query2);
 		}
-	}
+	}//UPDATE table_namE1 SET column_name1='11111111', COLUMN_NAME2=22222222, column_name3='333333333' WHERE coLUmn_NAME3='VALUE3'
 
 	private void parseInsert(String query) {// problem with strings with spaces
 		String regex1 = "insert\\s+into\\s+([a-zA-Z0-9_]+)\\s*[(]((\\s*([a-zA-Z0-9_']+)\\s*\\,?)+)[)]\\s*values\\s+[(]((\\s*([a-zA-Z0-9_'.]+)\\s*\\,?)+)[)]\\s*";
