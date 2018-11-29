@@ -190,13 +190,13 @@ public class Regex {
 		}
 		if (map.size() < 2) {
 			map.clear();
-		}
+		}else {
 		if(!map.containsKey("colMap")) {
 			map.put("colMap", null);
 		}
 		if(map.containsKey("where")) {
 			map.put("where", null);
-		}
+		}}
 		return map;
 	}
 }
