@@ -16,7 +16,7 @@ public class ConcreteDatabase implements Database{
 	@Override
 	public String createDatabase(String databaseName, boolean dropIfExists) {
 		String query = "CREATE DATABASE "+ databaseName;
-		String path = System.getProperty("file.separator") + "Databases" + System.getProperty("file.separator")
+		String path = "." + System.getProperty("file.separator") + "Databases" + System.getProperty("file.separator")
 		+ databaseName;
 		facade.setDropIfExists(dropIfExists);
 		try {

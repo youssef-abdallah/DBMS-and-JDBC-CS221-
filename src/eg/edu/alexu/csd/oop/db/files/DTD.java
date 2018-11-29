@@ -10,11 +10,15 @@ import java.util.List;
 
 public class DTD {
 
-	public void Write(String DataBase, String TableName, List<String> ColumnNames) {
+	public Boolean Write(String DataBase, String TableName, List<String> ColumnNames) {
+		File file = new File(DataBase + System.getProperty("file.separator") + TableName + ".dtd");
+		if (file.exists()) {
+			return false;
+		}
 		try {
-			File file = new File(DataBase + System.getProperty("file.separator") + TableName + ".dtd");
-			if (!file.exists()) {
-				file.createNewFile();
+			File file2 = new File(DataBase + System.getProperty("file.separator") + TableName + ".dtd");
+			if (!file2.exists()) {
+				file2.createNewFile();
 			}
 			FileWriter fw = new FileWriter(file);
 			BufferedWriter write = new BufferedWriter(fw);
@@ -35,6 +39,7 @@ public class DTD {
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
+		return true;
 	}
 	
 	public ArrayList<String> read(String DataBase, String TableName){

@@ -1,5 +1,6 @@
 package eg.edu.alexu.csd.oop.db.parser;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -130,18 +131,19 @@ public class Regex {
 		}
 	}
 
-	private void parseCreate(String query) {
-		String regex1 = "\\s*create\\s+database\\s+([a-zA-Z0-9_\\/]+)\\s*";
+	private void parseCreate(String query) throws SQLException {
+		String regex1 = "\\s*CREATE\\s+DATABASE\\s+([a-zA-Z0-9_\\\\/]+)\\s*";
 		String regex2 = "\\s*create\\s+table\\s+([a-zA-Z_0-9]+)\\s*[(]((\\s*([a-zA-Z_0-9]+)\\s+(varchar||int)\\s*\\,?)+)[)]\\s*";
 		if (validate(regex1, query.trim())) {
 			map.put("operation", "CREATE DATABASE");
-			map.put("tableName", getGroupFromQuery(regex1, query, 1));
+			map.put("databaseName", getGroupFromQuery(regex1, query, 1));
 		} else if (validate(regex2, query)) {
 			map.put("operation", "CREATE TABLE");
 			map.put("tableName", getGroupFromQuery(regex2, query, 1));
 			fillColMap("\\s*([a-zA-Z_0-9]+)\\s+(varchar||int)\\s*\\,?", getGroupFromQuery(regex2, query, 2).trim());
+		} else {
+			throw new java.sql.SQLException();
 		}
-
 	}
 
 	private void parseDrop(String query) {
@@ -156,7 +158,7 @@ public class Regex {
 		}
 	}
 
-	public HashMap<String, Object> parseQuery(String query) {
+	public HashMap<String, Object> parseQuery(String query) throws SQLException {
 		list.clear();
 		String operation = getGroupFromQuery("([a-zA-Z]+)\\s", query, 1);
 		switch (operation.toUpperCase()) {
@@ -190,13 +192,13 @@ public class Regex {
 		}
 		if (map.size() < 2) {
 			map.clear();
-		}
+		}else {
 		if(!map.containsKey("colMap")) {
 			map.put("colMap", null);
 		}
-		if(map.containsKey("where")) {
+		if(!map.containsKey("where")) {
 			map.put("where", null);
-		}
+		}}
 		return map;
 	}
 }
