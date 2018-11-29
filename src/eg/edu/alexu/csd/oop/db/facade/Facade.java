@@ -35,25 +35,25 @@ public class Facade {
 		}
 		String operationName = (String) map.get("operation");
 		if (operationName.equalsIgnoreCase("create database")) {
-				boolean checkDir = false;
-				String path= System.getProperty("file.separator")+
-						".Databases"+System.getProperty("file.separator")+map.get("databaseName");
-				try {
-					Path xpath = Paths.get(path);
-					checkDir = Files.exists(xpath);
-					if (checkDir) {
-					} else {
-						Files.createDirectory(xpath);
-					}
-				} catch (Exception e) {
-					e.printStackTrace();
+			boolean checkDir = false;
+			String path = System.getProperty("file.separator") + ".Databases" + System.getProperty("file.separator")
+					+ map.get("databaseName");
+			try {
+				Path xpath = Paths.get(path);
+				checkDir = Files.exists(xpath);
+				if (checkDir) {
+				} else {
+					Files.createDirectory(xpath);
 				}
-				currentDatabase = path; 
+			} catch (Exception e) {
+				e.printStackTrace();
 			}
-		else if(operationName.equalsIgnoreCase("create table")){
+			currentDatabase = path;
+		} else if (operationName.equalsIgnoreCase("create table")) {
 			DTD dtdFile = new DTD();
 			HashMap<String, String> colMap = (HashMap<String, String>) map.get("colMap");
-			dtdFile.Write(currentDatabase, (String) map.get("tableName"), new ArrayList(Arrays.asList(colMap.keySet().toArray())));
+			dtdFile.Write(currentDatabase, (String) map.get("tableName"),
+					new ArrayList(Arrays.asList(colMap.keySet().toArray())));
 		}
 
 	}
