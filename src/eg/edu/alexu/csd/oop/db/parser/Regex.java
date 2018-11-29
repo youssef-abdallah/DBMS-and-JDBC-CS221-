@@ -38,7 +38,7 @@ public class Regex {
 		Pattern pattern = Pattern.compile(regex, Pattern.CASE_INSENSITIVE);
 		Matcher m = pattern.matcher(str2check);
 		while (m.find()) {
-			colMap.put(m.group(1), m.group(2));
+			colMap.put(m.group(1).toLowerCase(), m.group(2));
 		}
 		map.put("colMap", colMap);
 	}
@@ -63,7 +63,7 @@ public class Regex {
 			map.put("colMap", colMap);
 		} else {
 			while (m.find()) {
-				list.add(m.group(2));
+				list.add(m.group(2).toLowerCase());
 			}
 		}
 
