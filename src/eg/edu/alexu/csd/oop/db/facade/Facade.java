@@ -124,6 +124,8 @@ public class Facade {
 			HashMap<String, String> colMap = (HashMap<String, String>) map.get("colMap");
 			opeartionSuccess = dtdFile.Write(currentDatabase, (String) map.get("tableName"),
 					new ArrayList(Arrays.asList(colMap.keySet().toArray())));
+					Xml xml = new Xml();
+					xml.Write(currentDatabase, tableName, null);
 		} else {
 			exp = factory.makeExpression(operationName, tableName, condition, colVal);
 			DTD dtd = new DTD();

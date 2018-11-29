@@ -116,7 +116,7 @@ public class Context {
     		if(entry.getKey().equalsIgnoreCase(table)) {
     			List<Row> currentTable = entry.getValue();
     			ArrayList<String> rowContent = new ArrayList<>();
-    			
+    			result.add("");
     		// if (all columns are given)
     			if(setStatement.size() == schema.size()) {
     				for(int i = 0; i<schema.size(); i++) {
