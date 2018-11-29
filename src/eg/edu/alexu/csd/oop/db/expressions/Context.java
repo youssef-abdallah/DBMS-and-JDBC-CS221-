@@ -9,7 +9,7 @@ import java.util.function.Predicate;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-class Context {
+public class Context {
 
     private Map<String, List<Row>> tables = new HashMap<>();
     private ArrayList<String> schema;
