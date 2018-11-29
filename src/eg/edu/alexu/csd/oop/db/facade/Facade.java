@@ -107,7 +107,7 @@ public class Facade {
 		} else {
 			exp = factory.makeExpression(operationName, tableName, condition, colVal);
 			DTD dtd = new DTD();
-			String path = System.getProperty("file.separator") + "Databases" + System.getProperty("file.separator")
+			String path = "." + System.getProperty("file.separator") + "Databases" + System.getProperty("file.separator")
 					+ map.get("databaseName");
 			ArrayList<String> schema = dtd.read(path, tableName);
 			Xml xml = new Xml();
