@@ -135,7 +135,7 @@ public class Regex {
 		String regex2 = "\\s*create\\s+table\\s+([a-zA-Z_0-9]+)\\s*[(]((\\s*([a-zA-Z_0-9]+)\\s+(varchar||int)\\s*\\,?)+)[)]\\s*";
 		if (validate(regex1, query.trim())) {
 			map.put("operation", "CREATE DATABASE");
-			map.put("tableName", getGroupFromQuery(regex1, query, 1));
+			map.put("databaseName", getGroupFromQuery(regex1, query, 1));
 		} else if (validate(regex2, query)) {
 			map.put("operation", "CREATE TABLE");
 			map.put("tableName", getGroupFromQuery(regex2, query, 1));
