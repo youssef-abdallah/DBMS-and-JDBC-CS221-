@@ -1,6 +1,7 @@
 package eg.edu.alexu.csd.oop.db.facade;
 
 import java.io.File;
+import java.io.IOException;
 import java.lang.management.OperatingSystemMXBean;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -99,8 +100,24 @@ public class Facade {
 	public void setDropIfExists(boolean dropIfExists) {
 		this.dropIfExists = dropIfExists;
 	}
+	
+	private void dropDatabase(File files) throws IOException {
 
-	public void evaluateQuery() throws SQLException {
+		for (File file : files.listFiles()) {
+			if (file.isDirectory()) {
+				dropDatabase(file);
+			} else {
+				if (!file.delete()) {
+					throw new IOException();
+				}
+			}
+		}
+		if (!files.delete()) {
+			throw new IOException();
+		}
+	}
+
+	public void evaluateQuery() throws SQLException{
 		map = parser.parseQuery(query);
 		if (map.isEmpty()) {
 			setOpeartionSuccess(false);
@@ -130,7 +147,24 @@ public class Facade {
 					new ArrayList(Arrays.asList(colMap.keySet().toArray())));
 					Xml xml = new Xml();
 					xml.Write(currentDatabase, tableName, null, "create");
+		} else if(operationName.equalsIgnoreCase("drope database")) {
+			File files = new File(currentDatabase);
+			try {
+				dropDatabase(files);
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		} else if (operationName.equalsIgnoreCase("drop table")) {
+			File f = new File(currentDatabase);
+			ArrayList<String> names = new ArrayList<String>(Arrays.asList(f.list()));
+			for (int i = 0; i < names.size(); i++) {
+				if((names.get(i).contains(tableName))){
+					File ff = new File(f.getPath() + System.getProperty("file.separator") + names.get(i));
+					ff.delete();
+				}
+			}
 		} else {
+		
 			exp = factory.makeExpression(operationName, tableName, condition, colVal);
 			DTD dtd = new DTD();
 			String path = "." + System.getProperty("file.separator") + "Databases" + System.getProperty("file.separator")

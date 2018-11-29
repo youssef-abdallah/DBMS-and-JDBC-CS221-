@@ -20,7 +20,11 @@ public class ExpressionsFactory {
 		} else if(operationName.equalsIgnoreCase("insert")) {
 			exp = new Insert(tableName, new Values(colVal));
 		} else if(operationName.equalsIgnoreCase("update")) {
-			exp = new Update(tableName, new Set(colVal, new Where(condition, "update")));
+			if (condition == null) {
+				exp = new Update(tableName, new Set(colVal));
+			} else {
+				exp = new Update(tableName, new Set(colVal, new Where(condition, "update")));
+			}
 		} else if(operationName.equalsIgnoreCase("delete")) {
 			if (condition == null) {
 				exp = new Delete(tableName);
