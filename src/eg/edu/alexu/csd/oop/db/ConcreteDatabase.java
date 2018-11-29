@@ -8,6 +8,10 @@ public class ConcreteDatabase implements Database{
 	
 	private Facade facade;
 	boolean drop = false;
+	
+	public ConcreteDatabase() {
+		facade = new Facade();
+	}
 
 	@Override
 	public String createDatabase(String databaseName, boolean dropIfExists) {
