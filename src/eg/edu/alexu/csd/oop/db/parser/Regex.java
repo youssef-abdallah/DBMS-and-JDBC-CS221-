@@ -96,12 +96,15 @@ public class Regex {
 			fillColMap("[^WHERE]\\s([a-zA-Z0-9_]+)\\s*=\\s*(\\'[a-zA-Z0-9_ ]+\\')", query2);
 			fillColMap("[^WHERE]\\s([a-zA-Z0-9_]+)\\s*=\\s*([a-zA-Z0-9_]+)", query2);
 		}
-	}//UPDATE table_namE1 SET column_name1='11111111', COLUMN_NAME2=22222222, column_name3='333333333' WHERE coLUmn_NAME3='VALUE3'
-
-	private void parseInsert(String query) {// problem with strings with spaces
-		String regex1 = "insert\\s+into\\s+([a-zA-Z0-9_]+)\\s*[(]((\\s*([a-zA-Z0-9_']+)\\s*\\,?)+)[)]\\s*values\\s+[(]((\\s*([a-zA-Z0-9_'.]+)\\s*\\,?)+)[)]\\s*";
+	}
+	private void parseInsert(String query) throws SQLException {// problem with strings with spaces
+		query = query.trim();
+		if((query.charAt(query.length()-1)!=')')){
+			throw new java.sql.SQLException();
+		}
+		String regex1 = "insert\\s+into\\s+([a-zA-Z0-9_]+)\\s*[(]((\\s*([a-zA-Z0-9_']+)\\s*\\,?)+)[)]\\s*values\\s+[(]((\\s*([a-zA-Z0-9_'.]+)\\s*\\,?)+)[)]";
 		String regex2 = "insert\\s+into\\s+([a-zA-Z0-9_]+)\\s+values\\s+[(]((\\s*([a-zA-Z0-9_'.]+)\\s*\\,?)+)[)]\\s*";
-		if (validate(regex1, query)) {
+		if (validate(regex1, query.trim())) {
 			map.put("tableName", getGroupFromQuery(regex1, query, 1));
 			fillValuesMap("(\\s*([a-zA-Z0-9_]+)\\s*\\,?)", getGroupFromQuery(regex1, query, 2), false);
 			fillValuesMap("(\\s*([a-zA-Z0-9_'.]+)\\s*\\,?)", getGroupFromQuery(regex1, query, 5), true);
@@ -202,6 +205,7 @@ public class Regex {
 		if(!map.containsKey("where")) {
 			map.put("where", null);
 		}}
+		System.out.println(map);
 		return map;
 	}
 }
