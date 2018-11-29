@@ -99,8 +99,8 @@ public class Regex {
 	}
 
 	private void parseInsert(String query) {// problem with strings with spaces
-		String regex1 = "insert\\s+into\\s+([a-zA-z0-9_]+)\\s+[(]((\\s*([a-zA-Z0-9_']+)\\s*\\,?)+)[)]\\s*values\\s+[(]((\\s*([a-zA-Z0-9_'.]+)\\s*\\,?)+)[)]\\s*";
-		String regex2 = "insert\\s+into\\s+([a-zA-z0-9_]+)\\s+values\\s+[(]((\\s*([a-zA-Z0-9_'.]+)\\s*\\,?)+)[)]\\s*";
+		String regex1 = "insert\\s+into\\s+([a-zA-Z0-9_]+)\\s*[(]((\\s*([a-zA-Z0-9_']+)\\s*\\,?)+)[)]\\s*values\\s+[(]((\\s*([a-zA-Z0-9_'.]+)\\s*\\,?)+)[)]\\s*";
+		String regex2 = "insert\\s+into\\s+([a-zA-Z0-9_]+)\\s+values\\s+[(]((\\s*([a-zA-Z0-9_'.]+)\\s*\\,?)+)[)]\\s*";
 		if (validate(regex1, query)) {
 			map.put("tableName", getGroupFromQuery(regex1, query, 1));
 			fillValuesMap("(\\s*([a-zA-Z0-9_]+)\\s*\\,?)", getGroupFromQuery(regex1, query, 2), false);
@@ -202,6 +202,7 @@ public class Regex {
 		if(!map.containsKey("where")) {
 			map.put("where", null);
 		}}
+		System.out.println(map);
 		return map;
 	}
 }
