@@ -30,22 +30,19 @@ public class Facade {
 	private Context ctx;
 	private Object[][] result;
 	private boolean opeartionSuccess;
-	
+
 	private void CreateDirectory(String path) {
 		File dir = new File(path);
-	    
-	    // create multiple directories at one time
-	    boolean successful = dir.mkdirs();
-	    if (successful)
-	    {
-	      // created the directories successfully
-	      System.out.println("directories were created successfully");
-	    }
-	    else
-	    {
-	      // something failed trying to create the directories
-	      System.out.println("failed trying to create the directories");
-	    }
+
+		// create multiple directories at one time
+		boolean successful = dir.mkdirs();
+		if (successful) {
+			// created the directories successfully
+			System.out.println("directories were created successfully");
+		} else {
+			// something failed trying to create the directories
+			System.out.println("failed trying to create the directories");
+		}
 	}
 
 	public Object[][] getResult() {
@@ -88,14 +85,14 @@ public class Facade {
 			setOpeartionSuccess(false);
 			throw new java.sql.SQLException();
 		}
-		String tableName = (String)map.get("tableName");
-		String condition = (String)map.get("where");
-		HashMap <String, String> colVal = (HashMap)map.get("colMap");
+		String tableName = (String) map.get("tableName");
+		String condition = (String) map.get("where");
+		HashMap<String, String> colVal = (HashMap) map.get("colMap");
 		String operationName = (String) map.get("operation");
 		if (operationName.equalsIgnoreCase("create database")) {
 			boolean checkDir = false;
-			String path = "." + System.getProperty("file.separator") + "Databases" + System.getProperty("file.separator")
-					+ map.get("databaseName");
+			String path = "." + System.getProperty("file.separator") + "Databases"
+					+ System.getProperty("file.separator") + map.get("databaseName");
 			try {
 				this.CreateDirectory(path);
 			} catch (Exception e) {
@@ -108,24 +105,26 @@ public class Facade {
 			dtdFile.Write(currentDatabase, (String) map.get("tableName"),
 					new ArrayList(Arrays.asList(colMap.keySet().toArray())));
 		} else {
-		   exp = factory.makeExpression(operationName, tableName, condition, colVal);
-		   DTD dtd = new DTD();
-		   String path = System.getProperty("file.separator") + "Databases" + System.getProperty("file.separator")
-			+ map.get("databaseName");
-		   ArrayList<String> schema = dtd.read(path, tableName);
-		   Xml xml = new Xml();
-		   ctx = new Context(xml.getTables(path), schema);
-		   List<String> interpretation = exp.interpret(ctx);
-		   String[] s = interpretation.get(0).split(" ");
-	        int rows = interpretation.size();
-	        int cols = s.length;
-	        result = new Object[rows][cols];
-	        for(int i = 0; i < rows; i++) {
-	        	String[] tmp = interpretation.get(i).split(" ");
-	        	for(int j = 0; j < cols; j++) {
-	        		result[i][j] = tmp[j];
-	        	}
-	        }
+			exp = factory.makeExpression(operationName, tableName, condition, colVal);
+			DTD dtd = new DTD();
+			String path = System.getProperty("file.separator") + "Databases" + System.getProperty("file.separator")
+					+ map.get("databaseName");
+			ArrayList<String> schema = dtd.read(path, tableName);
+			Xml xml = new Xml();
+			ctx = new Context(xml.getTables(path), schema);
+			List<String> interpretation = exp.interpret(ctx);
+			if (interpretation.size() != 0) {
+				String[] s = interpretation.get(0).split(" ");
+				int rows = interpretation.size();
+				int cols = s.length;
+				result = new Object[rows][cols];
+				for (int i = 0; i < rows; i++) {
+					String[] tmp = interpretation.get(i).split(" ");
+					for (int j = 0; j < cols; j++) {
+						result[i][j] = tmp[j];
+					}
+				}
+			}
 		}
 
 	}
