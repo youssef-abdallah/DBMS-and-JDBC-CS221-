@@ -1,5 +1,6 @@
 package eg.edu.alexu.csd.oop.db.facade;
 
+import java.lang.management.OperatingSystemMXBean;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -27,21 +28,46 @@ public class Facade {
 	private ExpressionsFactory factory;
 	private Context ctx;
 	private Object[][] result;
+	private boolean opeartionSuccess;
 
 	public Object[][] getResult() {
 		return result;
 	}
 
-	public Facade(String query, boolean drop) {
+	public Facade() {
 		parser = new Regex();
-		this.query = query;
-		dropIfExists = drop;
 		factory = new ExpressionsFactory();
+		opeartionSuccess = true;
+	}
+
+	public boolean isOpeartionSuccess() {
+		return opeartionSuccess;
+	}
+
+	public void setOpeartionSuccess(boolean opeartionSuccess) {
+		this.opeartionSuccess = opeartionSuccess;
+	}
+
+	public String getQuery() {
+		return query;
+	}
+
+	public void setQuery(String query) {
+		this.query = query;
+	}
+
+	public boolean isDropIfExists() {
+		return dropIfExists;
+	}
+
+	public void setDropIfExists(boolean dropIfExists) {
+		this.dropIfExists = dropIfExists;
 	}
 
 	public void evaluateQuery() throws SQLException {
 		map = parser.parseQuery(query);
 		if (map.isEmpty()) {
+			setOpeartionSuccess(false);
 			throw new java.sql.SQLException();
 		}
 		String tableName = (String)map.get("tableName");
