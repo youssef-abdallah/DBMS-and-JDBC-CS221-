@@ -2,17 +2,11 @@ package eg.edu.alexu.csd.oop.db.facade;
 
 import java.io.File;
 import java.io.IOException;
-import java.lang.management.OperatingSystemMXBean;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
-
-import eg.edu.alexu.csd.oop.db.cre_del.Create;
 import eg.edu.alexu.csd.oop.db.expressions.Context;
 import eg.edu.alexu.csd.oop.db.expressions.Expression;
 import eg.edu.alexu.csd.oop.db.expressions.ExpressionsFactory;
@@ -117,6 +111,7 @@ public class Facade {
 		}
 	}
 
+	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public void evaluateQuery() throws SQLException{
 		map = parser.parseQuery(query);
 		if (map.isEmpty()) {
@@ -125,12 +120,21 @@ public class Facade {
 		}
 		String tableName = (String) map.get("tableName");
 		String condition = (String) map.get("where");
-		HashMap<String, String> colVal = (HashMap) map.get("colMap");
+		HashMap<String, String> colVal = (HashMap<String, String>) map.get("colMap");
 		String operationName = (String) map.get("operation");
-		if (operationName.equalsIgnoreCase("create database")) {
-			boolean checkDir = false;
+		if (operationName.equalsIgnoreCase("create database")) {			
 			String path = "." + System.getProperty("file.separator") + "Databases"
 					+ System.getProperty("file.separator") + map.get("databaseName");
+			File f = new File(path);
+			
+			if(isDropIfExists() && f.exists()) {
+				File files = new File(path);
+				try {
+					dropDatabase(files);
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			}
 			try {
 				this.CreateDirectory(path);
 			} catch (Exception e) {
@@ -164,14 +168,16 @@ public class Facade {
 				}
 			}
 		} else {
-		
+			Xml xml = new Xml();
+			String path = "." + System.getProperty("file.separator") + "Databases" + System.getProperty("file.separator")
+			+ map.get("databaseName");
+			HashMap<String, List<Row>> tables = xml.getTables(path);
+			if (!tables.containsKey(tableName) && operationName.equalsIgnoreCase("update")) {
+				throw new SQLException();
+			}
 			exp = factory.makeExpression(operationName, tableName, condition, colVal);
 			DTD dtd = new DTD();
-			String path = "." + System.getProperty("file.separator") + "Databases" + System.getProperty("file.separator")
-					+ map.get("databaseName");
 			ArrayList<String> schema = dtd.read(path, tableName);
-			Xml xml = new Xml();
-			HashMap<String, List<Row>> tables = xml.getTables(path);
 			ctx = new Context(tables, schema);
 			List<String> interpretation = exp.interpret(ctx);
 			result = get2DArray(interpretation);

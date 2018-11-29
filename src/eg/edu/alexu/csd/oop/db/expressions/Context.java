@@ -18,7 +18,7 @@ public class Context {
     	tables = newTables;
     	schema = newSchema;
     }
-
+    private int colIndex;
     private String table;
     private String column;
     private String condition;
@@ -188,12 +188,33 @@ public class Context {
     }
     
     private void setRowMapper() {
-    	int colIndex;
-    	String[] splittedCondition = condition.split("=");
-    	colIndex = schema.indexOf(splittedCondition[0]);
+    	colIndex = -1;
+    	String operator = "";
+    	if (condition.contains("=")) {
+    		operator = "=";
+    	} else if (condition.contains(">")) {
+    		operator = ">";
+    	} else if (condition.contains("<")) {
+    		operator = "<";
+    	}
+    	String[] splittedCondition = condition.split(operator);
+    	for (int i = 0; i < schema.size(); i++) {
+    		if (schema.get(i).equalsIgnoreCase(splittedCondition[0])) {
+    			colIndex = i;
+    			break;
+    		}
+    	}
+    	final int x = colIndex;
         whereFilter = s -> {
             String[] tmp = s.split(" ");
-            return tmp[colIndex].equals(splittedCondition[1]);
+            if (condition.contains("="))
+            	return tmp[x].equalsIgnoreCase(splittedCondition[1]);
+            else if (condition.contains(">")) {
+            	return Double.parseDouble(tmp[x]) > Double.parseDouble(splittedCondition[1]);
+            } else {
+            	return Double.parseDouble(tmp[x]) < Double.parseDouble(splittedCondition[1]);
+            }
+            	
         };
     }
 }

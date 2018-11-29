@@ -3,7 +3,6 @@ package eg.edu.alexu.csd.oop.db.parser;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -83,18 +82,19 @@ public class Regex {
 	}
 
 	private void parseUpdate(String query) {
+		String query2 = query + " ";
 		String regex1 = "update\\s+([a-zA-Z0-9_]+)\\s+set\\s+([a-zA-Z0-9,_]+\\s*=\\s*[a-zA-Z0-9,_ ']+\\s)+\\s*";
 		String regex2 = regex1.concat("where\\s+([a-zA-Z=><'0-9 ]+)\\s*");
-		if (validate(regex2, query)) {
-			map.put("tableName", getGroupFromQuery(regex1, query, 1));
-			map.put("where", getGroupFromQuery(regex2, query, 3));
-			fillColMap("[^WHERE]\\s([a-zA-Z0-9_]+)\\s*=\\s*(\\'[a-zA-Z0-9_ ]+\\')", query);
-			fillColMap("[^WHERE]\\s([a-zA-Z0-9_]+)\\s*=\\s*([a-zA-Z0-9_]+)", query);
-		} else if (validate(regex1, query)) {
-			map.put("tableName", getGroupFromQuery(regex1, query, 1));
+		if (validate(regex2, query2)) {
+			map.put("tableName", getGroupFromQuery(regex1, query2, 1));
+			map.put("where", getGroupFromQuery(regex2, query2, 3));
+			fillColMap("[^WHERE]\\s([a-zA-Z0-9_]+)\\s*=\\s*(\\'[a-zA-Z0-9_ ]+\\')", query2);
+			fillColMap("[^WHERE]\\s([a-zA-Z0-9_]+)\\s*=\\s*([a-zA-Z0-9_]+)", query2);
+		} else if (validate(regex1, query2)) {
+			map.put("tableName", getGroupFromQuery(regex1, query2, 1));
 			map.put("where", null);
-			fillColMap("[^WHERE]\\s([a-zA-Z0-9_]+)\\s*=\\s*(\\'[a-zA-Z0-9_ ]+\\')", query);
-			fillColMap("[^WHERE]\\s([a-zA-Z0-9_]+)\\s*=\\s*([a-zA-Z0-9_]+)", query);
+			fillColMap("[^WHERE]\\s([a-zA-Z0-9_]+)\\s*=\\s*(\\'[a-zA-Z0-9_ ]+\\')", query2);
+			fillColMap("[^WHERE]\\s([a-zA-Z0-9_]+)\\s*=\\s*([a-zA-Z0-9_]+)", query2);
 		}
 	}
 
