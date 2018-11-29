@@ -156,7 +156,7 @@ public class Regex {
 		}
 	}
 
-	public Map<String, Object> parseQuery(String query) {
+	public HashMap<String, Object> parseQuery(String query) {
 		list.clear();
 		String operation = getGroupFromQuery("([a-zA-Z]+)\\s", query, 1);
 		switch (operation.toUpperCase()) {
