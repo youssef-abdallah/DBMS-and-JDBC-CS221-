@@ -131,9 +131,9 @@ public class Regex {
 	}
 
 	private void parseCreate(String query) {
-		String regex1 = "\\s*create\\s+database\\s+([a-zA-Z0-9_]+)\\s*";
+		String regex1 = "\\s*create\\s+database\\s+([a-zA-Z0-9_\\/]+)\\s*";
 		String regex2 = "\\s*create\\s+table\\s+([a-zA-Z_0-9]+)\\s*[(]((\\s*([a-zA-Z_0-9]+)\\s+(varchar||int)\\s*\\,?)+)[)]\\s*";
-		if (validate(regex1, query)) {
+		if (validate(regex1, query.trim())) {
 			map.put("operation", "CREATE DATABASE");
 			map.put("tableName", getGroupFromQuery(regex1, query, 1));
 		} else if (validate(regex2, query)) {
@@ -190,6 +190,12 @@ public class Regex {
 		}
 		if (map.size() < 2) {
 			map.clear();
+		}
+		if(!map.containsKey("colMap")) {
+			map.put("colMap", null);
+		}
+		if(map.containsKey("where")) {
+			map.put("where", null);
 		}
 		return map;
 	}
