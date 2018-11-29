@@ -151,7 +151,7 @@ public class Facade {
 					new ArrayList(Arrays.asList(colMap.keySet().toArray())));
 					Xml xml = new Xml();
 					xml.Write(currentDatabase, tableName, null, "create");
-		} else if(operationName.equalsIgnoreCase("drope database")) {
+		} else if(operationName.equalsIgnoreCase("drop database")) {
 			File files = new File(currentDatabase);
 			try {
 				dropDatabase(files);
@@ -169,15 +169,13 @@ public class Facade {
 			}
 		} else {
 			Xml xml = new Xml();
-			String path = "." + System.getProperty("file.separator") + "Databases" + System.getProperty("file.separator")
-			+ map.get("databaseName");
-			HashMap<String, List<Row>> tables = xml.getTables(path);
+			HashMap<String, List<Row>> tables = xml.getTables(currentDatabase);
 			if (!tables.containsKey(tableName) && operationName.equalsIgnoreCase("update")) {
 				throw new SQLException();
 			}
 			exp = factory.makeExpression(operationName, tableName, condition, colVal);
 			DTD dtd = new DTD();
-			ArrayList<String> schema = dtd.read(path, tableName);
+			ArrayList<String> schema = dtd.read(currentDatabase, tableName);
 			ctx = new Context(tables, schema);
 			List<String> interpretation = exp.interpret(ctx);
 			result = get2DArray(interpretation);

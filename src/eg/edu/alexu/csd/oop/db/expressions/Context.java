@@ -118,13 +118,13 @@ public class Context {
     			ArrayList<String> rowContent = new ArrayList<>();
     			result.add("");
     		// if (all columns are given)
-    			if(setStatement.size() == schema.size()) {
+    			if(setStatement.containsKey("0")) {
     				for(int i = 0; i<schema.size(); i++) {
     					rowContent.add(setStatement.get(String.valueOf(i)));
     				}
     			} else {
     				for(int i = 0; i<schema.size(); i++) {
-    					if(setStatement.containsKey(schema.get(i))) {
+    					if(setStatement.containsKey(schema.get(i).toLowerCase())) {
     						rowContent.add(setStatement.get(schema.get(i)));
     					}else {
     						rowContent.add("null");
@@ -210,9 +210,9 @@ public class Context {
             if (condition.contains("="))
             	return tmp[x].equalsIgnoreCase(splittedCondition[1]);
             else if (condition.contains(">")) {
-            	return Double.parseDouble(tmp[x]) > Double.parseDouble(splittedCondition[1]);
+            	return Integer.parseInt(tmp[x]) > Integer.parseInt(splittedCondition[1]);
             } else {
-            	return Double.parseDouble(tmp[x]) < Double.parseDouble(splittedCondition[1]);
+            	return Integer.parseInt(tmp[x]) < Integer.parseInt(splittedCondition[1]);
             }
             	
         };

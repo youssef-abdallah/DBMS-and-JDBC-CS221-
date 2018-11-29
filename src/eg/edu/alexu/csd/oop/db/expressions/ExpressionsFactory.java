@@ -6,6 +6,9 @@ public class ExpressionsFactory {
 	
 	public Expression makeExpression(String operationName, 
 			String tableName, String condition, HashMap<String, String> colVal) {
+		if (condition != null) {
+			condition = condition.replaceAll(" ", "");
+		}
 		Expression exp = null;
 		if(operationName.equalsIgnoreCase("select")) {
 			String columns = colVal.keySet().toString();

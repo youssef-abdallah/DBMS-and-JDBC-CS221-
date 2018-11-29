@@ -202,7 +202,6 @@ public class Regex {
 		if(!map.containsKey("where")) {
 			map.put("where", null);
 		}}
-		System.out.println(map);
 		return map;
 	}
 }
