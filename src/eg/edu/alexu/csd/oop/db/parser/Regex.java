@@ -1,5 +1,6 @@
 package eg.edu.alexu.csd.oop.db.parser;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -130,7 +131,7 @@ public class Regex {
 		}
 	}
 
-	private void parseCreate(String query) {
+	private void parseCreate(String query) throws SQLException {
 		String regex1 = "\\s*CREATE\\s+DATABASE\\s+([a-zA-Z0-9_\\\\/]+)\\s*";
 		String regex2 = "\\s*create\\s+table\\s+([a-zA-Z_0-9]+)\\s*[(]((\\s*([a-zA-Z_0-9]+)\\s+(varchar||int)\\s*\\,?)+)[)]\\s*";
 		if (validate(regex1, query.trim())) {
@@ -140,6 +141,8 @@ public class Regex {
 			map.put("operation", "CREATE TABLE");
 			map.put("tableName", getGroupFromQuery(regex2, query, 1));
 			fillColMap("\\s*([a-zA-Z_0-9]+)\\s+(varchar||int)\\s*\\,?", getGroupFromQuery(regex2, query, 2).trim());
+		} else {
+			throw new java.sql.SQLException();
 		}
 
 	}
@@ -156,7 +159,7 @@ public class Regex {
 		}
 	}
 
-	public HashMap<String, Object> parseQuery(String query) {
+	public HashMap<String, Object> parseQuery(String query) throws SQLException {
 		list.clear();
 		String operation = getGroupFromQuery("([a-zA-Z]+)\\s", query, 1);
 		switch (operation.toUpperCase()) {

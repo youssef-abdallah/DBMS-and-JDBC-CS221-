@@ -6,7 +6,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -100,8 +99,8 @@ public class Xml {
 		return result;
 	}
 	
-	public Map<String, List<Row>> getTables(String DataBase) {
-		Map<String, List<Row>> result = new HashMap<>();
+	public HashMap<String, List<Row>> getTables(String DataBase) {
+		HashMap<String, List<Row>> result = new HashMap<>();
 		File f = new File(DataBase);
 		ArrayList<String> names = new ArrayList<String>(Arrays.asList(f.list()));
 		for (int i = 0; i < names.size(); i++) {

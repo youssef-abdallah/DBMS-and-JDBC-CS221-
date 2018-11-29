@@ -15,6 +15,7 @@ import eg.edu.alexu.csd.oop.db.cre_del.Create;
 import eg.edu.alexu.csd.oop.db.expressions.Context;
 import eg.edu.alexu.csd.oop.db.expressions.Expression;
 import eg.edu.alexu.csd.oop.db.expressions.ExpressionsFactory;
+import eg.edu.alexu.csd.oop.db.expressions.Row;
 import eg.edu.alexu.csd.oop.db.files.DTD;
 import eg.edu.alexu.csd.oop.db.files.Xml;
 import eg.edu.alexu.csd.oop.db.parser.Regex;
@@ -47,6 +48,25 @@ public class Facade {
 
 	public Object[][] getResult() {
 		return result;
+	}
+	
+	private Object[][] get2DArray(List<String> array) {
+		Object[][] ans;
+		if (array.size() != 0) {
+			String[] s = array.get(0).split(" ");
+			int rows = array.size();
+			int cols = s.length;
+			ans = new Object[rows][cols];
+			for (int i = 0; i < rows; i++) {
+				String[] tmp = array.get(i).split(" ");
+				for (int j = 0; j < cols; j++) {
+					ans[i][j] = tmp[j];
+				}
+			}
+			return ans;
+		}
+		ans = new Object[0][0];
+		return ans;
 	}
 
 	public Facade() {
@@ -102,7 +122,7 @@ public class Facade {
 		} else if (operationName.equalsIgnoreCase("create table")) {
 			DTD dtdFile = new DTD();
 			HashMap<String, String> colMap = (HashMap<String, String>) map.get("colMap");
-			dtdFile.Write(currentDatabase, (String) map.get("tableName"),
+			opeartionSuccess = dtdFile.Write(currentDatabase, (String) map.get("tableName"),
 					new ArrayList(Arrays.asList(colMap.keySet().toArray())));
 		} else {
 			exp = factory.makeExpression(operationName, tableName, condition, colVal);
@@ -111,20 +131,17 @@ public class Facade {
 					+ map.get("databaseName");
 			ArrayList<String> schema = dtd.read(path, tableName);
 			Xml xml = new Xml();
+			HashMap<String, List<Row>> tables = xml.getTables(path);
 			ctx = new Context(xml.getTables(path), schema);
 			List<String> interpretation = exp.interpret(ctx);
-			if (interpretation.size() != 0) {
-				String[] s = interpretation.get(0).split(" ");
-				int rows = interpretation.size();
-				int cols = s.length;
-				result = new Object[rows][cols];
-				for (int i = 0; i < rows; i++) {
-					String[] tmp = interpretation.get(i).split(" ");
-					for (int j = 0; j < cols; j++) {
-						result[i][j] = tmp[j];
-					}
-				}
+			result = get2DArray(interpretation);
+			List<Row> rowList = tables.get(tableName);
+			List<String> stringList = new ArrayList<String>();
+			for(Row row : rowList) {
+				stringList.add(row.toString());
 			}
+			Object[][] newTable = get2DArray(stringList);
+			xml.Write(currentDatabase, tableName, newTable);
 		}
 
 	}
