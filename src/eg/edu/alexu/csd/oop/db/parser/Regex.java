@@ -194,7 +194,7 @@ public class Regex {
 		if(!map.containsKey("colMap")) {
 			map.put("colMap", null);
 		}
-		if(map.containsKey("where")) {
+		if(!map.containsKey("where")) {
 			map.put("where", null);
 		}}
 		return map;
