@@ -11,9 +11,11 @@ public class ExpressionsFactory {
 		}
 		Expression exp = null;
 		if(operationName.equalsIgnoreCase("select")) {
-			String columns = colVal.keySet().toString();
-			if (columns.equals("[]")) {
+			String columns = null;
+			if (colVal == null) {
 				columns = "*";
+			} else {
+				columns = colVal.keySet().toString();
 			}
 			if(condition == null) {
 				exp = new Select(columns, new From(tableName));

@@ -71,7 +71,7 @@ public class Regex {
 
 	private void parseDelete(String query) {
 		String regex1 = "delete\\s+from\\s+([a-zA-Z0-9_]+)\\s*";
-		String regex2 = regex1.concat("where\\s+([a-zA-Z=><'0-9 ]+)\\s*");
+		String regex2 = regex1.concat("where\\s+([a-zA-Z=><'0-9_ ]+)\\s*");
 		if (validate(regex2, query)) {
 			map.put("tableName", getGroupFromQuery(regex1, query, 1));
 			map.put("where", getGroupFromQuery(regex2, query, 2));
@@ -84,7 +84,7 @@ public class Regex {
 	private void parseUpdate(String query) {
 		String query2 = query + " ";
 		String regex1 = "update\\s+([a-zA-Z0-9_]+)\\s+set\\s+([a-zA-Z0-9,_]+\\s*=\\s*[a-zA-Z0-9,_ ']+\\s)+\\s*";
-		String regex2 = regex1.concat("where\\s+([a-zA-Z=><'0-9 ]+)\\s*");
+		String regex2 = regex1.concat("where\\s+([a-zA-Z=><'0-9_ ]+)\\s*");
 		if (validate(regex2, query2)) {
 			map.put("tableName", getGroupFromQuery(regex1, query2, 1));
 			map.put("where", getGroupFromQuery(regex2, query2, 3));
@@ -113,9 +113,9 @@ public class Regex {
 
 	private void parseSelect(String query) {
 		String regex1 = "\\s*select\\s+\\*\\s*from\\s+([a-zA-Z0-9_]+)\\s*";
-		String regex2 = regex1.concat("where\\s+([a-zA-Z=><'0-9 ]+)\\s*");
+		String regex2 = regex1.concat("where\\s+([a-zA-Z=><'0-9_ ]+)\\s*");
 		String regex3 = "\\s*select\\s+((\\s*[^from][a-zA-Z0-9_]+\\s*\\,?)+)\\s*from\\s+([a-zA-Z0-9_]+)\\s*";
-		String regex4 = regex3.concat("where\\s+([a-zA-Z=><'0-9 ]+)\\s*");
+		String regex4 = regex3.concat("where\\s+([a-zA-Z=><'0-9_ ]+)\\s*");
 		if (validate(regex2, query)) {
 			map.put("tableName", getGroupFromQuery(regex2, query, 1));
 			map.put("where", getGroupFromQuery(regex2, query, 2));
@@ -128,7 +128,7 @@ public class Regex {
 			map.put("tableName", getGroupFromQuery(regex3, query, 3));
 			map.put("where", getGroupFromQuery(regex4, query, 4));
 			fillValuesMap("(([a-zA-Z0-9_]+)\\s*\\,?)+", getGroupFromQuery(regex4, query, 1), true);
-		}
+		}//SELECT column_name1 FROM table_name13 WHERE coluMN_NAME2 < 5
 	}
 
 	private void parseCreate(String query) throws SQLException {
