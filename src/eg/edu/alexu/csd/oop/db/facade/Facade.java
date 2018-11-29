@@ -125,7 +125,7 @@ public class Facade {
 			opeartionSuccess = dtdFile.Write(currentDatabase, (String) map.get("tableName"),
 					new ArrayList(Arrays.asList(colMap.keySet().toArray())));
 					Xml xml = new Xml();
-					xml.Write(currentDatabase, tableName, null);
+					xml.Write(currentDatabase, tableName, null, "create");
 		} else {
 			exp = factory.makeExpression(operationName, tableName, condition, colVal);
 			DTD dtd = new DTD();
@@ -134,7 +134,7 @@ public class Facade {
 			ArrayList<String> schema = dtd.read(path, tableName);
 			Xml xml = new Xml();
 			HashMap<String, List<Row>> tables = xml.getTables(path);
-			ctx = new Context(xml.getTables(path), schema);
+			ctx = new Context(tables, schema);
 			List<String> interpretation = exp.interpret(ctx);
 			result = get2DArray(interpretation);
 			List<Row> rowList = tables.get(tableName);
@@ -143,7 +143,7 @@ public class Facade {
 				stringList.add(row.toString());
 			}
 			Object[][] newTable = get2DArray(stringList);
-			xml.Write(currentDatabase, tableName, newTable);
+			xml.Write(currentDatabase, tableName, newTable, "");
 		}
 
 	}

@@ -23,9 +23,9 @@ import org.w3c.dom.NodeList;
 
 public class Xml {
 
-	public boolean Write(String DataBase, String TableName, Object[][] Data) {
+	public boolean Write(String DataBase, String TableName, Object[][] Data, String operation) {
 		File file = new File(DataBase + System.getProperty("file.separator") + TableName + ".xml");
-		if (file.exists()) {
+		if (file.exists() && operation.equals("create")) {
 			return false;
 		}
 		DTD d = new DTD();

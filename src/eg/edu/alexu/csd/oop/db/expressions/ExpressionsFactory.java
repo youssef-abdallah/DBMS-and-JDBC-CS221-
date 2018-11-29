@@ -9,6 +9,9 @@ public class ExpressionsFactory {
 		Expression exp = null;
 		if(operationName.equalsIgnoreCase("select")) {
 			String columns = colVal.keySet().toString();
+			if (columns.equals("[]")) {
+				columns = "*";
+			}
 			if(condition == null) {
 				exp = new Select(columns, new From(tableName));
 			}else {
