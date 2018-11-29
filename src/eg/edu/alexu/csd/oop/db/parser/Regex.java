@@ -161,6 +161,8 @@ public class Regex {
 
 	public HashMap<String, Object> parseQuery(String query) throws SQLException {
 		list.clear();
+		map.clear();
+		colMap.clear();
 		String operation = getGroupFromQuery("([a-zA-Z]+)\\s", query, 1);
 		switch (operation.toUpperCase()) {
 		case ("CREATE"):
