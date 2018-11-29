@@ -4,7 +4,7 @@ import java.util.HashMap;
 
 public class ExpressionsFactory {
 	
-	public Expression ExpressionFactory(String operationName, 
+	public Expression ExpressionsFactory(String operationName, 
 			String tableName, String condition, HashMap<String, String> colVal) {
 		Expression exp = null;
 		if(operationName.equalsIgnoreCase("select")) {
