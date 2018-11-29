@@ -45,6 +45,18 @@ public class Facade {
 		return result;
 	}
 	
+	private boolean isInteger(String s) {
+	    try { 
+	        Integer.parseInt(s); 
+	    } catch(NumberFormatException e) { 
+	        return false; 
+	    } catch(NullPointerException e) {
+	        return false;
+	    }
+	    // only got here if we didn't return false
+	    return true;
+	}
+	
 	private Object[][] get2DArray(List<String> array) {
 		Object[][] ans;
 		if (array.size() != 0) {
@@ -55,7 +67,32 @@ public class Facade {
 			for (int i = 0; i < rows; i++) {
 				String[] tmp = array.get(i).split(" ");
 				for (int j = 0; j < cols; j++) {
+					if (isInteger(tmp[j])) {
+						ans[i][j] = Integer.valueOf(tmp[j]);
+					}
+					else {
+						ans[i][j] = tmp[j];
+					}
+				}
+			}
+			return ans;
+		}
+		ans = new Object[0][0];
+		return ans;
+	}
+	
+	private Object[][] get2DArrayXml(List<String> array) {
+		Object[][] ans;
+		if (array.size() != 0) {
+			String[] s = array.get(0).split(" ");
+			int rows = array.size();
+			int cols = s.length;
+			ans = new Object[rows][cols];
+			for (int i = 0; i < rows; i++) {
+				String[] tmp = array.get(i).split(" ");
+				for (int j = 0; j < cols; j++) {
 					ans[i][j] = tmp[j];
+					
 				}
 			}
 			return ans;
@@ -184,7 +221,7 @@ public class Facade {
 			for(Row row : rowList) {
 				stringList.add(row.toString());
 			}
-			Object[][] newTable = get2DArray(stringList);
+			Object[][] newTable = get2DArrayXml(stringList);
 			xml.Write(currentDatabase, tableName, newTable, "");
 		}
 
