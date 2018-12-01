@@ -1,17 +1,12 @@
 package eg.edu.alexu.csd.oop.db.facade;
 
 import java.io.File;
-import java.lang.management.OperatingSystemMXBean;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
+import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
-
-import eg.edu.alexu.csd.oop.db.cre_del.Create;
 import eg.edu.alexu.csd.oop.db.expressions.Context;
 import eg.edu.alexu.csd.oop.db.expressions.Expression;
 import eg.edu.alexu.csd.oop.db.expressions.ExpressionsFactory;
@@ -38,16 +33,24 @@ public class Facade {
 		// create multiple directories at one time
 		boolean successful = dir.mkdirs();
 		if (successful) {
-			// created the directories successfully
-			System.out.println("directories were created successfully");
 		} else {
-			// something failed trying to create the directories
-			System.out.println("failed trying to create the directories");
 		}
 	}
 
 	public Object[][] getResult() {
 		return result;
+	}
+	
+	private boolean isInteger(String s) {
+	    try { 
+	        Integer.parseInt(s); 
+	    } catch(NumberFormatException e) { 
+	        return false; 
+	    } catch(NullPointerException e) {
+	        return false;
+	    }
+	    // only got here if we didn't return false
+	    return true;
 	}
 	
 	private Object[][] get2DArray(List<String> array) {
@@ -60,7 +63,32 @@ public class Facade {
 			for (int i = 0; i < rows; i++) {
 				String[] tmp = array.get(i).split(" ");
 				for (int j = 0; j < cols; j++) {
+					if (isInteger(tmp[j])) {
+						ans[i][j] = Integer.valueOf(tmp[j]);
+					}
+					else {
+						ans[i][j] = tmp[j];
+					}
+				}
+			}
+			return ans;
+		}
+		ans = new Object[0][0];
+		return ans;
+	}
+	
+	private Object[][] get2DArrayXml(List<String> array) {
+		Object[][] ans;
+		if (array.size() != 0) {
+			String[] s = array.get(0).split(" ");
+			int rows = array.size();
+			int cols = s.length;
+			ans = new Object[rows][cols];
+			for (int i = 0; i < rows; i++) {
+				String[] tmp = array.get(i).split(" ");
+				for (int j = 0; j < cols; j++) {
 					ans[i][j] = tmp[j];
+					
 				}
 			}
 			return ans;
@@ -70,9 +98,10 @@ public class Facade {
 	}
 
 	public Facade() {
-		parser = new Regex();
-		factory = new ExpressionsFactory();
+		parser = Regex.getInstance();
+		factory = ExpressionsFactory.getInstance();
 		opeartionSuccess = true;
+		currentDatabase = null;
 	}
 
 	public boolean isOpeartionSuccess() {
@@ -98,8 +127,25 @@ public class Facade {
 	public void setDropIfExists(boolean dropIfExists) {
 		this.dropIfExists = dropIfExists;
 	}
+	
+	private void dropDatabase(File files) throws IOException {
 
-	public void evaluateQuery() throws SQLException {
+		for (File file : files.listFiles()) {
+			if (file.isDirectory()) {
+				dropDatabase(file);
+			} else {
+				if (!file.delete()) {
+					throw new IOException();
+				}
+			}
+		}
+		if (!files.delete()) {
+			throw new IOException();
+		}
+	}
+
+	@SuppressWarnings({ "unchecked", "rawtypes" })
+	public void evaluateQuery() throws SQLException{
 		map = parser.parseQuery(query);
 		if (map.isEmpty()) {
 			setOpeartionSuccess(false);
@@ -107,12 +153,21 @@ public class Facade {
 		}
 		String tableName = (String) map.get("tableName");
 		String condition = (String) map.get("where");
-		HashMap<String, String> colVal = (HashMap) map.get("colMap");
+		HashMap<String, String> colVal = (HashMap<String, String>) map.get("colMap");
 		String operationName = (String) map.get("operation");
-		if (operationName.equalsIgnoreCase("create database")) {
-			boolean checkDir = false;
+		if (operationName.equalsIgnoreCase("create database")) {			
 			String path = "." + System.getProperty("file.separator") + "Databases"
 					+ System.getProperty("file.separator") + map.get("databaseName");
+			File f = new File(path);
+			
+			if(isDropIfExists() && f.exists()) {
+				File files = new File(path);
+				try {
+					dropDatabase(files);
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			}
 			try {
 				this.CreateDirectory(path);
 			} catch (Exception e) {
@@ -120,21 +175,41 @@ public class Facade {
 			}
 			currentDatabase = path;
 		} else if (operationName.equalsIgnoreCase("create table")) {
+			if (currentDatabase == null) {
+				throw new SQLException();
+			}
 			DTD dtdFile = new DTD();
 			HashMap<String, String> colMap = (HashMap<String, String>) map.get("colMap");
 			opeartionSuccess = dtdFile.Write(currentDatabase, (String) map.get("tableName"),
 					new ArrayList(Arrays.asList(colMap.keySet().toArray())));
 					Xml xml = new Xml();
-					xml.Write(currentDatabase, tableName, null);
+					xml.Write(currentDatabase, tableName, null, "create");
+		} else if(operationName.equalsIgnoreCase("drop database")) {
+			File files = new File(currentDatabase);
+			try {
+				dropDatabase(files);
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		} else if (operationName.equalsIgnoreCase("drop table")) {
+			File f = new File(currentDatabase);
+			ArrayList<String> names = new ArrayList<String>(Arrays.asList(f.list()));
+			for (int i = 0; i < names.size(); i++) {
+				if((names.get(i).contains(tableName))){
+					File ff = new File(f.getPath() + System.getProperty("file.separator") + names.get(i));
+					ff.delete();
+				}
+			}
 		} else {
+			Xml xml = new Xml();
+			HashMap<String, List<Row>> tables = xml.getTables(currentDatabase);
+			if (!tables.containsKey(tableName) && operationName.equalsIgnoreCase("update")) {
+				throw new SQLException();
+			}
 			exp = factory.makeExpression(operationName, tableName, condition, colVal);
 			DTD dtd = new DTD();
-			String path = "." + System.getProperty("file.separator") + "Databases" + System.getProperty("file.separator")
-					+ map.get("databaseName");
-			ArrayList<String> schema = dtd.read(path, tableName);
-			Xml xml = new Xml();
-			HashMap<String, List<Row>> tables = xml.getTables(path);
-			ctx = new Context(xml.getTables(path), schema);
+			ArrayList<String> schema = dtd.read(currentDatabase, tableName);
+			ctx = new Context(tables, schema);
 			List<String> interpretation = exp.interpret(ctx);
 			result = get2DArray(interpretation);
 			List<Row> rowList = tables.get(tableName);
@@ -142,8 +217,8 @@ public class Facade {
 			for(Row row : rowList) {
 				stringList.add(row.toString());
 			}
-			Object[][] newTable = get2DArray(stringList);
-			xml.Write(currentDatabase, tableName, newTable);
+			Object[][] newTable = get2DArrayXml(stringList);
+			xml.Write(currentDatabase, tableName, newTable, "");
 		}
 
 	}

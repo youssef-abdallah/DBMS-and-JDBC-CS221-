@@ -1,4 +1,5 @@
 package eg.edu.alexu.csd.oop.db.expressions;
+
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
@@ -18,21 +19,13 @@ public class Context {
     	tables = newTables;
     	schema = newSchema;
     }
-
+    private int colIndex;
     private String table;
     private String column;
     private String condition;
     private HashMap<String, String> setStatement = new HashMap<>();
-
-    /**
-     * Default setup, used for clearing the context for next queries.
-     * See {@link Context#clear()}
-     */
     private static final Predicate<String> matchAnyString = s -> s.length() > 0;
     private static final Function<String, Stream<? extends String>> matchAllColumns = Stream::of;
-    /**
-     * Varies based on setup in subclasses of {@link Expression}
-     */
     private Predicate<String> whereFilter = matchAnyString;
     private Function<String, Stream<? extends String>> columnMapper = matchAllColumns;
 
@@ -53,11 +46,6 @@ public class Context {
     void setSetStatement(HashMap<String, String> setStatement) {
         this.setStatement = setStatement;
     }
-
-    /**
-     * Clears the context to defaults.
-     * No filters, match all columns.
-     */
     void clear() {
     	if (setStatement.size() != 0) {
     		setStatement.clear();
@@ -85,84 +73,38 @@ public class Context {
     }
     
     public List<String> update() {
-
-        List<String> result = new ArrayList<String>();       
-        for (Map.Entry<String, List<Row>> entry : tables.entrySet()) {
-        	if (entry.getKey().equalsIgnoreCase(table)) {
-        		List<Row> currentTable = entry.getValue();
-        		for (int row = 0; row < currentTable.size(); row++) {
-        			if (whereFilter.test(currentTable.get(row).toString())) {
-        				result.add("");
-        				ArrayList<String> currentColumns = currentTable.get(row).getCols();
-        				for(int i = 0; i < currentColumns.size(); i++) {
-        					String key = schema.get(i);
-        					if (setStatement.containsKey(key)) {
-        						currentTable.get(row).set(i, setStatement.get(key));
-        					}
-        				}
-        			}
-        		}
-        	}
-        }
-
+    	ContextAdaptee adaptee = new ContextAdaptee(tables, table, schema);
+    	adaptee.setSetStatement(setStatement);
+    	adaptee.setWhereFilter(whereFilter);
+    	int length = adaptee.update();
         clear();
+        List<String> result = new ArrayList<String>();
+        for(int i = 0; i < length; i++)
+        	result.add("");
         return result;
     }
     
     public List<String> insert() {
-    	
+    	ContextAdaptee adaptee = new ContextAdaptee(tables, table, schema);
+    	adaptee.setSetStatement(setStatement);
+    	int length = adaptee.insert();
     	List<String> result = new ArrayList<String>();
-    	for(Map.Entry<String, List<Row>> entry : tables.entrySet()) {
-    		if(entry.getKey().equalsIgnoreCase(table)) {
-    			List<Row> currentTable = entry.getValue();
-    			ArrayList<String> rowContent = new ArrayList<>();
-    			result.add("");
-    		// if (all columns are given)
-    			if(setStatement.size() == schema.size()) {
-    				for(int i = 0; i<schema.size(); i++) {
-    					rowContent.add(setStatement.get(String.valueOf(i)));
-    				}
-    			} else {
-    				for(int i = 0; i<schema.size(); i++) {
-    					if(setStatement.containsKey(schema.get(i))) {
-    						rowContent.add(setStatement.get(schema.get(i)));
-    					}else {
-    						rowContent.add("null");
-    					}
-    				}
-    			}
-    			Row newRow = new Row(rowContent);
-    			currentTable.add(newRow);
-    			entry.setValue(currentTable);
-    		}
-    	}
-    	
+    	for(int i = 0; i < length; i++)
+        	result.add("");
     	clear();
     	return result;
     }
     
     public List<String> delete() {
-    	List<String> result = new ArrayList<String>();       
-        for (Map.Entry<String, List<Row>> entry : tables.entrySet()) {
-        	if (entry.getKey().equalsIgnoreCase(table)) {
-        		List<Row> currentTable = entry.getValue();
-        		for (int row = 0; row < currentTable.size(); row++) {
-        			if (whereFilter.test(currentTable.get(row).toString())) {
-        				result.add("");
-        				currentTable.remove(currentTable.get(row));
-        				row--;
-        			}
-        		}
-        	}
-        }
+        ContextAdaptee adaptee = new ContextAdaptee(tables, table, schema);
+        adaptee.setWhereFilter(whereFilter);
+        int length = adaptee.delete();
+    	List<String> result = new ArrayList<String>();
+    	for(int i = 0; i < length; i++)
+        	result.add("");
         clear();
         return result;
     }
-
-    /**
-     * Sets column mapper based on {@link #column} attribute.
-     * Note: If column is unknown, will remain to look for all columns.
-     */
     private void setColumnMapper() {
     	List<Integer> colIndexes = new ArrayList<Integer>();
     	if (column.equalsIgnoreCase("*")) {
@@ -182,18 +124,117 @@ public class Context {
             		sb.append(tmp[i] + " ");
             	}
             }
-            sb.deleteCharAt(sb.length() - 1);
+            if (sb.length() != 0)
+            	sb.deleteCharAt(sb.length() - 1);
             return Stream.of(sb.toString());
         };
     }
     
     private void setRowMapper() {
-    	int colIndex;
-    	String[] splittedCondition = condition.split("=");
-    	colIndex = schema.indexOf(splittedCondition[0]);
+    	colIndex = -1;
+    	String[] conditions = condition.split("\\s+[aA][nN][dD]\\s+|\\s+[oO][rR]\\s+");
+    	String operator = "";
+    	int idx = 0;
+    	boolean negated = false;
+    	if (conditions[idx].contains("not")) {
+    		conditions[idx] = conditions[idx].replaceAll("[nN][oO][tT]\\s+", "");
+    		negated = true;
+    	}
+    	if (conditions[idx].contains("=")) {
+    		operator = "=";
+    	} else if (conditions[idx].contains(">")) {
+    		operator = ">";
+    	} else if (conditions[idx].contains("<")) {
+    		operator = "<";
+    	}
+    	String[] splittedCondition = conditions[idx].split(operator);
+    	for (int i = 0; i < schema.size(); i++) {
+    		if (schema.get(i).equalsIgnoreCase(splittedCondition[0])) {
+    			colIndex = i;
+    			break;
+    		}
+    	}
+    	final int x = colIndex;
+    	final int z = idx;
         whereFilter = s -> {
             String[] tmp = s.split(" ");
-            return tmp[colIndex].equals(splittedCondition[1]);
+            if (conditions[z].contains("=")) {
+            	return tmp[x].equalsIgnoreCase(splittedCondition[1]);
+            }
+            else if (conditions[z].contains(">")) {
+            	return Integer.parseInt(tmp[x]) > Integer.parseInt(splittedCondition[1]);
+            } else {
+            	return Integer.parseInt(tmp[x]) < Integer.parseInt(splittedCondition[1]);
+            }
+            	
         };
+        if (negated) {
+        	whereFilter = whereFilter.negate();
+        	negated = false;
+        }
+        ArrayList<String> andOrArray = new ArrayList<>();
+        for (int i = 0; i < condition.length(); i++) {
+        	if (condition.toLowerCase().indexOf("and", i) != -1) {
+        		andOrArray.add("and");
+        		i = condition.toLowerCase().indexOf("and", i);
+        	}
+        	else if (condition.toLowerCase().indexOf("or", i) != -1) {
+        		andOrArray.add("or");
+        		i = condition.toLowerCase().indexOf("or", i);
+        	}
+        }
+        int operatorIndex = 0;
+        for(int i = idx + 1; i < conditions.length; i++) {
+        	if (conditions[i].contains("not")) {
+        		negated = true;
+        		conditions[i].replaceAll("[nN][oO][tT]\\s+", "");
+        	}
+        	Predicate<String> newFilter;
+        	if (conditions[i].contains("=")) {
+        		operator = "=";
+        	} else if (conditions[i].contains(">")) {
+        		operator = ">";
+        	} else if (conditions[i].contains("<")) {
+        		operator = "<";
+        	}
+        	String[] splittedCondition2 = conditions[i].split(operator);
+        	for (int k = 0; k < schema.size(); k++) {
+        		if (schema.get(k).equalsIgnoreCase(splittedCondition2[0])) {
+        			colIndex = k;
+        			break;
+        		}
+        	}
+        	final int y = colIndex;
+        	final int w = i;
+            newFilter = s -> {
+                String[] tmp = s.split(" ");
+                if (conditions[w].contains("=")) {
+                	return tmp[y].equalsIgnoreCase(splittedCondition2[1]);
+                }
+                else if (conditions[w].contains(">")) {
+                	return Integer.parseInt(tmp[y]) > Integer.parseInt(splittedCondition2[1]);
+                } else {
+                	return Integer.parseInt(tmp[y]) < Integer.parseInt(splittedCondition2[1]);
+                }
+                	
+            };
+            if (andOrArray.get(operatorIndex).equalsIgnoreCase("and")) {
+            	if (!negated) {
+            		whereFilter = whereFilter.and(newFilter);
+            	} else {
+            		whereFilter = whereFilter.and(newFilter.negate());
+            		negated = false;
+            	}
+            } else {
+            	if (!negated) {
+            		whereFilter = whereFilter.or(newFilter);
+            	} else {
+            		whereFilter = whereFilter.or(newFilter.negate());
+            		negated = false;
+            	}
+            }
+            operatorIndex++;
+        }
+        
     }
 }

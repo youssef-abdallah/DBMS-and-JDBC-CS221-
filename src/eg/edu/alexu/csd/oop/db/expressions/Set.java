@@ -7,6 +7,11 @@ public class Set implements Expression {
 	private HashMap<String, String> setStatement;
 	private Where where;
 	
+	public Set(HashMap<String, String> set) {
+		this.setStatement = set;
+		this.where = null;
+	}
+	
 	public Set(HashMap<String, String> set, Where where) {
 		this.setStatement = set;
 		this.where = where;

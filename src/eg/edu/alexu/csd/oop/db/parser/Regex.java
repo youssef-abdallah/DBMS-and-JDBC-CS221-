@@ -3,15 +3,22 @@ package eg.edu.alexu.csd.oop.db.parser;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Regex {
-
+	private static Regex uniqueInstance = new Regex();
 	private HashMap<String, Object> map = new HashMap<String, Object>();
 	private HashMap<Object, String> colMap = new HashMap<Object, String>();
 	private ArrayList<String> list = new ArrayList<>();
+	
+	private Regex() {
+		
+	}
+	
+	public static Regex getInstance() {
+		return uniqueInstance;
+	}
 
 	public boolean validate(String str2check) {
 		String regex = "[a-zA-Z]+\\s+(\\*\\s)?[a-zA-Z,0-9]+\\s+[a-zA-Z <0-9_>='(),]+\\s*";
@@ -39,7 +46,7 @@ public class Regex {
 		Pattern pattern = Pattern.compile(regex, Pattern.CASE_INSENSITIVE);
 		Matcher m = pattern.matcher(str2check);
 		while (m.find()) {
-			colMap.put(m.group(1), m.group(2));
+			colMap.put(m.group(1).toLowerCase(), m.group(2));
 		}
 		map.put("colMap", colMap);
 	}
@@ -64,7 +71,7 @@ public class Regex {
 			map.put("colMap", colMap);
 		} else {
 			while (m.find()) {
-				list.add(m.group(2));
+				list.add(m.group(2).toLowerCase());
 			}
 		}
 
@@ -72,7 +79,7 @@ public class Regex {
 
 	private void parseDelete(String query) {
 		String regex1 = "delete\\s+from\\s+([a-zA-Z0-9_]+)\\s*";
-		String regex2 = regex1.concat("where\\s+([a-zA-Z=><'0-9 ]+)\\s*");
+		String regex2 = regex1.concat("where\\s+([a-zA-Z=><'0-9_ ]+)\\s*");
 		if (validate(regex2, query)) {
 			map.put("tableName", getGroupFromQuery(regex1, query, 1));
 			map.put("where", getGroupFromQuery(regex2, query, 2));
@@ -83,25 +90,29 @@ public class Regex {
 	}
 
 	private void parseUpdate(String query) {
-		String regex1 = "update\\s+([a-zA-Z0-9_]+)\\s+set\\s+([a-zA-Z0-9,_]+\\s*=\\s*[a-zA-Z0-9,_ ']+\\s)+\\s*";
-		String regex2 = regex1.concat("where\\s+([a-zA-Z=><'0-9 ]+)\\s*");
-		if (validate(regex2, query)) {
-			map.put("tableName", getGroupFromQuery(regex1, query, 1));
-			map.put("where", getGroupFromQuery(regex2, query, 3));
-			fillColMap("[^WHERE]\\s([a-zA-Z0-9_]+)\\s*=\\s*(\\'[a-zA-Z0-9_ ]+\\')", query);
-			fillColMap("[^WHERE]\\s([a-zA-Z0-9_]+)\\s*=\\s*([a-zA-Z0-9_]+)", query);
-		} else if (validate(regex1, query)) {
-			map.put("tableName", getGroupFromQuery(regex1, query, 1));
+		String query2 = query + " ";
+		String regex1 = "update\\s+([a-zA-Z0-9_]+)\\s+set\\s+(\\s*[^WHERE][a-zA-Z0-9_]+\\s*=\\s*[a-zA-Z0-9_']+\\s*\\,?\\s*)+\\s*";
+		String regex2 = regex1.concat("where\\s+([a-zA-Z=><'0-9_ ]+)\\s*");
+		if (validate(regex2, query2)) {
+			map.put("tableName", getGroupFromQuery(regex1, query2, 1).toLowerCase());
+			map.put("where", getGroupFromQuery(regex2, query2, 3));
+			fillColMap("[^WHERE]\\s([a-zA-Z0-9_]+)\\s*=\\s*(\\'[a-zA-Z0-9_ ]+\\')", query2);
+			fillColMap("[^WHERE]\\s([a-zA-Z0-9_]+)\\s*=\\s*([a-zA-Z0-9_]+)", query2);
+		} else if (validate(regex1, query2)) {
+			map.put("tableName", getGroupFromQuery(regex1, query2, 1).toLowerCase());
 			map.put("where", null);
-			fillColMap("[^WHERE]\\s([a-zA-Z0-9_]+)\\s*=\\s*(\\'[a-zA-Z0-9_ ]+\\')", query);
-			fillColMap("[^WHERE]\\s([a-zA-Z0-9_]+)\\s*=\\s*([a-zA-Z0-9_]+)", query);
+			fillColMap("[^WHERE]\\s([a-zA-Z0-9_]+)\\s*=\\s*(\\'[a-zA-Z0-9_ ]+\\')", query2);
+			fillColMap("[^WHERE]\\s([a-zA-Z0-9_]+)\\s*=\\s*([a-zA-Z0-9_]+)", query2);
 		}
 	}
-
-	private void parseInsert(String query) {// problem with strings with spaces
-		String regex1 = "insert\\s+into\\s+([a-zA-z0-9_]+)\\s+[(]((\\s*([a-zA-Z0-9_']+)\\s*\\,?)+)[)]\\s*values\\s+[(]((\\s*([a-zA-Z0-9_'.]+)\\s*\\,?)+)[)]\\s*";
-		String regex2 = "insert\\s+into\\s+([a-zA-z0-9_]+)\\s+values\\s+[(]((\\s*([a-zA-Z0-9_'.]+)\\s*\\,?)+)[)]\\s*";
-		if (validate(regex1, query)) {
+	private void parseInsert(String query) throws SQLException {// problem with strings with spaces
+		query = query.trim();
+		if((query.charAt(query.length()-1)!=')')){
+			throw new java.sql.SQLException();
+		}
+		String regex1 = "insert\\s+into\\s+([a-zA-Z0-9_]+)\\s*[(]((\\s*([a-zA-Z0-9_']+)\\s*\\,?)+)[)]\\s*values\\s+[(]((\\s*([a-zA-Z0-9_'.]+)\\s*\\,?)+)[)]";
+		String regex2 = "insert\\s+into\\s+([a-zA-Z0-9_]+)\\s+values\\s+[(]((\\s*([a-zA-Z0-9_'.]+)\\s*\\,?)+)[)]\\s*";
+		if (validate(regex1, query.trim())) {
 			map.put("tableName", getGroupFromQuery(regex1, query, 1));
 			fillValuesMap("(\\s*([a-zA-Z0-9_]+)\\s*\\,?)", getGroupFromQuery(regex1, query, 2), false);
 			fillValuesMap("(\\s*([a-zA-Z0-9_'.]+)\\s*\\,?)", getGroupFromQuery(regex1, query, 5), true);
@@ -113,21 +124,21 @@ public class Regex {
 
 	private void parseSelect(String query) {
 		String regex1 = "\\s*select\\s+\\*\\s*from\\s+([a-zA-Z0-9_]+)\\s*";
-		String regex2 = regex1.concat("where\\s+([a-zA-Z=><'0-9 ]+)\\s*");
+		String regex2 = regex1.concat("where\\s+([a-zA-Z=><'0-9_ ]+)\\s*");
 		String regex3 = "\\s*select\\s+((\\s*[^from][a-zA-Z0-9_]+\\s*\\,?)+)\\s*from\\s+([a-zA-Z0-9_]+)\\s*";
-		String regex4 = regex3.concat("where\\s+([a-zA-Z=><'0-9 ]+)\\s*");
+		String regex4 = regex3.concat("where\\s+([a-zA-Z=><'0-9_ ]+)\\s*");
 		if (validate(regex2, query)) {
 			map.put("tableName", getGroupFromQuery(regex2, query, 1));
 			map.put("where", getGroupFromQuery(regex2, query, 2));
 		} else if (validate(regex1, query)) {
 			map.put("tableName", getGroupFromQuery(regex1, query, 1));
-		} else if (validate(regex3, query)) {
-			map.put("tableName", getGroupFromQuery(regex3, query, 3));
-			fillValuesMap("(([a-zA-Z0-9_]+)\\s*\\,?)+", getGroupFromQuery(regex3, query, 1), true);
 		} else if (validate(regex4, query)) {
 			map.put("tableName", getGroupFromQuery(regex3, query, 3));
 			map.put("where", getGroupFromQuery(regex4, query, 4));
 			fillValuesMap("(([a-zA-Z0-9_]+)\\s*\\,?)+", getGroupFromQuery(regex4, query, 1), true);
+		} else if (validate(regex3, query)) {
+			map.put("tableName", getGroupFromQuery(regex3, query, 3));
+			fillValuesMap("(([a-zA-Z0-9_]+)\\s*\\,?)+", getGroupFromQuery(regex3, query, 1), true);
 		}
 	}
 
@@ -144,6 +155,7 @@ public class Regex {
 		} else {
 			throw new java.sql.SQLException();
 		}
+
 	}
 
 	private void parseDrop(String query) {
@@ -160,6 +172,8 @@ public class Regex {
 
 	public HashMap<String, Object> parseQuery(String query) throws SQLException {
 		list.clear();
+		map.clear();
+		colMap.clear();
 		String operation = getGroupFromQuery("([a-zA-Z]+)\\s", query, 1);
 		switch (operation.toUpperCase()) {
 		case ("CREATE"):
@@ -187,8 +201,7 @@ public class Regex {
 			parseDelete(query);
 			break;
 		default:
-			System.out.println("wrong first word in query");
-			break;
+			throw new java.sql.SQLException();
 		}
 		if (map.size() < 2) {
 			map.clear();
