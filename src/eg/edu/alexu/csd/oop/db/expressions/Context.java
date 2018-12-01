@@ -73,76 +73,35 @@ public class Context {
     }
     
     public List<String> update() {
-
-        List<String> result = new ArrayList<String>();       
-        for (Map.Entry<String, List<Row>> entry : tables.entrySet()) {
-        	if (entry.getKey().equalsIgnoreCase(table)) {
-        		List<Row> currentTable = entry.getValue();
-        		for (int row = 0; row < currentTable.size(); row++) {
-        			if (whereFilter.test(currentTable.get(row).toString())) {
-        				result.add("");
-        				ArrayList<String> currentColumns = currentTable.get(row).getCols();
-        				for(int i = 0; i < currentColumns.size(); i++) {
-        					String key = schema.get(i);
-        					if (setStatement.containsKey(key)) {
-        						currentTable.get(row).set(i, setStatement.get(key));
-        					}
-        				}
-        			}
-        		}
-        	}
-        }
-
+    	ContextAdaptee adaptee = new ContextAdaptee(tables, table, schema);
+    	adaptee.setSetStatement(setStatement);
+    	adaptee.setWhereFilter(whereFilter);
+    	int length = adaptee.update();
         clear();
+        List<String> result = new ArrayList<String>();
+        for(int i = 0; i < length; i++)
+        	result.add("");
         return result;
     }
     
     public List<String> insert() {
-    	
+    	ContextAdaptee adaptee = new ContextAdaptee(tables, table, schema);
+    	adaptee.setSetStatement(setStatement);
+    	int length = adaptee.insert();
     	List<String> result = new ArrayList<String>();
-    	for(Map.Entry<String, List<Row>> entry : tables.entrySet()) {
-    		if(entry.getKey().equalsIgnoreCase(table)) {
-    			List<Row> currentTable = entry.getValue();
-    			ArrayList<String> rowContent = new ArrayList<>();
-    			result.add("");
-    		// if (all columns are given)
-    			if(setStatement.containsKey("0")) {
-    				for(int i = 0; i<schema.size(); i++) {
-    					rowContent.add(setStatement.get(String.valueOf(i)));
-    				}
-    			} else {
-    				for(int i = 0; i<schema.size(); i++) {
-    					if(setStatement.containsKey(schema.get(i).toLowerCase())) {
-    						rowContent.add(setStatement.get(schema.get(i)));
-    					}else {
-    						rowContent.add("null");
-    					}
-    				}
-    			}
-    			Row newRow = new Row(rowContent);
-    			currentTable.add(newRow);
-    			entry.setValue(currentTable);
-    		}
-    	}
-    	
+    	for(int i = 0; i < length; i++)
+        	result.add("");
     	clear();
     	return result;
     }
     
     public List<String> delete() {
-    	List<String> result = new ArrayList<String>();       
-        for (Map.Entry<String, List<Row>> entry : tables.entrySet()) {
-        	if (entry.getKey().equalsIgnoreCase(table)) {
-        		List<Row> currentTable = entry.getValue();
-        		for (int row = 0; row < currentTable.size(); row++) {
-        			if (whereFilter.test(currentTable.get(row).toString())) {
-        				result.add("");
-        				currentTable.remove(currentTable.get(row));
-        				row--;
-        			}
-        		}
-        	}
-        }
+        ContextAdaptee adaptee = new ContextAdaptee(tables, table, schema);
+        adaptee.setWhereFilter(whereFilter);
+        int length = adaptee.delete();
+    	List<String> result = new ArrayList<String>();
+    	for(int i = 0; i < length; i++)
+        	result.add("");
         clear();
         return result;
     }
