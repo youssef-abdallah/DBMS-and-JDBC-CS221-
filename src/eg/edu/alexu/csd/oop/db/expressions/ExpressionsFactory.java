@@ -3,6 +3,13 @@ package eg.edu.alexu.csd.oop.db.expressions;
 import java.util.HashMap;
 
 public class ExpressionsFactory {
+	private static ExpressionsFactory uniqueInstance = new ExpressionsFactory();
+	public static ExpressionsFactory getInstance() {
+		return uniqueInstance;
+	}
+	private ExpressionsFactory() {
+		
+	}
 	
 	public Expression makeExpression(String operationName, 
 			String tableName, String condition, HashMap<String, String> colVal) {

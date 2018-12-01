@@ -30,6 +30,7 @@ public class SanityTest {
 		try {
 			createDatabase(db, "TestDB", true);
 			db.executeStructureQuery("CREATE   TABLE   table_name1(column_name1 varchar , column_name2    int,  column_name3 varchar)       ");
+
 		} catch (Throwable e){
 			TestRunner.fail("Failed to parse query with extra spaces", e);
 		}

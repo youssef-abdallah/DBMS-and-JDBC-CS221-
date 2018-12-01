@@ -33,11 +33,7 @@ public class Facade {
 		// create multiple directories at one time
 		boolean successful = dir.mkdirs();
 		if (successful) {
-			// created the directories successfully
-			System.out.println("directories were created successfully");
 		} else {
-			// something failed trying to create the directories
-			System.out.println("failed trying to create the directories");
 		}
 	}
 
@@ -102,8 +98,8 @@ public class Facade {
 	}
 
 	public Facade() {
-		parser = new Regex();
-		factory = new ExpressionsFactory();
+		parser = Regex.getInstance();
+		factory = ExpressionsFactory.getInstance();
 		opeartionSuccess = true;
 		currentDatabase = null;
 	}

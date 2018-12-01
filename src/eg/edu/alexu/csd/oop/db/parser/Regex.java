@@ -7,10 +7,18 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Regex {
-
+	private static Regex uniqueInstance = new Regex();
 	private HashMap<String, Object> map = new HashMap<String, Object>();
 	private HashMap<Object, String> colMap = new HashMap<Object, String>();
 	private ArrayList<String> list = new ArrayList<>();
+	
+	private Regex() {
+		
+	}
+	
+	public static Regex getInstance() {
+		return uniqueInstance;
+	}
 
 	public boolean validate(String str2check) {
 		String regex = "[a-zA-Z]+\\s+(\\*\\s)?[a-zA-Z,0-9]+\\s+[a-zA-Z <0-9_>='(),]+\\s*";
@@ -124,14 +132,14 @@ public class Regex {
 			map.put("where", getGroupFromQuery(regex2, query, 2));
 		} else if (validate(regex1, query)) {
 			map.put("tableName", getGroupFromQuery(regex1, query, 1));
-		} else if (validate(regex3, query)) {
-			map.put("tableName", getGroupFromQuery(regex3, query, 3));
-			fillValuesMap("(([a-zA-Z0-9_]+)\\s*\\,?)+", getGroupFromQuery(regex3, query, 1), true);
 		} else if (validate(regex4, query)) {
 			map.put("tableName", getGroupFromQuery(regex3, query, 3));
 			map.put("where", getGroupFromQuery(regex4, query, 4));
 			fillValuesMap("(([a-zA-Z0-9_]+)\\s*\\,?)+", getGroupFromQuery(regex4, query, 1), true);
-		}//SELECT column_name1 FROM table_name13 WHERE coluMN_NAME2 < 5
+		} else if (validate(regex3, query)) {
+			map.put("tableName", getGroupFromQuery(regex3, query, 3));
+			fillValuesMap("(([a-zA-Z0-9_]+)\\s*\\,?)+", getGroupFromQuery(regex3, query, 1), true);
+		}
 	}
 
 	private void parseCreate(String query) throws SQLException {
@@ -193,8 +201,7 @@ public class Regex {
 			parseDelete(query);
 			break;
 		default:
-			System.out.println("wrong first word in query");
-			break;
+			throw new java.sql.SQLException();
 		}
 		if (map.size() < 2) {
 			map.clear();
@@ -205,7 +212,6 @@ public class Regex {
 		if(!map.containsKey("where")) {
 			map.put("where", null);
 		}}
-		System.out.println(map);
 		return map;
 	}
 }

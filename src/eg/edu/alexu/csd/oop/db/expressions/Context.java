@@ -1,4 +1,5 @@
 package eg.edu.alexu.csd.oop.db.expressions;
+
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
@@ -23,16 +24,8 @@ public class Context {
     private String column;
     private String condition;
     private HashMap<String, String> setStatement = new HashMap<>();
-
-    /**
-     * Default setup, used for clearing the context for next queries.
-     * See {@link Context#clear()}
-     */
     private static final Predicate<String> matchAnyString = s -> s.length() > 0;
     private static final Function<String, Stream<? extends String>> matchAllColumns = Stream::of;
-    /**
-     * Varies based on setup in subclasses of {@link Expression}
-     */
     private Predicate<String> whereFilter = matchAnyString;
     private Function<String, Stream<? extends String>> columnMapper = matchAllColumns;
 
@@ -53,11 +46,6 @@ public class Context {
     void setSetStatement(HashMap<String, String> setStatement) {
         this.setStatement = setStatement;
     }
-
-    /**
-     * Clears the context to defaults.
-     * No filters, match all columns.
-     */
     void clear() {
     	if (setStatement.size() != 0) {
     		setStatement.clear();
@@ -158,11 +146,6 @@ public class Context {
         clear();
         return result;
     }
-
-    /**
-     * Sets column mapper based on {@link #column} attribute.
-     * Note: If column is unknown, will remain to look for all columns.
-     */
     private void setColumnMapper() {
     	List<Integer> colIndexes = new ArrayList<Integer>();
     	if (column.equalsIgnoreCase("*")) {
@@ -190,15 +173,22 @@ public class Context {
     
     private void setRowMapper() {
     	colIndex = -1;
+    	String[] conditions = condition.split("\\s+[aA][nN][dD]\\s+|\\s+[oO][rR]\\s+");
     	String operator = "";
-    	if (condition.contains("=")) {
+    	int idx = 0;
+    	boolean negated = false;
+    	if (conditions[idx].contains("not")) {
+    		conditions[idx] = conditions[idx].replaceAll("[nN][oO][tT]\\s+", "");
+    		negated = true;
+    	}
+    	if (conditions[idx].contains("=")) {
     		operator = "=";
-    	} else if (condition.contains(">")) {
+    	} else if (conditions[idx].contains(">")) {
     		operator = ">";
-    	} else if (condition.contains("<")) {
+    	} else if (conditions[idx].contains("<")) {
     		operator = "<";
     	}
-    	String[] splittedCondition = condition.split(operator);
+    	String[] splittedCondition = conditions[idx].split(operator);
     	for (int i = 0; i < schema.size(); i++) {
     		if (schema.get(i).equalsIgnoreCase(splittedCondition[0])) {
     			colIndex = i;
@@ -206,16 +196,86 @@ public class Context {
     		}
     	}
     	final int x = colIndex;
+    	final int z = idx;
         whereFilter = s -> {
             String[] tmp = s.split(" ");
-            if (condition.contains("="))
+            if (conditions[z].contains("=")) {
             	return tmp[x].equalsIgnoreCase(splittedCondition[1]);
-            else if (condition.contains(">")) {
+            }
+            else if (conditions[z].contains(">")) {
             	return Integer.parseInt(tmp[x]) > Integer.parseInt(splittedCondition[1]);
             } else {
             	return Integer.parseInt(tmp[x]) < Integer.parseInt(splittedCondition[1]);
             }
             	
         };
+        if (negated) {
+        	whereFilter = whereFilter.negate();
+        	negated = false;
+        }
+        ArrayList<String> andOrArray = new ArrayList<>();
+        for (int i = 0; i < condition.length(); i++) {
+        	if (condition.toLowerCase().indexOf("and", i) != -1) {
+        		andOrArray.add("and");
+        		i = condition.toLowerCase().indexOf("and", i);
+        	}
+        	else if (condition.toLowerCase().indexOf("or", i) != -1) {
+        		andOrArray.add("or");
+        		i = condition.toLowerCase().indexOf("or", i);
+        	}
+        }
+        int operatorIndex = 0;
+        for(int i = idx + 1; i < conditions.length; i++) {
+        	if (conditions[i].contains("not")) {
+        		negated = true;
+        		conditions[i].replaceAll("[nN][oO][tT]\\s+", "");
+        	}
+        	Predicate<String> newFilter;
+        	if (conditions[i].contains("=")) {
+        		operator = "=";
+        	} else if (conditions[i].contains(">")) {
+        		operator = ">";
+        	} else if (conditions[i].contains("<")) {
+        		operator = "<";
+        	}
+        	String[] splittedCondition2 = conditions[i].split(operator);
+        	for (int k = 0; k < schema.size(); k++) {
+        		if (schema.get(k).equalsIgnoreCase(splittedCondition2[0])) {
+        			colIndex = k;
+        			break;
+        		}
+        	}
+        	final int y = colIndex;
+        	final int w = i;
+            newFilter = s -> {
+                String[] tmp = s.split(" ");
+                if (conditions[w].contains("=")) {
+                	return tmp[y].equalsIgnoreCase(splittedCondition2[1]);
+                }
+                else if (conditions[w].contains(">")) {
+                	return Integer.parseInt(tmp[y]) > Integer.parseInt(splittedCondition2[1]);
+                } else {
+                	return Integer.parseInt(tmp[y]) < Integer.parseInt(splittedCondition2[1]);
+                }
+                	
+            };
+            if (andOrArray.get(operatorIndex).equalsIgnoreCase("and")) {
+            	if (!negated) {
+            		whereFilter = whereFilter.and(newFilter);
+            	} else {
+            		whereFilter = whereFilter.and(newFilter.negate());
+            		negated = false;
+            	}
+            } else {
+            	if (!negated) {
+            		whereFilter = whereFilter.or(newFilter);
+            	} else {
+            		whereFilter = whereFilter.or(newFilter.negate());
+            		negated = false;
+            	}
+            }
+            operatorIndex++;
+        }
+        
     }
 }
