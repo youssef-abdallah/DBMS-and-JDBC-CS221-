@@ -2,8 +2,6 @@ package eg.edu.alexu.csd.oop.db.Main;
 
 import java.sql.SQLException;
 import java.util.Scanner;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 import eg.edu.alexu.csd.oop.db.ConcreteDatabase;
 
@@ -46,8 +44,8 @@ public class DBMS {
 			} else if(temp.contains("SELECT")) {
 				try {
 					Object result[][] = db.executeQuery(query);
-					for(int i = 0; i<result.length; i++) {
-						for(int j = 0; j<result[0].length; j++) {
+					for(int i = 0; i < result.length; i++) {
+						for(int j = 0; j < result[i].length; j++) {
 							System.out.print(result[i][j] + " ");
 						}
 						System.out.println();

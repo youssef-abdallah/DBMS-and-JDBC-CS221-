@@ -1,0 +1,6 @@
+<! ELEMENT t (row)*>
+<! ELEMENT row (score,surname,name,id)>
+<! ELEMENT score (#PCDATA)>
+<! ELEMENT surname (#PCDATA)>
+<! ELEMENT name (#PCDATA)>
+<! ELEMENT id (#PCDATA)>

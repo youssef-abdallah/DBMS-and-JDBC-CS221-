@@ -1,6 +1,8 @@
 package eg.edu.alexu.csd.oop.db.expressions;
 
 import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class ExpressionsFactory {
 	private static ExpressionsFactory uniqueInstance = new ExpressionsFactory();
@@ -22,7 +24,14 @@ public class ExpressionsFactory {
 			if (colVal == null) {
 				columns = "*";
 			} else {
-				columns = colVal.keySet().toString();
+				StringBuilder sb = new StringBuilder();
+				for(Map.Entry<String, String> entry : colVal.entrySet()) {
+					sb.append(entry.getValue() + ",");
+				}
+				if (sb.length() > 0) {
+					sb.deleteCharAt(sb.length() - 1);
+				}
+				columns = sb.toString();
 			}
 			if(condition == null) {
 				exp = new Select(columns, new From(tableName));
