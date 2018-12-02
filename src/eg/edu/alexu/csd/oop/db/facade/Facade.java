@@ -180,8 +180,11 @@ public class Facade {
 			}
 			DTD dtdFile = new DTD();
 			HashMap<String, String> colMap = (HashMap<String, String>) map.get("colMap");
-			opeartionSuccess = dtdFile.Write(currentDatabase, (String) map.get("tableName"),
-					new ArrayList(Arrays.asList(colMap.keySet().toArray())));
+			ArrayList columnsNames = new ArrayList<>();
+			for(int i = 0; i<colMap.size(); i++) {
+				columnsNames.add(colMap.get(String.valueOf(i)));
+			}
+			opeartionSuccess = dtdFile.Write(currentDatabase, (String) map.get("tableName"),columnsNames);
 					Xml xml = new Xml();
 					xml.Write(currentDatabase, tableName, null, "create");
 		} else if(operationName.equalsIgnoreCase("drop database")) {
