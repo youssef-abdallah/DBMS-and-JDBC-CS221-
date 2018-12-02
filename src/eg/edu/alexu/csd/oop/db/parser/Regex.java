@@ -11,11 +11,11 @@ public class Regex {
 	private HashMap<String, Object> map = new HashMap<String, Object>();
 	private HashMap<Object, String> colMap = new HashMap<Object, String>();
 	private ArrayList<String> list = new ArrayList<>();
-	
+
 	private Regex() {
-		
+
 	}
-	
+
 	public static Regex getInstance() {
 		return uniqueInstance;
 	}
@@ -105,9 +105,10 @@ public class Regex {
 			fillColMap("[^WHERE]\\s([a-zA-Z0-9_]+)\\s*=\\s*([a-zA-Z0-9_]+)", query2);
 		}
 	}
+
 	private void parseInsert(String query) throws SQLException {// problem with strings with spaces
 		query = query.trim();
-		if((query.charAt(query.length()-1)!=')')){
+		if ((query.charAt(query.length() - 1) != ')')) {
 			throw new java.sql.SQLException();
 		}
 		String regex1 = "insert\\s+into\\s+([a-zA-Z0-9_]+)\\s*[(]((\\s*([a-zA-Z0-9_']+)\\s*\\,?)+)[)]\\s*values\\s*[(]((\\s*([a-zA-Z0-9_'.]+)\\s*\\,?)+)[)]";
@@ -151,7 +152,8 @@ public class Regex {
 		} else if (validate(regex2, query)) {
 			map.put("operation", "CREATE TABLE");
 			map.put("tableName", getGroupFromQuery(regex2, query, 1));
-			fillValuesMap("\\s*(([a-zA-Z_0-9]+))\\s+(varchar||int)\\s*\\,?", getGroupFromQuery(regex2, query, 2).trim(),true);
+			fillValuesMap("\\s*(([a-zA-Z_0-9]+))\\s+(varchar||int)\\s*\\,?", getGroupFromQuery(regex2, query, 2).trim(),
+					true);
 		} else {
 			throw new java.sql.SQLException();
 		}
@@ -205,13 +207,14 @@ public class Regex {
 		}
 		if (map.size() < 2) {
 			map.clear();
-		}else {
-		if(!map.containsKey("colMap")) {
-			map.put("colMap", null);
+		} else {
+			if (!map.containsKey("colMap")) {
+				map.put("colMap", null);
+			}
+			if (!map.containsKey("where")) {
+				map.put("where", null);
+			}
 		}
-		if(!map.containsKey("where")) {
-			map.put("where", null);
-		}}
 		return map;
 	}
 }

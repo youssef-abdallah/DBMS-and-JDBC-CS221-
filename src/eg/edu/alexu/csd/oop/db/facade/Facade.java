@@ -40,19 +40,19 @@ public class Facade {
 	public Object[][] getResult() {
 		return result;
 	}
-	
+
 	private boolean isInteger(String s) {
-	    try { 
-	        Integer.parseInt(s); 
-	    } catch(NumberFormatException e) { 
-	        return false; 
-	    } catch(NullPointerException e) {
-	        return false;
-	    }
-	    // only got here if we didn't return false
-	    return true;
+		try {
+			Integer.parseInt(s);
+		} catch (NumberFormatException e) {
+			return false;
+		} catch (NullPointerException e) {
+			return false;
+		}
+		// only got here if we didn't return false
+		return true;
 	}
-	
+
 	private Object[][] get2DArray(List<String> array) {
 		Object[][] ans;
 		if (array.size() != 0) {
@@ -65,8 +65,7 @@ public class Facade {
 				for (int j = 0; j < cols; j++) {
 					if (isInteger(tmp[j])) {
 						ans[i][j] = Integer.valueOf(tmp[j]);
-					}
-					else {
+					} else {
 						ans[i][j] = tmp[j];
 					}
 				}
@@ -76,7 +75,7 @@ public class Facade {
 		ans = new Object[0][0];
 		return ans;
 	}
-	
+
 	private Object[][] get2DArrayXml(List<String> array) {
 		Object[][] ans;
 		if (array.size() != 0) {
@@ -88,7 +87,7 @@ public class Facade {
 				String[] tmp = array.get(i).split(" ");
 				for (int j = 0; j < cols; j++) {
 					ans[i][j] = tmp[j];
-					
+
 				}
 			}
 			return ans;
@@ -127,7 +126,7 @@ public class Facade {
 	public void setDropIfExists(boolean dropIfExists) {
 		this.dropIfExists = dropIfExists;
 	}
-	
+
 	private void dropDatabase(File files) throws IOException {
 
 		for (File file : files.listFiles()) {
@@ -145,7 +144,7 @@ public class Facade {
 	}
 
 	@SuppressWarnings({ "unchecked", "rawtypes" })
-	public void evaluateQuery() throws SQLException{
+	public void evaluateQuery() throws SQLException {
 		map = parser.parseQuery(query);
 		if (map.isEmpty()) {
 			setOpeartionSuccess(false);
@@ -155,12 +154,12 @@ public class Facade {
 		String condition = (String) map.get("where");
 		HashMap<String, String> colVal = (HashMap<String, String>) map.get("colMap");
 		String operationName = (String) map.get("operation");
-		if (operationName.equalsIgnoreCase("create database")) {			
+		if (operationName.equalsIgnoreCase("create database")) {
 			String path = "." + System.getProperty("file.separator") + "Databases"
 					+ System.getProperty("file.separator") + map.get("databaseName");
 			File f = new File(path);
-			
-			if(isDropIfExists() && f.exists()) {
+
+			if (isDropIfExists() && f.exists()) {
 				File files = new File(path);
 				try {
 					dropDatabase(files);
@@ -181,13 +180,13 @@ public class Facade {
 			DTD dtdFile = new DTD();
 			HashMap<String, String> colMap = (HashMap<String, String>) map.get("colMap");
 			ArrayList columnsNames = new ArrayList<>();
-			for(int i = 0; i<colMap.size(); i++) {
+			for (int i = 0; i < colMap.size(); i++) {
 				columnsNames.add(colMap.get(String.valueOf(i)));
 			}
-			opeartionSuccess = dtdFile.Write(currentDatabase, (String) map.get("tableName"),columnsNames);
-					Xml xml = new Xml();
-					xml.Write(currentDatabase, tableName, null, "create");
-		} else if(operationName.equalsIgnoreCase("drop database")) {
+			opeartionSuccess = dtdFile.Write(currentDatabase, (String) map.get("tableName"), columnsNames);
+			Xml xml = new Xml();
+			xml.Write(currentDatabase, tableName, null, "create");
+		} else if (operationName.equalsIgnoreCase("drop database")) {
 			File files = new File(currentDatabase);
 			try {
 				dropDatabase(files);
@@ -198,7 +197,7 @@ public class Facade {
 			File f = new File(currentDatabase);
 			ArrayList<String> names = new ArrayList<String>(Arrays.asList(f.list()));
 			for (int i = 0; i < names.size(); i++) {
-				if((names.get(i).contains(tableName))){
+				if ((names.get(i).contains(tableName))) {
 					File ff = new File(f.getPath() + System.getProperty("file.separator") + names.get(i));
 					ff.delete();
 				}
@@ -217,7 +216,7 @@ public class Facade {
 			result = get2DArray(interpretation);
 			List<Row> rowList = tables.get(tableName);
 			List<String> stringList = new ArrayList<String>();
-			for(Row row : rowList) {
+			for (Row row : rowList) {
 				stringList.add(row.toString());
 			}
 			Object[][] newTable = get2DArrayXml(stringList);
