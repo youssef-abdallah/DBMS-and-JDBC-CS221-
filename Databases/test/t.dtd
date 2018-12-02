@@ -1,5 +1,0 @@
-<! ELEMENT t (row)*>
-<! ELEMENT row (name,id,surname)>
-<! ELEMENT name (#PCDATA)>
-<! ELEMENT id (#PCDATA)>
-<! ELEMENT surname (#PCDATA)>

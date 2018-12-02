@@ -2,7 +2,7 @@ package eg.edu.alexu.csd.oop.db;
 
 import java.sql.SQLException;
 
-import eg.edu.alexu.csd.oop.db.facade.Facade;
+import eg.edu.alexu.csd.oop.db.cs32.facade.Facade;
 
 public class ConcreteDatabase implements Database{
 	
