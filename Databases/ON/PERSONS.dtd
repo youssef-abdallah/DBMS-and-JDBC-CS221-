@@ -1,5 +1,0 @@
-<! ELEMENT PERSONS (row)*>
-<! ELEMENT row (name,id,grades)>
-<! ELEMENT name (#PCDATA)>
-<! ELEMENT id (#PCDATA)>
-<! ELEMENT grades (#PCDATA)>

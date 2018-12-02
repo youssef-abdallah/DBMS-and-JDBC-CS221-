@@ -15,7 +15,7 @@ public class DBMS {
 		Scanner scBoolean = new Scanner(System.in);
 		ConcreteDatabase db = new ConcreteDatabase();
 		while(true) {
-			System.out.println("Enter a SQL query:\n");
+			System.out.println("Enter a SQL query:");
 			String query;
 			query = sc.nextLine();
 			String temp = query.toUpperCase();
@@ -45,9 +45,13 @@ public class DBMS {
 				}
 			} else if(temp.contains("SELECT")) {
 				try {
-					Object result[][] = new Object[100][];
-							result = db.executeQuery(query);
-					System.out.println(result.toString());
+					Object result[][] = db.executeQuery(query);
+					for(int i = 0; i<result.length; i++) {
+						for(int j = 0; j<result[0].length; j++) {
+							System.out.print(result[i][j] + " ");
+						}
+						System.out.println();
+					}
 				} catch (SQLException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
@@ -60,3 +64,7 @@ public class DBMS {
 	}
 	
 }
+
+// create database test
+// false
+// select * from t
