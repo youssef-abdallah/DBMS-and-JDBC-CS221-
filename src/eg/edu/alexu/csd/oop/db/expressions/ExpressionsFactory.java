@@ -1,7 +1,6 @@
 package eg.edu.alexu.csd.oop.db.expressions;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 public class ExpressionsFactory {
@@ -16,7 +15,11 @@ public class ExpressionsFactory {
 	public Expression makeExpression(String operationName, 
 			String tableName, String condition, HashMap<String, String> colVal) {
 		if (condition != null) {
-			condition = condition.replaceAll(" ", "");
+			if (condition.contains("or") || condition.contains("and") || condition.contains("not"))
+				condition = condition.replaceAll("\\s+=\\s+", "");
+			else {
+				condition = condition.replaceAll(" ", "");
+			}
 		}
 		Expression exp = null;
 		if(operationName.equalsIgnoreCase("select")) {

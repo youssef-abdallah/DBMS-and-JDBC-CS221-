@@ -113,7 +113,7 @@ public class Context {
     	String[] columns = column.split(",");
     	for(int i = 0; i < columns.length; i++) {
     		if (schema.contains(columns[i])) {
-    			colIndexes.add(i);
+    			colIndexes.add(schema.indexOf(columns[i]));
     		}
     	}
         columnMapper = s -> {
