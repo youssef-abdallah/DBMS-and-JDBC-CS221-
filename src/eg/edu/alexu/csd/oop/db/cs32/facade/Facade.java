@@ -158,8 +158,7 @@ public class Facade {
 		HashMap<String, String> colVal = (HashMap<String, String>) map.get("colMap");
 		String operationName = (String) map.get("operation");
 		if (operationName.equalsIgnoreCase("create database")) {
-			String path = "." + System.getProperty("file.separator") + "Databases"
-					+ System.getProperty("file.separator") + map.get("databaseName");
+			String path = (String) map.get("databaseName");
 			File f = new File(path);
 
 			if (isDropIfExists() && f.exists()) {

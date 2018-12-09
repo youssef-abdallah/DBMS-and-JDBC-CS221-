@@ -87,7 +87,6 @@ public class ConcreteStatement implements java.sql.Statement {
 		}
 		String temp = arg0.toLowerCase();
 		if (temp.contains("create database")) {
-			System.out.println(connection.getPath()+ System.getProperty("file.separator") +arg0.split(" ")[2]);
 			dbms.createDatabase(connection.getPath()+ System.getProperty("file.separator") +arg0.split(" ")[2], true);
 		} else if (temp.contains("create table") || temp.contains("drop table") || temp.contains("drop database")) {
 			dbms.executeQuery(arg0);
