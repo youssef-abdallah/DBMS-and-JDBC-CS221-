@@ -30,10 +30,12 @@ public class Resultset implements ResultSet {
 	private List<String> Coulmun;
 	private Statement statement;
 	private Boolean close = false;
-	public Resultset(Object[][] Data, List<String> coulmun, Statement state) {
+	private String TableName;
+	public Resultset(Object[][] Data, List<String> coulmun, Statement state, String TableName) {
 		this.result = Data;
 		this.Coulmun = coulmun;
 		this.statement = state;
+		this.TableName = TableName;
 	}
 
 	@Override
