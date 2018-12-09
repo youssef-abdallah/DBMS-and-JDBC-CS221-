@@ -7,6 +7,7 @@ import java.sql.SQLWarning;
 import java.util.ArrayList;
 import java.util.List;
 
+import eg.edu.alexu.csd.oop.db.ConcreteDatabase;
 import eg.edu.alexu.csd.oop.db.Database;
 import eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection;
 
@@ -24,6 +25,7 @@ public class ConcreteStatement implements java.sql.Statement {
 	public ConcreteStatement(Connection connection) {
 		this.connection = (ConcreteConnection) connection;
 		path=((ConcreteConnection) connection).getPath();
+		dbms=new ConcreteDatabase();
 	}
 
 	@Override
