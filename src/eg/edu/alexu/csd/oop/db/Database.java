@@ -59,4 +59,6 @@ public interface Database {
 	 * @return
 	 */
 	public List<String> getSchema(String DataBase, String TableName);
+	
+	public String getTableName();
 }

@@ -26,6 +26,11 @@ public class Facade {
 	private Context ctx;
 	private Object[][] result;
 	private boolean opeartionSuccess;
+	private String tableName ;
+	
+	public String getTableName() {
+		return tableName;
+	}
 
 	private void CreateDirectory(String path) {
 		File dir = new File(path);
@@ -148,7 +153,7 @@ public class Facade {
 			setOpeartionSuccess(false);
 			throw new java.sql.SQLException();
 		}
-		String tableName = (String) map.get("tableName");
+		tableName = (String) map.get("tableName");
 		String condition = (String) map.get("where");
 		HashMap<String, String> colVal = (HashMap<String, String>) map.get("colMap");
 		String operationName = (String) map.get("operation");

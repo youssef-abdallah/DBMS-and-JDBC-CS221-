@@ -57,4 +57,10 @@ public class ConcreteDatabase implements Database{
 		return d.read(DataBase, TableName);
 	}
 
+	@Override
+	public String getTableName() {
+		// TODO Auto-generated method stub
+		return facade.getTableName();
+	}
+
 }
