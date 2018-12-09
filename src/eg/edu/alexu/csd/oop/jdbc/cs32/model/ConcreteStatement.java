@@ -21,7 +21,7 @@ public class ConcreteStatement implements java.sql.Statement {
 	private List<String> columnsNames; 
 	private String path;
 
-	ConcreteStatement(Connection connection) {
+	public ConcreteStatement(Connection connection) {
 		this.connection = (ConcreteConnection) connection;
 		//path=connection.getPath();
 	}
