@@ -1,5 +1,7 @@
 package eg.edu.alexu.csd.oop.db;
 
+import java.util.List;
+
 public interface Database {
 	/**
 	 * Create database with the given name, or use it if exists. This method
@@ -50,4 +52,11 @@ public interface Database {
 	 *             syntax error
 	 */
 	public int executeUpdateQuery(String query) throws java.sql.SQLException;
+	/**
+	 * return Schema
+	 * @param DataBase : path of DataBase
+	 * @param TableName : Table Name
+	 * @return
+	 */
+	public List<String> getSchema(String DataBase, String TableName);
 }

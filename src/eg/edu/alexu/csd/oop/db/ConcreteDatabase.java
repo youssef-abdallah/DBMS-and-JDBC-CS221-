@@ -1,8 +1,10 @@
 package eg.edu.alexu.csd.oop.db;
 
 import java.sql.SQLException;
+import java.util.List;
 
 import eg.edu.alexu.csd.oop.db.cs32.facade.Facade;
+import eg.edu.alexu.csd.oop.db.cs32.files.DTD;
 
 public class ConcreteDatabase implements Database{
 	
@@ -47,6 +49,12 @@ public class ConcreteDatabase implements Database{
 		facade.setQuery(query);
 		facade.evaluateQuery();
 		return facade.getResult().length;
+	}
+
+	@Override
+	public List<String> getSchema(String DataBase, String TableName) {
+		DTD d = new DTD();
+		return d.read(DataBase, TableName);
 	}
 
 }
