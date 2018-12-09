@@ -29,6 +29,9 @@ public class ConcreteConnection implements java.sql.Connection {
 	public void setPath(String path) {
 		this.path = path;
 	}
+	public String getPath() {
+		return path;
+	}
 
 	@Override
 	public <T> T unwrap(Class<T> iface) throws SQLException {
