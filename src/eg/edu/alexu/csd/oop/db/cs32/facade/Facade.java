@@ -190,6 +190,9 @@ public class Facade {
 			Xml xml = new Xml();
 			xml.Write(currentDatabase, tableName, null, "create");
 		} else if (operationName.equalsIgnoreCase("drop database")) {
+			if (currentDatabase == null) {
+				return;
+			}
 			File files = new File(currentDatabase);
 			try {
 				dropDatabase(files);
