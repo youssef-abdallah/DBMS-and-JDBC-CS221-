@@ -13,7 +13,7 @@ import eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection;
 
 public class ConcreteStatement implements java.sql.Statement {
 	private ArrayList<String> batch = new ArrayList<>();
-	private Database dbms;
+	private Database dbms=new ConcreteDatabase();
 	private boolean isClosed = false;
 	private int counter;
 	private int queryTimeout = 0;
@@ -25,7 +25,7 @@ public class ConcreteStatement implements java.sql.Statement {
 	public ConcreteStatement(Connection connection) {
 		this.connection = (ConcreteConnection) connection;
 		path=((ConcreteConnection) connection).getPath();
-		dbms=new ConcreteDatabase();
+		
 	}
 
 	@Override
