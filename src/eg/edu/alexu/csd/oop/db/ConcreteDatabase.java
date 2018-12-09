@@ -8,10 +8,15 @@ import eg.edu.alexu.csd.oop.db.cs32.files.DTD;
 
 public class ConcreteDatabase implements Database{
 	
+	private static ConcreteDatabase uniqueInstance = new ConcreteDatabase();
 	private Facade facade;
 	boolean drop = false;
 	
-	public ConcreteDatabase() {
+	public static ConcreteDatabase getInstacnce() {
+		return uniqueInstance;
+	}
+	
+	private ConcreteDatabase() {
 		facade = new Facade();
 	}
 
