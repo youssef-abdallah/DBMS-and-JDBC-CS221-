@@ -42,8 +42,7 @@ public class ConcreteConnection implements java.sql.Connection {
 
 	@Override
 	public Statement createStatement() throws SQLException {
-		// TODO Auto-generated method stub
-		return null;
+		return new ConcreteStatement(this);
 	}
 
 	@Override
