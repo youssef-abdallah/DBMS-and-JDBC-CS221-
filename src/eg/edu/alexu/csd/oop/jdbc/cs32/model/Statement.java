@@ -1,10 +1,11 @@
-package eg.edu.alexu.csd.oop.jdbc.cs32;
+package eg.edu.alexu.csd.oop.jdbc.cs32.model;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.SQLWarning;
 import java.util.ArrayList;
+import java.util.List;
 
 import eg.edu.alexu.csd.oop.jdbc.Database;
 import eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection;
@@ -17,6 +18,7 @@ public class Statement implements java.sql.Statement {
 	private int queryTimeout = 0;
 	private ConcreteConnection connection;
 	private int[] results; 
+	private List<String> columnsNames; 
 
 	Statement(Connection connection) {
 		this.connection = (ConcreteConnection) connection;
@@ -81,15 +83,18 @@ public class Statement implements java.sql.Statement {
 		}
 		String temp = arg0.toLowerCase();
 		if (temp.contains("create database")) {
-			dbms.createDatabase(arg0.split(" ")[2], true);
+			dbms.createDatabase(connection.getPath()+ System.getProperty("file.separator") +arg0.split(" ")[2], true);
 		} else if (temp.contains("create table") || temp.contains("drop table") || temp.contains("drop database")) {
 			dbms.executeQuery(arg0);
 		} else if (temp.contains("insert into") || temp.contains("update") || temp.contains("delete")) {
 			counter = this.executeUpdate(arg0);
 		} else if (temp.contains("select")) {
 			this.executeQuery(arg0);
+		}else {
+			throw new SQLException();
 		}
 		return true;
+		
 	}
 
 	@Override
@@ -130,7 +135,8 @@ public class Statement implements java.sql.Statement {
 			throw new UnsupportedOperationException();
 		}
 		Object[][] select = dbms.executeQuery(arg0);
-		return new ResultSet();
+		columnsNames = dbms.readDTD;
+		return new Resultset(select,columnsNames,this);
 	}
 
 	@Override
