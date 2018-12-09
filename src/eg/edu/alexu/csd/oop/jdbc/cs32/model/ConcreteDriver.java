@@ -13,7 +13,7 @@ public class ConcreteDriver implements Driver {
 	public Connection connect(String url, Properties info) throws SQLException {
 		File dir = (File) info.get("path");
 		String path = dir.getAbsolutePath();
-		return (Connection) ConnectionManager.getInstance(ConcreteConnection.class, path);
+		return (Connection) ConnectionManager.getInstance(ConcreteConnection.class, path).acquire();
 	}
 
 	@Override
