@@ -13,18 +13,18 @@ import eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection;
 
 public class ConcreteStatement implements java.sql.Statement {
 	private ArrayList<String> batch = new ArrayList<>();
-	private static  Database dbms=new ConcreteDatabase();
+	private Database dbms = ConcreteDatabase.getInstacnce();
 	private boolean isClosed = false;
 	private int counter;
 	private int queryTimeout = 0;
 	private ConcreteConnection connection;
-	private int[] results; 
-	private List<String> columnsNames; 
+	private int[] results;
+	private List<String> columnsNames;
 	private String path;
 
 	public ConcreteStatement(Connection connection) {
 		this.connection = (ConcreteConnection) connection;
-		path=((ConcreteConnection) connection).getPath();
+		path = ((ConcreteConnection) connection).getPath();
 	}
 
 	@Override
@@ -86,18 +86,18 @@ public class ConcreteStatement implements java.sql.Statement {
 		}
 		String temp = arg0.toLowerCase();
 		if (temp.contains("create database")) {
-			dbms.createDatabase(connection.getPath()+ System.getProperty("file.separator") +arg0.split(" ")[2], true);
+			dbms.createDatabase(connection.getPath() + System.getProperty("file.separator") + arg0.split(" ")[2], true);
 		} else if (temp.contains("create table") || temp.contains("drop table") || temp.contains("drop database")) {
 			dbms.executeQuery(arg0);
 		} else if (temp.contains("insert into") || temp.contains("update") || temp.contains("delete")) {
 			counter = this.executeUpdate(arg0);
 		} else if (temp.contains("select")) {
 			this.executeQuery(arg0);
-		}else {
+		} else {
 			throw new SQLException();
 		}
 		return true;
-		
+
 	}
 
 	@Override
@@ -140,7 +140,7 @@ public class ConcreteStatement implements java.sql.Statement {
 		Object[][] select = dbms.executeQuery(arg0);
 		String tableName = dbms.getTableName();
 		columnsNames = dbms.getSchema(path, tableName);
-		return new Resultset(select,columnsNames,this,tableName);
+		return new Resultset(select, columnsNames, this, tableName);
 
 	}
 
