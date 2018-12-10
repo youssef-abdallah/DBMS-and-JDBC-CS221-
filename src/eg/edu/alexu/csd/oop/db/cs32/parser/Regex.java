@@ -152,7 +152,7 @@ public class Regex {
 		} else if (validate(regex2, query)) {
 			map.put("operation", "CREATE TABLE");
 			map.put("tableName", getGroupFromQuery(regex2, query, 1));
-			fillValuesMap("\\s*(([a-zA-Z_0-9]+))\\s+((varchar)|(int))\\s*\\,?", getGroupFromQuery(regex2, query, 2),true);
+			fillValuesMap("\\s*((([a-zA-Z_0-9]+)\\s+((varchar)|(int))))\\s*\\,?", getGroupFromQuery(regex2, query, 2),true);
 		} else {
 			throw new java.sql.SQLException();
 		}

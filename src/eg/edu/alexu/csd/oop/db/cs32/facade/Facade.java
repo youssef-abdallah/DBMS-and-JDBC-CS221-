@@ -194,13 +194,21 @@ public class Facade {
 			}
 			DTD dtdFile = new DTD();
 			HashMap<String, String> colMap = (HashMap<String, String>) map.get("colMap");
+			ArrayList<String> columnsNamesTypes = new ArrayList<>();
+			List<String> types = new ArrayList<String>();
 			ArrayList columnsNames = new ArrayList<>();
 			for (int i = 0; i < colMap.size(); i++) {
-				columnsNames.add(colMap.get(String.valueOf(i)));
+				columnsNamesTypes.add(colMap.get(String.valueOf(i)));
+			}
+			for(int i=0;i<columnsNamesTypes.size();i++) {
+				columnsNames.add(columnsNamesTypes.get(i).split(" ")[0]);
+				//System.out.println(columnsNamesTypes.get(i).split(" ")[0]);
+				types.add(columnsNamesTypes.get(i).split(" ")[1]);
+				//System.out.println(columnsNamesTypes.get(i).split(" ")[1]);
 			}
 			opeartionSuccess = dtdFile.Write(currentDatabase, (String) map.get("tableName"), columnsNames);
 			Xml xml = new Xml();
-		//	xml.Write(currentDatabase, tableName, null, "create");
+			xml.Write(currentDatabase, tableName, null, "create",types);
 		} else if (operationName.equalsIgnoreCase("drop database")) {
 			if (currentDatabase == null) {
 				return;
@@ -239,7 +247,7 @@ public class Facade {
 				stringList.add(row.toString());
 			}
 			Object[][] newTable = get2DArrayXml(stringList);
-			//xml.Write(currentDatabase, tableName, newTable, "");
+			xml.Write(currentDatabase, tableName, newTable, "",xml.getTypes(currentDatabase, tableName));
 		}
 
 	}
