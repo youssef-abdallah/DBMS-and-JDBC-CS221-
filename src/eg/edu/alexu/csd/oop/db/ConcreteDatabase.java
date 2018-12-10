@@ -53,9 +53,9 @@ public class ConcreteDatabase implements Database{
 	}
 
 	@Override
-	public List<String> getSchema(String DataBase, String TableName) {
+	public List<String> getSchema(String TableName) {
 		DTD d = new DTD();
-		return d.read(DataBase, TableName);
+		return d.read(facade.getPath(), TableName);
 	}
 
 	@Override

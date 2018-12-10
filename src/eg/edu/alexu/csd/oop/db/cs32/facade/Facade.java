@@ -31,6 +31,9 @@ public class Facade {
 	public String getTableName() {
 		return tableName;
 	}
+	public String getPath() {
+		return currentDatabase;
+	}
 
 	private void CreateDirectory(String path) {
 		File dir = new File(path);
