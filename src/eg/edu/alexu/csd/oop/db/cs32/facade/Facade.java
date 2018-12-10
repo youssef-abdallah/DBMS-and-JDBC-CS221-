@@ -252,6 +252,5 @@ public class Facade {
 			Object[][] newTable = get2DArrayXml(stringList);
 			xml.Write(currentDatabase, tableName, newTable, "",xml.getTypes(currentDatabase, tableName));
 		}
-
 	}
 }
