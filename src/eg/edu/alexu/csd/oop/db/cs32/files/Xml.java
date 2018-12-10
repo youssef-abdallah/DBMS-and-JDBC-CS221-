@@ -25,7 +25,9 @@ import org.w3c.dom.NodeList;
 public class Xml {
 
 	public boolean Write(String DataBase, String TableName, Object[][] Data, String operation, List<String> types) throws SQLException {
-		check(Data, types);
+		if (!(Data == null)) {
+			check(Data, types);
+		}
 		File file = new File(DataBase + System.getProperty("file.separator") + TableName + ".xml");
 		if (file.exists() && operation.equals("create")) {
 			return false;
