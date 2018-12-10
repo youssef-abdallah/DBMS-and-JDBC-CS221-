@@ -86,11 +86,11 @@ public class ConcreteStatement implements java.sql.Statement {
 		}
 		boolean success = true;
 		String temp = arg0.toLowerCase();
-		if (temp.contains("create database")) {
+		if (temp.contains("create")&&temp.contains("database")) {
 			dbms.createDatabase(connection.getPath() + System.getProperty("file.separator") + arg0.split(" ")[2], true);
-		} else if (temp.contains("create table") || temp.contains("drop table") || temp.contains("drop database")) {
+		} else if ((temp.contains("create")&&temp.contains("table"))|| (temp.contains("drop")&&temp.contains("table")) ||(temp.contains("drop")&&temp.contains("database"))) {
 			success = dbms.executeStructureQuery(arg0);
-		} else if (temp.contains("insert into") || temp.contains("update") || temp.contains("delete")) {
+		} else if (temp.contains("insert")&&temp.contains("into") || temp.contains("update") || temp.contains("delete")) {
 			counter = this.executeUpdate(arg0);
 		} else if (temp.contains("select")) {
 			Object[][] select = dbms.executeQuery(arg0);
@@ -143,10 +143,9 @@ public class ConcreteStatement implements java.sql.Statement {
 		}
 		Object[][] select = dbms.executeQuery(arg0);
 		String tableName = dbms.getTableName();
-		columnsNames = dbms.getSchema(path, tableName);
+		columnsNames = dbms.getSchema(tableName);
 		//return new Resultset(select, columnsNames, this, tableName,);
 		return null;
-
 	}
 
 	@Override
