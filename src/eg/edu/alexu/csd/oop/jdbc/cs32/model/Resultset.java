@@ -186,13 +186,19 @@ public class Resultset implements ResultSet {
 
 	@Override
 	public boolean next() throws SQLException {
-		num = (num + 1) % (result.length - 1);
+		if (num == result.length) {
+			return false;
+		}
+		num = (num + 1);
 		return true;
 	}
 
 	@Override
 	public boolean previous() throws SQLException {
-		num = (num - 1) % (result.length);
+		if (num == 0 || num == -1) {
+			return false;
+		}
+		num = (num - 1);
 		return true;
 	}
 
