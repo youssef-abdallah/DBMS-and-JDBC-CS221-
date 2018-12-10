@@ -5,6 +5,7 @@ import java.util.List;
 
 import eg.edu.alexu.csd.oop.db.cs32.facade.Facade;
 import eg.edu.alexu.csd.oop.db.cs32.files.DTD;
+import eg.edu.alexu.csd.oop.db.cs32.files.Xml;
 
 public class ConcreteDatabase implements Database{
 	
@@ -56,6 +57,12 @@ public class ConcreteDatabase implements Database{
 	public List<String> getSchema(String TableName) {
 		DTD d = new DTD();
 		return d.read(facade.getPath(), TableName);
+	}
+	
+	@Override
+	public List<String> getTypes(String TableName) {
+		Xml x = new Xml();
+		return x.getTypes(facade.getPath(), TableName);
 	}
 
 	@Override

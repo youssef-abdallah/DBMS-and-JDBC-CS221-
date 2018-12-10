@@ -19,11 +19,9 @@ public class ConcreteStatement implements java.sql.Statement {
 	private ConcreteConnection connection;
 	private int[] results;
 	private List<String> columnsNames;
-	private String path = null;
 
 	public ConcreteStatement(Connection connection) {
 		this.connection = (ConcreteConnection) connection;
-		path = ((ConcreteConnection) connection).getPath();
 		dbms = ((ConcreteConnection) connection).getDatabase();
 	}
 
@@ -144,8 +142,8 @@ public class ConcreteStatement implements java.sql.Statement {
 		Object[][] select = dbms.executeQuery(arg0);
 		String tableName = dbms.getTableName();
 		columnsNames = dbms.getSchema(tableName);
-		//return new Resultset(select, columnsNames, this, tableName,);
-		return null;
+		List<String> types = dbms.getTypes(tableName);
+		return new Resultset(select, columnsNames, this, tableName, types);
 	}
 
 	@Override

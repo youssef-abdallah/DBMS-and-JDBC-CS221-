@@ -8,10 +8,12 @@ public class MetaData implements ResultSetMetaData{
 	private List<String> Coulmun;
 	private List<String> Types;
 	private String TableName;
-	public MetaData(List<String> coulmun,List<String> types, String tableName) {
+	private Object[][] Data;
+	public MetaData(List<String> coulmun,List<String> types, String tableName, Object[][] data) {
 		this.Coulmun = coulmun;
 		this.Types = types;
 		this.TableName = tableName;
+		this.Data = data;
 	}
 
 	@Override
@@ -36,7 +38,7 @@ public class MetaData implements ResultSetMetaData{
 
 	@Override
 	public int getColumnCount() throws SQLException {
-		return this.Coulmun.size();
+		return this.Data[0].length;
 	}
 
 	@Override

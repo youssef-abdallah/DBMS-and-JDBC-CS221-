@@ -108,14 +108,18 @@ public class Resultset implements ResultSet {
 
 	@Override
 	public ResultSetMetaData getMetaData() throws SQLException {
-		return new MetaData(this.Coulmun, this.Types, TableName);
+		return new MetaData(this.Coulmun, this.Types, TableName, result);
 		
 	}
 
 	@Override
 	public Object getObject(int arg0) throws SQLException {
 		if (arg0 < result[0].length) {
-			return result[this.num][arg0];
+			try {
+				return (int) (result[num][arg0 - 1]);
+			} catch (Exception e) {
+				return result[num][arg0 - 1];
+			}
 		}
 		return null;
 	}
@@ -196,7 +200,7 @@ public class Resultset implements ResultSet {
 
 	@Override
 	public boolean previous() throws SQLException {
-		if (num == 0 || num == -1) {
+		if (num == -1) {
 			return false;
 		}
 		num = (num - 1);

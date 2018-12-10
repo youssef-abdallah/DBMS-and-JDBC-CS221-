@@ -61,4 +61,6 @@ public interface Database {
 	public List<String> getSchema(String TableName);
 	
 	public String getTableName();
+
+	public List<String> getTypes(String TableName);
 }
