@@ -5,6 +5,7 @@ import java.sql.Blob;
 import java.sql.CallableStatement;
 import java.sql.Clob;
 import java.sql.DatabaseMetaData;
+import java.sql.Driver;
 import java.sql.NClob;
 import java.sql.PreparedStatement;
 import java.sql.SQLClientInfoException;
@@ -18,6 +19,8 @@ import java.util.Map;
 import java.util.Properties;
 import java.util.concurrent.Executor;
 
+import org.apache.log4j.Logger;
+
 import eg.edu.alexu.csd.oop.db.ConcreteDatabase;
 import eg.edu.alexu.csd.oop.db.Database;
 
@@ -25,8 +28,10 @@ public class ConcreteConnection implements java.sql.Connection {
 	private String path;
 	private boolean isClosed;
 	private Database dbms = new ConcreteDatabase();
+	private static final Logger log = Logger.getLogger(ConcreteConnection.class);
 	
 	public ConcreteConnection() {
+		log.info("Establishing a new Connection");
 		isClosed = false;
 	}
 	public ConcreteDatabase getDatabase() {
@@ -52,6 +57,7 @@ public class ConcreteConnection implements java.sql.Connection {
 
 	@Override
 	public Statement createStatement() throws SQLException {
+		log.info("Creatting statement");
 		return new ConcreteStatement(this);
 	}
 
@@ -100,6 +106,7 @@ public class ConcreteConnection implements java.sql.Connection {
 		} else {
 			isClosed = true;
 		}
+		log.info("Closing connection");
 		
 	}
 

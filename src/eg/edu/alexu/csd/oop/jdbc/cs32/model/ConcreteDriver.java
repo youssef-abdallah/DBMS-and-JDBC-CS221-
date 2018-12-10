@@ -1,16 +1,19 @@
 package eg.edu.alexu.csd.oop.jdbc.cs32.model;
 import java.io.File;
+
+import org.apache.log4j.Logger;
 import java.sql.*;
 import java.util.Properties;
-import java.util.logging.Logger;
 
 import eg.edu.alexu.csd.oop.jdbc.cs32.model.connectionsPool.ConnectionManager;
 
 
 public class ConcreteDriver implements Driver {
+	private static final Logger log = Logger.getLogger(Driver.class);
 
 	@Override
 	public Connection connect(String url, Properties info) throws SQLException {
+		log.info("Trying to connect");
 		File dir = (File) info.get("path");
 		String path = dir.getAbsolutePath();
 		return (Connection) ConnectionManager.getInstance(ConcreteConnection.class, path).acquire();
@@ -45,7 +48,7 @@ public class ConcreteDriver implements Driver {
 	}
 
 	@Override
-	public Logger getParentLogger() throws SQLFeatureNotSupportedException {
+	public java.util.logging.Logger getParentLogger() throws SQLFeatureNotSupportedException {
 		throw new UnsupportedOperationException();
 	}
 
