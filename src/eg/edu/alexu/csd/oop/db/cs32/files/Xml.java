@@ -2,6 +2,7 @@ package eg.edu.alexu.csd.oop.db.cs32.files;
 import eg.edu.alexu.csd.oop.db.cs32.expressions.*;
 
 import java.io.File;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -23,7 +24,8 @@ import org.w3c.dom.NodeList;
 
 public class Xml {
 
-	public boolean Write(String DataBase, String TableName, Object[][] Data, String operation) {
+	public boolean Write(String DataBase, String TableName, Object[][] Data, String operation, List<String> types) throws SQLException {
+		check(Data, types);
 		File file = new File(DataBase + System.getProperty("file.separator") + TableName + ".xml");
 		if (file.exists() && operation.equals("create")) {
 			return false;
@@ -111,6 +113,59 @@ public class Xml {
 		}
 		
 		return result;
+	}
+	
+	private void check(Object[][] Data, List<String> types) throws SQLException {
+		for (int i = 0; i < Data.length; i++) {
+			for (int j = 0; j < types.size(); j++) {
+				switch (types.get(j)) {
+				case "varchar":
+					if(!(((String) Data[i][j]).startsWith("'") && ((String) Data[i][j]).endsWith("'"))) {
+						throw new SQLException();
+					}
+					break;
+				case "int":
+					if(((String) Data[i][j]).startsWith("'") && ((String) Data[i][j]).endsWith("'")) {
+						throw new SQLException();
+					}
+					break;
+				default:
+					break;
+				}
+			}
+		}
+	}
+	
+	public List<String> getTypes(String DataBase, String TableName){
+		List<String> result = new ArrayList<String>();
+		DTD d = new DTD();
+		List<String> ColumnNames = d.read(DataBase, TableName);
+		try {
+			File fXmlFile = new File(DataBase + System.getProperty("file.separator") + TableName + ".xml");
+			DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+			DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+			Document doc = dBuilder.parse(fXmlFile);
+			doc.getDocumentElement().normalize();
+
+			NodeList nList = doc.getElementsByTagName("row");
+			for (int i = 0; i < nList.getLength(); i++) {
+				Node nNode = nList.item(i);
+				if (nNode.getNodeType() == Node.ELEMENT_NODE) {
+					Element eElement = (Element) nNode;
+					for (int j = 0; j < ColumnNames.size(); j++) {
+						if (i == 0 && eElement.getElementsByTagName(ColumnNames.get(j)).item(0).getTextContent().contains("'")) {
+							result.add("varchar");
+						} else if ((i == 0 && !eElement.getElementsByTagName(ColumnNames.get(j)).item(0).getTextContent().contains("'"))) {
+							result.add("int");
+						}
+					}
+				}
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		return result;
+		
 	}
 
 }
