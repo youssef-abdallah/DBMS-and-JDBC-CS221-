@@ -12,9 +12,9 @@ import eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection;
 
 public class ConcreteStatement implements java.sql.Statement {
 	private ArrayList<String> batch = new ArrayList<>();
-	private Database dbms ;
+	private Database dbms;
 	private boolean isClosed = false;
-	private int counter ;
+	private int counter;
 	private int queryTimeout = 0;
 	private ConcreteConnection connection;
 	private int[] results;
@@ -94,7 +94,7 @@ public class ConcreteStatement implements java.sql.Statement {
 			counter = this.executeUpdate(arg0);
 		} else if (temp.contains("select")) {
 			Object[][] select = dbms.executeQuery(arg0);
-			if(select.length==0) {
+			if (select.length == 0) {
 				success = false;
 			}
 		} else {
@@ -144,7 +144,8 @@ public class ConcreteStatement implements java.sql.Statement {
 		Object[][] select = dbms.executeQuery(arg0);
 		String tableName = dbms.getTableName();
 		columnsNames = dbms.getSchema(path, tableName);
-		return new Resultset(select, columnsNames, this, tableName);
+		//return new Resultset(select, columnsNames, this, tableName,);
+		return null;
 
 	}
 

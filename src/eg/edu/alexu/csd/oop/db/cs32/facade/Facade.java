@@ -200,7 +200,7 @@ public class Facade {
 			}
 			opeartionSuccess = dtdFile.Write(currentDatabase, (String) map.get("tableName"), columnsNames);
 			Xml xml = new Xml();
-			xml.Write(currentDatabase, tableName, null, "create");
+		//	xml.Write(currentDatabase, tableName, null, "create");
 		} else if (operationName.equalsIgnoreCase("drop database")) {
 			if (currentDatabase == null) {
 				return;
@@ -239,7 +239,7 @@ public class Facade {
 				stringList.add(row.toString());
 			}
 			Object[][] newTable = get2DArrayXml(stringList);
-			xml.Write(currentDatabase, tableName, newTable, "");
+			//xml.Write(currentDatabase, tableName, newTable, "");
 		}
 
 	}
