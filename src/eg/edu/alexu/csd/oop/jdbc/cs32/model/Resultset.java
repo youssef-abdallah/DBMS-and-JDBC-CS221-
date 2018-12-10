@@ -31,11 +31,13 @@ public class Resultset implements ResultSet {
 	private Statement statement;
 	private Boolean close = false;
 	private String TableName;
-	public Resultset(Object[][] Data, List<String> coulmun, Statement state, String TableName) {
+	private List<String> Types;
+	public Resultset(Object[][] Data, List<String> columun, Statement state, String TableName, List<String> types) {
 		this.result = Data;
-		this.Coulmun = coulmun;
+		this.Coulmun = columun;
 		this.statement = state;
 		this.TableName = TableName;
+		this.Types = types;
 	}
 
 	@Override
@@ -106,8 +108,7 @@ public class Resultset implements ResultSet {
 
 	@Override
 	public ResultSetMetaData getMetaData() throws SQLException {
-		///
-		return null;
+		return new MetaData(this.Coulmun, this.Types, TableName);
 		
 	}
 
