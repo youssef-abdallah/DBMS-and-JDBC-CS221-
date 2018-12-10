@@ -24,6 +24,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.log4j.Logger;
+
 public class Resultset implements ResultSet {
 
 	private int num;
@@ -34,6 +36,7 @@ public class Resultset implements ResultSet {
 	private String TableName;
 	private List<String> Types;
 	private HashMap<String, String> SC;
+	private static final Logger log = Logger.getLogger(Resultset.class);
 	
 	public Resultset(Object[][] Data, List<String> columun, Statement state, String TableName, List<String> types, HashMap<String, String> Sc) {
 		this.result = Data;
@@ -42,15 +45,18 @@ public class Resultset implements ResultSet {
 		this.TableName = TableName;
 		this.Types = types;
 		this.SC = Sc;
+		log.info("resultSet is created");
 	}
 
 	@Override
 	public boolean absolute(int arg0) throws SQLException {
 		if (isClosed()) {
+			log.info("resultSet already closed, a SQLException is thrown");
 			throw new SQLException();
 		}
 		if (arg0 == 0) {
 			this.num = -1;
+			log.info("setting cursor to the front of resultSet");
 			return false;
 		}
 		if (arg0 < 0) {
@@ -61,68 +67,83 @@ public class Resultset implements ResultSet {
 		while (this.num < 0) {
 			this.num += result.length; 
 		}
+		log.info("setting cursor to " + this.num);
 		return true;
 	}
 
 	@Override
 	public void afterLast() throws SQLException {
 		if (isClosed()) {
+			log.info("file already closed, a SQLException is thrown");
 			throw new SQLException();
 		}
 		num = result.length;
+		log.info("setting cursor to the end of resultSet");
 	}
 
 	@Override
 	public void beforeFirst() throws SQLException {
 		if (isClosed()) {
+			log.info("file already closed, a SQLException is thrown");
 			throw new SQLException();
 		}
 		num = -1;
-
+		log.info("setting cursor to the front of resultSet");
 	}
 
 	@Override
 	public void close() throws SQLException {
 		if (isClosed()) {
+			log.info("resultSet already closed, a SQLException is thrown");
 			throw new SQLException();
 		}
 		this.close = true;
+		log.info("resultSet is closed");
 	}
 
 	@Override
 	public int findColumn(String arg0) throws SQLException {
 		if (isClosed()) {
+			log.info("resultSet already closed, a SQLException is thrown");
 			throw new SQLException();
 		}
 		for (int i = 0; i < Coulmun.size(); i++) {
 			if (Coulmun.get(i).equals(arg0)) {
+				log.info("column found at row " + i);
 				return i;
 			}
 		}
+		log.info("column not found");
 		return -1;
 	}
 
 	@Override
 	public boolean first() throws SQLException {
 		if (isClosed()) {
+			log.info("resultSet already closed, a SQLException is thrown");
 			throw new SQLException();
 		}
 		if (result.length > 1) {
 			num = 0;
+			log.info("setting cursor to the first row");
 			return true;
 		}
+		log.info("resultSet is still emtpy");
 		return false;
 	}
 
 	@Override
 	public int getInt(int arg0) throws SQLException {
 		if (isClosed()) {
+			log.info("resultSet already closed, a SQLException is thrown");
 			throw new SQLException();
 		}
 		if (arg0 < result[0].length && num >= 0) {
 			try {
+				log.info("value of the integer is returned successfuly");
 				return Integer.parseInt((String) result[this.num][arg0]) ;
 			} catch (Exception e) {
+				log.info("object in this column is not an integer");
 				throw new SQLException();
 			}
 		}
@@ -132,13 +153,16 @@ public class Resultset implements ResultSet {
 	@Override
 	public int getInt(String arg0) throws SQLException {
 		if (isClosed()) {
+			log.info("resultSet already closed, a SQLException is thrown");
 			throw new SQLException();
 		}
 		int arg = findColumn(arg0);
 		if (!(arg == -1)) {
 			try {
+				log.info("value of the integer is returned successfully");
 				return Integer.parseInt((String) result[this.num][arg]);
 			} catch (Exception e) {
+				log.info("object in this column is not an integer");
 				throw new SQLException();
 			}
 		}
@@ -148,8 +172,10 @@ public class Resultset implements ResultSet {
 	@Override
 	public ResultSetMetaData getMetaData() throws SQLException {
 		if (isClosed()) {
+			log.info("resultSet already closed, a SQLException is thrown");
 			throw new SQLException();
 		}
+		log.info("MetaData returned successfully");
 		return new MetaData(this.Coulmun, this.Types, TableName, SC);
 		
 	}
@@ -157,128 +183,165 @@ public class Resultset implements ResultSet {
 	@Override
 	public Object getObject(int arg0) throws SQLException {
 		if (isClosed()) {
+			log.info("resultSet already closed, a SQLException is thrown");
 			throw new SQLException();
 		}
 		if (arg0 < result[0].length && num >= 0) {
 			try {
+				log.info("object in this column is returned successfully");
 				return (int) (result[num][arg0 - 1]);
 			} catch (Exception e) {
+				
 				return result[num][arg0 - 1];
 			}
 		}
+		log.info("out of resultSet boundries, a null object is returned");
 		return null;
 	}
 
 	@Override
 	public Statement getStatement() throws SQLException {
 		if (isClosed()) {
+			log.info("resultSet already closed, a SQLException is thrown");
 			throw new SQLException();
 		}
+		log.info("getting statement successfully");
 		return this.statement;
 	}
 
 	@Override
 	public String getString(int arg0) throws SQLException {
 		if (isClosed()) {
+			log.info("resultSet already closed, a SQLException is thrown");
 			throw new SQLException();
 		}
 		if (arg0 < result[0].length && arg0 > 0) {
+			log.info("string in this columns is returned successfully");
 			return (String) result[this.num][arg0];
 		}
+		log.info("out of resultSet boundries, a null string is returned");
 		return null;
 	}
 
 	@Override
 	public String getString(String arg0) throws SQLException {
 		if (isClosed()) {
+			log.info("resultSet already closed, a SQLException is thrown");
 			throw new SQLException();
 		}
 		int arg = findColumn(arg0);
 		if (!(arg == -1)) {
+			log.info("string in this columns is returned successfully");
 			return (String) result[this.num][arg];
 		}
+		log.info("out of resultSet boundries, a null string is returned");
 		return null;
 	}
 
 	@Override
 	public boolean isAfterLast() throws SQLException {
 		if (isClosed()) {
+			log.info("resultSet already closed, a SQLException is thrown");
 			throw new SQLException();
 		}
 		if (num == result.length) {
+			log.info("cursor is after the last row");
 			return true;
 		}
+		log.info("cursor is not afetr the last row");
 		return false;
 	}
 
 	@Override
 	public boolean isBeforeFirst() throws SQLException {
 		if (isClosed()) {
+			log.info("resultSet already closed, a SQLException is thrown");
 			throw new SQLException();
 		}
 		if (num == -1) {
+			log.info("cursor is before the first row");
 			return true;
 		}
+		log.info("cursor is not before the first row");
 		return false;
 	}
 
 	@Override
 	public boolean isClosed() throws SQLException {
+		if(this.close) {
+			log.info("resultSet is closed");
+		}else {
+			log.info("resultSet is not closed");
+		}
 		return this.close;
 	}
 
 	@Override
 	public boolean isFirst() throws SQLException {
 		if (isClosed()) {
+			log.info("resultSet already closed, a SQLException is thrown");
 			throw new SQLException();
 		}
 		if (num == 0) {
+			log.info("cursor is in the the first row");
 			return true;
 		}
+		log.info("cursor is not in the first");
 		return false;
 	}
 
 	@Override
 	public boolean isLast() throws SQLException {
 		if (isClosed()) {
+			log.info("resultSet already closed, a SQLException is thrown");
 			throw new SQLException();
 		}
 		if (num == result.length - 1) {
+			log.info("cursor is in the the last row");
 			return true;
 		}
+		log.info("cursor is in the the last row");
 		return false;
 	}
 
 	@Override
 	public boolean last() throws SQLException {
 		if (isClosed()) {
+			log.info("resultSet already closed, a SQLException is thrown");
 			throw new SQLException();
 		}
 		num = result.length - 1;
+		log.info("setting cursor to the last row");
 		return true;
 	}
 
 	@Override
 	public boolean next() throws SQLException {
 		if (isClosed()) {
+			log.info("resultSet already closed, a SQLException is thrown");
 			throw new SQLException();
 		}
 		if (num == result.length) {
+			log.info("cursor is in the last row");
 			return false;
 		}
 		num = (num + 1);
+		log.info("setting cursor to the next row");
 		return true;
 	}
 
 	@Override
 	public boolean previous() throws SQLException {
 		if (isClosed()) {
+			log.info("resultSet already closed, a SQLException is thrown");
 			throw new SQLException();
 		}
 		if (num == -1) {
+			log.info("cursor is in the first row");
 			return false;
 		}
 		num = (num - 1);
+		log.info("setting cursor to the previous row");
 		return true;
 	}
 

@@ -6,9 +6,12 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import org.apache.log4j.Logger;
+
 public class MetaData implements ResultSetMetaData {
 	private String TableName;
 	private List<String> col = new ArrayList<String>(), ty = new ArrayList<String>();
+	private static final Logger log = Logger.getLogger(MetaData.class);
 
 	public MetaData(List<String> coulmun, List<String> types, String tableName, HashMap<String, String> Sc) {
 		this.TableName = tableName;
@@ -27,6 +30,7 @@ public class MetaData implements ResultSetMetaData {
 				}
 			}
 		}
+		log.info("resultSetMetaData is created");
 	}
 
 	@Override
@@ -51,6 +55,7 @@ public class MetaData implements ResultSetMetaData {
 
 	@Override
 	public int getColumnCount() throws SQLException {
+		log.info("columns count returned " + this.col.size());
 		return this.col.size();
 	}
 
@@ -61,11 +66,13 @@ public class MetaData implements ResultSetMetaData {
 
 	@Override
 	public String getColumnLabel(int column) throws SQLException {
+		log.info("column label returned");
 		return this.col.get(column - 1);
 	}
 
 	@Override
 	public String getColumnName(int column) throws SQLException {
+		log.info("column name returned");
 		return this.col.get(column - 1);
 	}
 
@@ -82,6 +89,7 @@ public class MetaData implements ResultSetMetaData {
 		default:
 			break;
 		}
+		log.info("column type returned");
 		return check;
 	}
 
