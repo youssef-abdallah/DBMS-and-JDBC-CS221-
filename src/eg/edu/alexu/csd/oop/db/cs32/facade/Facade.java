@@ -190,7 +190,7 @@ public class Facade {
 			HashMap<String, List<Row>> tables = xml1.getTables(currentDatabase);
 			if(tables.containsKey(tableName)) {
 				opeartionSuccess = false;
-				return ;
+				return;
 			}
 			DTD dtdFile = new DTD();
 			HashMap<String, String> colMap = (HashMap<String, String>) map.get("colMap");
