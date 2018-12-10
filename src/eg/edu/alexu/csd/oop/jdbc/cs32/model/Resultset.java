@@ -34,6 +34,7 @@ public class Resultset implements ResultSet {
 	private String TableName;
 	private List<String> Types;
 	private HashMap<String, String> SC;
+	
 	public Resultset(Object[][] Data, List<String> columun, Statement state, String TableName, List<String> types, HashMap<String, String> Sc) {
 		this.result = Data;
 		this.Coulmun = columun;
