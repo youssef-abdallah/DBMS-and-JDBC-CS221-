@@ -18,12 +18,19 @@ import java.util.Map;
 import java.util.Properties;
 import java.util.concurrent.Executor;
 
+import eg.edu.alexu.csd.oop.db.ConcreteDatabase;
+import eg.edu.alexu.csd.oop.db.Database;
+
 public class ConcreteConnection implements java.sql.Connection {
 	private String path;
 	private boolean isClosed;
+	private Database dbms = new ConcreteDatabase();
 	
 	public ConcreteConnection() {
 		isClosed = false;
+	}
+	public ConcreteDatabase getDatabase() {
+		return (ConcreteDatabase) dbms;
 	}
 	
 	public void setPath(String path) {

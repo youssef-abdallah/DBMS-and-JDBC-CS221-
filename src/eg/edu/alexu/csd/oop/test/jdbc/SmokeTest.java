@@ -37,7 +37,7 @@ public class SmokeTest {
     public void testCreateAndOpenAndDropDatabase() throws SQLException {
         Driver driver = (Driver)TestRunner.getImplementationInstanceForInterface(Driver.class);
         Properties info = new Properties();
-        File dbDir = new File("sample" + System.getProperty("file.separator") + (Math.random() * 100000));
+        File dbDir = new File("sample" + System.getProperty("file.separator") + (int)(Math.random() * 100000));
         info.put("path", dbDir.getAbsoluteFile());
         Connection connection = driver.connect("jdbc:xmldb://localhost", info);
         {

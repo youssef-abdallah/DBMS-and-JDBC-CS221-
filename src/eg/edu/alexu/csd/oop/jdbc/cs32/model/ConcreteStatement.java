@@ -7,24 +7,24 @@ import java.sql.SQLWarning;
 import java.util.ArrayList;
 import java.util.List;
 
-import eg.edu.alexu.csd.oop.db.ConcreteDatabase;
 import eg.edu.alexu.csd.oop.db.Database;
 import eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection;
 
 public class ConcreteStatement implements java.sql.Statement {
 	private ArrayList<String> batch = new ArrayList<>();
-	private Database dbms = ConcreteDatabase.getInstacnce();
+	private Database dbms ;
 	private boolean isClosed = false;
-	private int counter;
+	private int counter ;
 	private int queryTimeout = 0;
 	private ConcreteConnection connection;
 	private int[] results;
 	private List<String> columnsNames;
-	private String path;
+	private String path = null;
 
 	public ConcreteStatement(Connection connection) {
 		this.connection = (ConcreteConnection) connection;
 		path = ((ConcreteConnection) connection).getPath();
+		dbms = ((ConcreteConnection) connection).getDatabase();
 	}
 
 	@Override
@@ -84,19 +84,23 @@ public class ConcreteStatement implements java.sql.Statement {
 		if (isClosed) {
 			throw new UnsupportedOperationException();
 		}
+		boolean success = true;
 		String temp = arg0.toLowerCase();
 		if (temp.contains("create database")) {
 			dbms.createDatabase(connection.getPath() + System.getProperty("file.separator") + arg0.split(" ")[2], true);
 		} else if (temp.contains("create table") || temp.contains("drop table") || temp.contains("drop database")) {
-			dbms.executeQuery(arg0);
+			success = dbms.executeStructureQuery(arg0);
 		} else if (temp.contains("insert into") || temp.contains("update") || temp.contains("delete")) {
 			counter = this.executeUpdate(arg0);
 		} else if (temp.contains("select")) {
-			this.executeQuery(arg0);
+			Object[][] select = dbms.executeQuery(arg0);
+			if(select.length==0) {
+				success = false;
+			}
 		} else {
 			throw new SQLException();
 		}
-		return true;
+		return success;
 
 	}
 

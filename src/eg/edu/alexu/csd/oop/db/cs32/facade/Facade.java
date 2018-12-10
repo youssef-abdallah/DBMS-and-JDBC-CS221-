@@ -131,7 +131,7 @@ public class Facade {
 	}
 
 	private void dropDatabase(File files) throws IOException {
-
+		System.out.println(currentDatabase);
 		for (File file : files.listFiles()) {
 			if (file.isDirectory()) {
 				dropDatabase(file);
@@ -158,7 +158,14 @@ public class Facade {
 		HashMap<String, String> colVal = (HashMap<String, String>) map.get("colMap");
 		String operationName = (String) map.get("operation");
 		if (operationName.equalsIgnoreCase("create database")) {
-			String path = (String) map.get("databaseName");
+			String databaseName= (String) map.get("databaseName");
+			String path=null;
+			if(!databaseName.contains(":")) {
+			path = "." + System.getProperty("file.separator") + "Databases"
+					+ System.getProperty("file.separator") + map.get("databaseName");
+			} else {
+				path = databaseName;
+			}
 			File f = new File(path);
 
 			if (isDropIfExists() && f.exists()) {
@@ -179,6 +186,12 @@ public class Facade {
 			if (currentDatabase == null) {
 				throw new SQLException();
 			}
+			Xml xml1 = new Xml();
+			HashMap<String, List<Row>> tables = xml1.getTables(currentDatabase);
+			if(tables.containsKey(tableName)) {
+				opeartionSuccess = false;
+				return ;
+			}
 			DTD dtdFile = new DTD();
 			HashMap<String, String> colMap = (HashMap<String, String>) map.get("colMap");
 			ArrayList columnsNames = new ArrayList<>();
@@ -195,6 +208,7 @@ public class Facade {
 			File files = new File(currentDatabase);
 			try {
 				dropDatabase(files);
+				currentDatabase=null;
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
