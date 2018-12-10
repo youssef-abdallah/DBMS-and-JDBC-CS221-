@@ -5,6 +5,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.SQLWarning;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import eg.edu.alexu.csd.oop.db.Database;
@@ -143,7 +144,8 @@ public class ConcreteStatement implements java.sql.Statement {
 		String tableName = dbms.getTableName();
 		columnsNames = dbms.getSchema(tableName);
 		List<String> types = dbms.getTypes(tableName);
-		return new Resultset(select, columnsNames, this, tableName, types);
+		HashMap<String, String> Cs = dbms.getSC();
+		return new Resultset(select, columnsNames, this, tableName, types, Cs);
 	}
 
 	@Override

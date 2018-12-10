@@ -1,5 +1,7 @@
 package eg.edu.alexu.csd.oop.db;
 
+import java.sql.SQLException;
+import java.util.HashMap;
 import java.util.List;
 
 public interface Database {
@@ -63,4 +65,6 @@ public interface Database {
 	public String getTableName();
 
 	public List<String> getTypes(String TableName);
+
+	public HashMap<String, String> getSC() throws SQLException;
 }

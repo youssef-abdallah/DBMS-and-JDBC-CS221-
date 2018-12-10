@@ -1,6 +1,7 @@
 package eg.edu.alexu.csd.oop.db;
 
 import java.sql.SQLException;
+import java.util.HashMap;
 import java.util.List;
 
 import eg.edu.alexu.csd.oop.db.cs32.facade.Facade;
@@ -69,6 +70,11 @@ public class ConcreteDatabase implements Database{
 	public String getTableName() {
 		// TODO Auto-generated method stub
 		return facade.getTableName();
+	}
+
+	@Override
+	public HashMap<String, String> getSC() throws SQLException {
+		return facade.gettype();
 	}
 
 }

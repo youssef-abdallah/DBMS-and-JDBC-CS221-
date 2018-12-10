@@ -27,6 +27,7 @@ public class Facade {
 	private Object[][] result;
 	private boolean opeartionSuccess;
 	private String tableName ;
+	private HashMap<String, String> ColVal;
 	
 	public String getTableName() {
 		return tableName;
@@ -101,7 +102,9 @@ public class Facade {
 		ans = new Object[0][0];
 		return ans;
 	}
-
+	public HashMap<String, String> gettype() throws SQLException {
+		return this.ColVal;
+	}
 	public Facade() {
 		parser = Regex.getInstance();
 		factory = ExpressionsFactory.getInstance();
@@ -238,6 +241,7 @@ public class Facade {
 			if (!tables.containsKey(tableName) && operationName.equalsIgnoreCase("update")) {
 				throw new SQLException();
 			}
+			ColVal = colVal;
 			exp = factory.makeExpression(operationName, tableName, condition, colVal);
 			DTD dtd = new DTD();
 			ArrayList<String> schema = dtd.read(currentDatabase, tableName);

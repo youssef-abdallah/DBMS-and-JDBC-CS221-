@@ -20,6 +20,7 @@ import java.sql.Statement;
 import java.sql.Time;
 import java.sql.Timestamp;
 import java.util.Calendar;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -32,38 +33,66 @@ public class Resultset implements ResultSet {
 	private Boolean close = false;
 	private String TableName;
 	private List<String> Types;
-	public Resultset(Object[][] Data, List<String> columun, Statement state, String TableName, List<String> types) {
+	private HashMap<String, String> SC;
+	public Resultset(Object[][] Data, List<String> columun, Statement state, String TableName, List<String> types, HashMap<String, String> Sc) {
 		this.result = Data;
 		this.Coulmun = columun;
 		this.statement = state;
 		this.TableName = TableName;
 		this.Types = types;
+		this.SC = Sc;
 	}
 
 	@Override
 	public boolean absolute(int arg0) throws SQLException {
-		this.num = (result.length + arg0) % (result.length + 1);
+		if (isClosed()) {
+			throw new SQLException();
+		}
+		if (arg0 == 0) {
+			this.num = -1;
+			return false;
+		}
+		if (arg0 < 0) {
+			this.num = (result.length + (arg0)) % (result.length);
+		} else {
+			this.num = (result.length + (arg0 - 1)) % (result.length);
+		}
+		while (this.num < 0) {
+			this.num += result.length; 
+		}
 		return true;
 	}
 
 	@Override
 	public void afterLast() throws SQLException {
+		if (isClosed()) {
+			throw new SQLException();
+		}
 		num = result.length;
 	}
 
 	@Override
 	public void beforeFirst() throws SQLException {
+		if (isClosed()) {
+			throw new SQLException();
+		}
 		num = -1;
 
 	}
 
 	@Override
 	public void close() throws SQLException {
+		if (isClosed()) {
+			throw new SQLException();
+		}
 		this.close = true;
 	}
 
 	@Override
 	public int findColumn(String arg0) throws SQLException {
+		if (isClosed()) {
+			throw new SQLException();
+		}
 		for (int i = 0; i < Coulmun.size(); i++) {
 			if (Coulmun.get(i).equals(arg0)) {
 				return i;
@@ -74,6 +103,9 @@ public class Resultset implements ResultSet {
 
 	@Override
 	public boolean first() throws SQLException {
+		if (isClosed()) {
+			throw new SQLException();
+		}
 		if (result.length > 1) {
 			num = 0;
 			return true;
@@ -83,7 +115,10 @@ public class Resultset implements ResultSet {
 
 	@Override
 	public int getInt(int arg0) throws SQLException {
-		if (arg0 < result[0].length) {
+		if (isClosed()) {
+			throw new SQLException();
+		}
+		if (arg0 < result[0].length && num >= 0) {
 			try {
 				return Integer.parseInt((String) result[this.num][arg0]) ;
 			} catch (Exception e) {
@@ -95,6 +130,9 @@ public class Resultset implements ResultSet {
 
 	@Override
 	public int getInt(String arg0) throws SQLException {
+		if (isClosed()) {
+			throw new SQLException();
+		}
 		int arg = findColumn(arg0);
 		if (!(arg == -1)) {
 			try {
@@ -108,13 +146,19 @@ public class Resultset implements ResultSet {
 
 	@Override
 	public ResultSetMetaData getMetaData() throws SQLException {
-		return new MetaData(this.Coulmun, this.Types, TableName, result);
+		if (isClosed()) {
+			throw new SQLException();
+		}
+		return new MetaData(this.Coulmun, this.Types, TableName, SC);
 		
 	}
 
 	@Override
 	public Object getObject(int arg0) throws SQLException {
-		if (arg0 < result[0].length) {
+		if (isClosed()) {
+			throw new SQLException();
+		}
+		if (arg0 < result[0].length && num >= 0) {
 			try {
 				return (int) (result[num][arg0 - 1]);
 			} catch (Exception e) {
@@ -126,12 +170,18 @@ public class Resultset implements ResultSet {
 
 	@Override
 	public Statement getStatement() throws SQLException {
+		if (isClosed()) {
+			throw new SQLException();
+		}
 		return this.statement;
 	}
 
 	@Override
 	public String getString(int arg0) throws SQLException {
-		if (arg0 < result[0].length) {
+		if (isClosed()) {
+			throw new SQLException();
+		}
+		if (arg0 < result[0].length && arg0 > 0) {
 			return (String) result[this.num][arg0];
 		}
 		return null;
@@ -139,6 +189,9 @@ public class Resultset implements ResultSet {
 
 	@Override
 	public String getString(String arg0) throws SQLException {
+		if (isClosed()) {
+			throw new SQLException();
+		}
 		int arg = findColumn(arg0);
 		if (!(arg == -1)) {
 			return (String) result[this.num][arg];
@@ -148,6 +201,9 @@ public class Resultset implements ResultSet {
 
 	@Override
 	public boolean isAfterLast() throws SQLException {
+		if (isClosed()) {
+			throw new SQLException();
+		}
 		if (num == result.length) {
 			return true;
 		}
@@ -156,6 +212,9 @@ public class Resultset implements ResultSet {
 
 	@Override
 	public boolean isBeforeFirst() throws SQLException {
+		if (isClosed()) {
+			throw new SQLException();
+		}
 		if (num == -1) {
 			return true;
 		}
@@ -169,6 +228,9 @@ public class Resultset implements ResultSet {
 
 	@Override
 	public boolean isFirst() throws SQLException {
+		if (isClosed()) {
+			throw new SQLException();
+		}
 		if (num == 0) {
 			return true;
 		}
@@ -177,6 +239,9 @@ public class Resultset implements ResultSet {
 
 	@Override
 	public boolean isLast() throws SQLException {
+		if (isClosed()) {
+			throw new SQLException();
+		}
 		if (num == result.length - 1) {
 			return true;
 		}
@@ -185,12 +250,18 @@ public class Resultset implements ResultSet {
 
 	@Override
 	public boolean last() throws SQLException {
+		if (isClosed()) {
+			throw new SQLException();
+		}
 		num = result.length - 1;
 		return true;
 	}
 
 	@Override
 	public boolean next() throws SQLException {
+		if (isClosed()) {
+			throw new SQLException();
+		}
 		if (num == result.length) {
 			return false;
 		}
@@ -200,6 +271,9 @@ public class Resultset implements ResultSet {
 
 	@Override
 	public boolean previous() throws SQLException {
+		if (isClosed()) {
+			throw new SQLException();
+		}
 		if (num == -1) {
 			return false;
 		}

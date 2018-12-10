@@ -2,18 +2,31 @@ package eg.edu.alexu.csd.oop.jdbc.cs32.model;
 
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
-public class MetaData implements ResultSetMetaData{
-	private List<String> Coulmun;
-	private List<String> Types;
+public class MetaData implements ResultSetMetaData {
 	private String TableName;
-	private Object[][] Data;
-	public MetaData(List<String> coulmun,List<String> types, String tableName, Object[][] data) {
-		this.Coulmun = coulmun;
-		this.Types = types;
+	private List<String> col = new ArrayList<String>(), ty = new ArrayList<String>();
+
+	public MetaData(List<String> coulmun, List<String> types, String tableName, HashMap<String, String> Sc) {
 		this.TableName = tableName;
-		this.Data = data;
+		if (Sc == null) {
+			col = coulmun;
+			ty = types;
+		} else {
+			List<String> temp = new ArrayList<String>();
+			for(int i = 0; i < Sc.size(); i++) {
+				temp.add(Sc.get(String.valueOf(i)));
+			}
+			for (int i = 0; i < coulmun.size(); i++) {
+				if (temp.contains(coulmun.get(i))) {
+					col.add(coulmun.get(i));
+					ty.add(types.get(i));
+				}
+			}
+		}
 	}
 
 	@Override
@@ -38,7 +51,7 @@ public class MetaData implements ResultSetMetaData{
 
 	@Override
 	public int getColumnCount() throws SQLException {
-		return this.Data[0].length;
+		return this.col.size();
 	}
 
 	@Override
@@ -48,18 +61,18 @@ public class MetaData implements ResultSetMetaData{
 
 	@Override
 	public String getColumnLabel(int column) throws SQLException {
-		return this.Coulmun.get(column - 1);
+		return this.col.get(column - 1);
 	}
 
 	@Override
 	public String getColumnName(int column) throws SQLException {
-		return this.Coulmun.get(column - 1);
+		return this.col.get(column - 1);
 	}
 
 	@Override
 	public int getColumnType(int column) throws SQLException {
 		int check = -1;
-		switch (this.Types.get(column - 1)) {
+		switch (this.ty.get(column - 1)) {
 		case "varchar":
 			check = 0;
 			break;
@@ -94,7 +107,7 @@ public class MetaData implements ResultSetMetaData{
 
 	@Override
 	public String getTableName(int column) throws SQLException {
-		if (column > 0 && column < this.Coulmun.size()) {
+		if (column > 0 && column < this.col.size()) {
 			return this.TableName;
 		}
 		return null;
