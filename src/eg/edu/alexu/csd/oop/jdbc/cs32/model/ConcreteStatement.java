@@ -8,6 +8,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import org.apache.log4j.Logger;
+
 import eg.edu.alexu.csd.oop.db.Database;
 import eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection;
 
@@ -20,10 +22,13 @@ public class ConcreteStatement implements java.sql.Statement {
 	private ConcreteConnection connection;
 	private int[] results;
 	private List<String> columnsNames;
+	private static final Logger log = Logger.getLogger(ConcreteStatement.class);
+
 
 	public ConcreteStatement(Connection connection) {
 		this.connection = (ConcreteConnection) connection;
 		dbms = ((ConcreteConnection) connection).getDatabase();
+		log.info("Statement Created");
 	}
 
 	@Override
@@ -40,9 +45,11 @@ public class ConcreteStatement implements java.sql.Statement {
 	public void addBatch(String arg0) throws SQLException {
 		// TODO Auto-generated method stub
 		if (isClosed) {
+			log.info("statement already closed, an UnsupportedOperationException is thrown");
 			throw new UnsupportedOperationException();
 		}
 		batch.add(arg0);
+		log.info("added "+arg0+" to the batch");
 	}
 
 	@Override
@@ -54,9 +61,11 @@ public class ConcreteStatement implements java.sql.Statement {
 	public void clearBatch() throws SQLException {
 		// TODO Auto-generated method stub
 		if (isClosed) {
+			log.info("statement already closed, an UnsupportedOperationException is thrown");
 			throw new UnsupportedOperationException();
 		}
 		batch.clear();
+		log.info("batch cleared");
 	}
 
 	@Override
@@ -69,6 +78,7 @@ public class ConcreteStatement implements java.sql.Statement {
 	public void close() throws SQLException {
 		// TODO Auto-generated method stub
 		isClosed = true;
+		log.info("statement closed");
 	}
 
 	@Override
@@ -81,15 +91,19 @@ public class ConcreteStatement implements java.sql.Statement {
 	public boolean execute(String arg0) throws SQLException {
 		// TODO Auto-generated method stub
 		if (isClosed) {
+			log.info("statement already closed, an UnsupportedOperationException is thrown");
 			throw new UnsupportedOperationException();
 		}
 		boolean success = true;
 		String temp = arg0.toLowerCase();
-		if (temp.contains("create")&&temp.contains("database")) {
+		if (temp.contains("create") && temp.contains("database")) {
 			dbms.createDatabase(connection.getPath() + System.getProperty("file.separator") + arg0.split(" ")[2], true);
-		} else if ((temp.contains("create")&&temp.contains("table"))|| (temp.contains("drop")&&temp.contains("table")) ||(temp.contains("drop")&&temp.contains("database"))) {
+		} else if ((temp.contains("create") && temp.contains("table"))
+				|| (temp.contains("drop") && temp.contains("table"))
+				|| (temp.contains("drop") && temp.contains("database"))) {
 			success = dbms.executeStructureQuery(arg0);
-		} else if (temp.contains("insert")&&temp.contains("into") || temp.contains("update") || temp.contains("delete")) {
+		} else if (temp.contains("insert") && temp.contains("into") || temp.contains("update")
+				|| temp.contains("delete")) {
 			counter = this.executeUpdate(arg0);
 		} else if (temp.contains("select")) {
 			Object[][] select = dbms.executeQuery(arg0);
@@ -97,7 +111,14 @@ public class ConcreteStatement implements java.sql.Statement {
 				success = false;
 			}
 		} else {
+			log.info("Wrong query , a SQL Exception thrown");
 			throw new SQLException();
+		}
+		if(success) {
+			log.info("Query executed successfully");
+		}
+		else {
+			log.info("Failed to execute query");
 		}
 		return success;
 
@@ -122,6 +143,7 @@ public class ConcreteStatement implements java.sql.Statement {
 	public int[] executeBatch() throws SQLException {
 		// TODO Auto-generated method stub
 		if (isClosed) {
+			log.info("statement already closed, an UnsupportedOperationException is thrown");
 			throw new UnsupportedOperationException();
 		}
 		results = new int[batch.size()];
@@ -130,6 +152,7 @@ public class ConcreteStatement implements java.sql.Statement {
 			this.execute(batch.get(i));
 			results[i] = counter;
 		}
+		log.info("Executed all "+batch.size()+" queries in the batch");
 		batch.clear();
 		return results;
 	}
@@ -138,6 +161,7 @@ public class ConcreteStatement implements java.sql.Statement {
 	public ResultSet executeQuery(String arg0) throws SQLException {
 		// TODO Auto-generated method stub
 		if (isClosed) {
+			log.info("statement already closed, an UnsupportedOperationException is thrown");
 			throw new UnsupportedOperationException();
 		}
 		Object[][] select = dbms.executeQuery(arg0);
@@ -145,6 +169,7 @@ public class ConcreteStatement implements java.sql.Statement {
 		columnsNames = dbms.getSchema(tableName);
 		List<String> types = dbms.getTypes(tableName);
 		HashMap<String, String> Cs = dbms.getSC();
+		log.info("Select query executed");
 		return new Resultset(select, columnsNames, this, tableName, types, Cs);
 	}
 
@@ -152,10 +177,12 @@ public class ConcreteStatement implements java.sql.Statement {
 	public int executeUpdate(String arg0) throws SQLException {
 		// TODO Auto-generated method stub
 		if (isClosed) {
+			log.info("statement already closed, an UnsupportedOperationException is thrown");
 			throw new UnsupportedOperationException();
 		}
 		counter = 0;
 		counter = dbms.executeUpdateQuery(arg0);
+		log.info("Updated query executed , edited rows = "+ counter);
 		return counter;
 	}
 
@@ -180,6 +207,7 @@ public class ConcreteStatement implements java.sql.Statement {
 	@Override
 	public Connection getConnection() throws SQLException {
 		// TODO Auto-generated method stub
+		log.info("Returning Connection");
 		return connection;
 	}
 
