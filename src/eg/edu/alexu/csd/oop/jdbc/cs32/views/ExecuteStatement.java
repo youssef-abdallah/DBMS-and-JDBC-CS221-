@@ -68,5 +68,6 @@ public class ExecuteStatement {
 			statement.addBatch(query);
 		}
 		statement.executeBatch();
+		
 	}
 }
