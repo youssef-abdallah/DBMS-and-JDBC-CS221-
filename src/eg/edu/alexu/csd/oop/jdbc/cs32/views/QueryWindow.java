@@ -19,6 +19,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JSeparator;
 import javax.swing.JTable;
 import javax.swing.JTextArea;
+import javax.swing.JTextField;
 import javax.swing.SpringLayout;
 import javax.swing.table.DefaultTableModel;
 
@@ -29,6 +30,8 @@ public class QueryWindow {
 	private static JSeparator jSeparator;
 	
 	private static JPanel mainPanel;
+	
+	private static JTextField databasePath;
 	
 	private static JTextArea sQLCommandArea;
 	private static JTable sQLResultsArea;
@@ -47,6 +50,7 @@ public class QueryWindow {
 	private static JButton clearCommandButton;
 	private static JButton connectButton;
 	private static JButton clearResultsButton;
+	private static JButton disconnectButton;
 	
 	private static SpringLayout springLayout;
 	
@@ -148,12 +152,14 @@ public class QueryWindow {
 	private static void InitTextFields(){
 		
 		sQLCommandArea = new JTextArea(5,30);
-		
+		databasePath = new JTextField(30);
 		sQLResultsArea = new JTable();
 		resultsScrollPane = new JScrollPane(sQLResultsArea);
 		commandScrollPane = new JScrollPane(sQLCommandArea);
 		mainPanel.add(commandScrollPane);
 		mainPanel.add(resultsScrollPane);
+		mainPanel.add(databasePath);
+		
 	}
 	private static void InitButtons(){
 		connectButton = new JButton("Connect");
@@ -161,14 +167,20 @@ public class QueryWindow {
 		executeButton.setEnabled(false);
 		clearCommandButton = new JButton("Clear Command");
 		clearResultsButton = new JButton("Clear Results");
+		disconnectButton = new JButton("Disconnect");
 		
 		connectButton.addActionListener(new ActionListener(){
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 					Properties info = new Properties();
 					try {
-						File dbDir = new File("Databases");
-				        info.put("path", dbDir.getAbsoluteFile());
+						if (databasePath.getText() == null) {
+							File dbDir = new File("Databases");
+							info.put("path", dbDir.getAbsoluteFile());
+						} else {
+							File dbDir = new File(databasePath.getText());
+							info.put("path", dbDir.getAbsoluteFile());
+						}
 						connection = driver.connect("jdbc:xmldb://localhost", info);
 					} catch (SQLException e) {
 						JOptionPane.showMessageDialog(mainPanel, "Could not connect! try again!");
@@ -176,6 +188,21 @@ public class QueryWindow {
 					if(connection != null){
 						connectionL.setText("jdbc:mysql://localhost");
 						executeButton.setEnabled(true);
+					}
+			}
+		});
+		disconnectButton.addActionListener(new ActionListener(){
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+					try {
+						connection.close();
+						connection = null;
+					} catch (SQLException e) {
+						JOptionPane.showMessageDialog(mainPanel, "Could not close connection");
+					}
+					if(connection == null){
+						connectionL.setText("");
+						executeButton.setEnabled(false);
 					}
 			}
 		});
@@ -240,8 +267,8 @@ public class QueryWindow {
 				sQLResultsArea.setModel(new DefaultTableModel(new String[][]{new String[]{""}},new String[]{""}));
 				
 			}});
-		
 		mainPanel.add(connectButton);
+		mainPanel.add(disconnectButton);
 		mainPanel.add(executeButton);
 		mainPanel.add(clearCommandButton);
 		mainPanel.add(clearResultsButton);
@@ -255,6 +282,8 @@ public class QueryWindow {
 		springLayout.putConstraint(SpringLayout.NORTH, driverL,20, SpringLayout.SOUTH,dBInformationL);
 		springLayout.putConstraint(SpringLayout.WEST, driverL,5, SpringLayout.WEST,mainPanel);
 		
+		springLayout.putConstraint(SpringLayout.NORTH, databasePath, 40, SpringLayout.SOUTH, driverL);
+		springLayout.putConstraint(SpringLayout.WEST, databasePath,5, SpringLayout.WEST, driverL);
 		
 		springLayout.putConstraint(SpringLayout.NORTH, databaseL,18, SpringLayout.SOUTH,driverL);
 		springLayout.putConstraint(SpringLayout.WEST, databaseL,5, SpringLayout.WEST,mainPanel);
@@ -264,7 +293,10 @@ public class QueryWindow {
 		springLayout.putConstraint(SpringLayout.WEST, connectionL, 10, SpringLayout.WEST, mainPanel);
 		
 		springLayout.putConstraint(SpringLayout.SOUTH, connectButton, -10, SpringLayout.VERTICAL_CENTER, mainPanel);
-		springLayout.putConstraint(SpringLayout.EAST, connectButton, -10, SpringLayout.HORIZONTAL_CENTER, mainPanel);
+		springLayout.putConstraint(SpringLayout.EAST, connectButton, -150, SpringLayout.HORIZONTAL_CENTER, mainPanel);
+		
+		springLayout.putConstraint(SpringLayout.SOUTH, disconnectButton, -10, SpringLayout.VERTICAL_CENTER, mainPanel);
+		springLayout.putConstraint(SpringLayout.EAST, disconnectButton, -50, SpringLayout.HORIZONTAL_CENTER, mainPanel);
 		
 		springLayout.putConstraint(SpringLayout.WEST, sQLCommandL, 160, SpringLayout.EAST, dBInformationL);
 		springLayout.putConstraint(SpringLayout.NORTH, sQLCommandL, 10, SpringLayout.NORTH, mainPanel);

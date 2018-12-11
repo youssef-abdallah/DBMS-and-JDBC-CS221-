@@ -797,3 +797,36 @@
 2018-12-11 20:11:01,636  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
 2018-12-11 20:11:01,636  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.next 329 - setting cursor to the next row
 2018-12-11 20:11:06,792  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.close 109 - Closing connection
+2018-12-11 20:55:59,073  INFO [AWT-EventQueue-0] - java.sql.Driver.connect 16 - Trying to connect
+2018-12-11 20:55:59,084  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.<init> 34 - Establishing a new Connection
+2018-12-11 20:56:00,223  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.close 109 - Closing connection
+2018-12-11 20:56:21,549  INFO [AWT-EventQueue-0] - java.sql.Driver.connect 16 - Trying to connect
+2018-12-11 20:56:21,559  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.<init> 34 - Establishing a new Connection
+2018-12-11 20:56:22,569  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.close 109 - Closing connection
+2018-12-11 20:56:38,062  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 20:57:29,541  INFO [AWT-EventQueue-0] - java.sql.Driver.connect 16 - Trying to connect
+2018-12-11 20:57:29,559  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.<init> 34 - Establishing a new Connection
+2018-12-11 20:57:30,709  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.close 109 - Closing connection
+2018-12-11 20:57:35,689  INFO [AWT-EventQueue-0] - java.sql.Driver.connect 16 - Trying to connect
+2018-12-11 20:57:35,689  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.<init> 34 - Establishing a new Connection
+2018-12-11 20:57:48,249  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.close 109 - Closing connection
+2018-12-11 21:43:09,435  INFO [AWT-EventQueue-0] - java.sql.Driver.connect 16 - Trying to connect
+2018-12-11 21:43:09,446  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.<init> 34 - Establishing a new Connection
+2018-12-11 21:43:28,229  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.close 109 - Closing connection
+2018-12-11 21:43:43,086  INFO [AWT-EventQueue-0] - java.sql.Driver.connect 16 - Trying to connect
+2018-12-11 21:43:43,095  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.<init> 34 - Establishing a new Connection
+2018-12-11 21:44:01,238  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 21:44:17,115  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.close 109 - Closing connection
+2018-12-11 21:44:23,148  INFO [AWT-EventQueue-0] - java.sql.Driver.connect 16 - Trying to connect
+2018-12-11 21:44:23,160  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.<init> 34 - Establishing a new Connection
+2018-12-11 21:44:24,306  INFO [AWT-EventQueue-0] - java.sql.Driver.connect 16 - Trying to connect
+2018-12-11 21:44:24,315  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.<init> 34 - Establishing a new Connection
+2018-12-11 21:44:25,566  INFO [AWT-EventQueue-0] - java.sql.Driver.connect 16 - Trying to connect
+2018-12-11 21:44:25,566  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.<init> 34 - Establishing a new Connection
+2018-12-11 21:44:26,825  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.close 109 - Closing connection
+2018-12-11 21:44:29,005  INFO [AWT-EventQueue-0] - java.sql.Driver.connect 16 - Trying to connect
+2018-12-11 21:44:29,005  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.<init> 34 - Establishing a new Connection
+2018-12-11 21:44:29,826  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.close 109 - Closing connection
+2018-12-11 21:44:30,435  INFO [AWT-EventQueue-0] - java.sql.Driver.connect 16 - Trying to connect
+2018-12-11 21:44:30,445  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.<init> 34 - Establishing a new Connection
+2018-12-11 21:44:32,115  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.close 109 - Closing connection

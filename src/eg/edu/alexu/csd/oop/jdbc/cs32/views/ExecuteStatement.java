@@ -34,7 +34,6 @@ public class ExecuteStatement {
 		for (int c = 0; c < len - 1; c++) {
 			Vector<String> mRow = new Vector<String>();
 			for(int i = 1; i <= numColumns; i++){
-				System.out.println(resultSet.getObject(i));
 				mRow.add(String.valueOf(resultSet.getObject(i)));
 			}
 			resultSet.next();
