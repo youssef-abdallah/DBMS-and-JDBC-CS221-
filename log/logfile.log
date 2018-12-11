@@ -1325,3 +1325,542 @@
 2018-12-11 22:43:21,213  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
 2018-12-11 22:43:21,214  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.getObject 191 - object in this column is returned successfully
 2018-12-11 22:43:21,214  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.close 109 - Closing connection
+2018-12-11 23:00:44,102  INFO [main] - java.sql.Driver.connect 16 - Trying to connect
+2018-12-11 23:00:44,117  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.<init> 34 - Establishing a new Connection
+2018-12-11 23:00:44,117  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 23:00:44,117  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 23:00:44,418  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.<init> 48 - resultSet is created
+2018-12-11 23:00:44,418  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 23:00:44,418  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.next 329 - setting cursor to the next row
+2018-12-11 23:00:44,418  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 23:00:44,418  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.next 329 - setting cursor to the next row
+2018-12-11 23:00:44,418  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 23:00:44,418  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.next 325 - cursor is in the last row
+2018-12-11 23:00:44,418  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 23:00:44,418  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.getMetaData 178 - MetaData returned successfully
+2018-12-11 23:00:44,418  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.MetaData.<init> 33 - resultSetMetaData is created
+2018-12-11 23:00:44,418  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.MetaData.getColumnCount 58 - columns count returned 1
+2018-12-11 23:00:44,418  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.close 109 - Closing connection
+2018-12-11 23:00:44,418  INFO [main] - java.sql.Driver.connect 16 - Trying to connect
+2018-12-11 23:00:44,418  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.<init> 34 - Establishing a new Connection
+2018-12-11 23:00:44,418  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 23:00:44,418  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 23:00:44,449  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.close 109 - Closing connection
+2018-12-11 23:00:44,465  INFO [main] - java.sql.Driver.connect 16 - Trying to connect
+2018-12-11 23:00:44,465  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.<init> 34 - Establishing a new Connection
+2018-12-11 23:00:44,465  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 23:00:44,465  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 23:00:44,581  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.close 109 - Closing connection
+2018-12-11 23:00:44,581  INFO [main] - java.sql.Driver.connect 16 - Trying to connect
+2018-12-11 23:00:44,581  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.<init> 34 - Establishing a new Connection
+2018-12-11 23:00:44,581  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 23:00:44,581  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 23:00:44,596  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 23:00:44,612  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.close 109 - Closing connection
+2018-12-11 23:00:44,618  INFO [main] - java.sql.Driver.connect 16 - Trying to connect
+2018-12-11 23:00:44,618  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.<init> 34 - Establishing a new Connection
+2018-12-11 23:00:44,618  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 23:00:44,618  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 23:00:44,618  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.close 109 - Closing connection
+2018-12-11 23:00:44,618  INFO [main] - java.sql.Driver.connect 16 - Trying to connect
+2018-12-11 23:00:44,618  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.<init> 34 - Establishing a new Connection
+2018-12-11 23:00:44,618  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 23:00:44,618  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 23:00:44,634  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 23:00:44,634  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 23:00:44,634  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.close 109 - Closing connection
+2018-12-11 23:00:44,650  INFO [main] - java.sql.Driver.connect 16 - Trying to connect
+2018-12-11 23:00:44,650  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.<init> 34 - Establishing a new Connection
+2018-12-11 23:00:44,650  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 23:00:44,650  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 23:00:44,681  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.close 109 - Closing connection
+2018-12-11 23:00:44,681  INFO [main] - java.sql.Driver.connect 16 - Trying to connect
+2018-12-11 23:00:44,681  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.<init> 34 - Establishing a new Connection
+2018-12-11 23:00:44,681  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 23:00:44,681  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 23:00:44,734  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.close 109 - Closing connection
+2018-12-11 23:00:44,734  INFO [main] - java.sql.Driver.connect 16 - Trying to connect
+2018-12-11 23:00:44,734  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.<init> 34 - Establishing a new Connection
+2018-12-11 23:00:44,734  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 23:00:44,734  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 23:00:44,750  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.close 109 - Closing connection
+2018-12-11 23:00:44,765  INFO [main] - java.sql.Driver.connect 16 - Trying to connect
+2018-12-11 23:00:44,765  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.<init> 34 - Establishing a new Connection
+2018-12-11 23:00:44,765  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 23:00:44,765  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 23:00:44,819  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.<init> 48 - resultSet is created
+2018-12-11 23:00:44,819  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 23:00:44,819  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.next 329 - setting cursor to the next row
+2018-12-11 23:00:44,819  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 23:00:44,819  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.next 329 - setting cursor to the next row
+2018-12-11 23:00:44,819  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 23:00:44,819  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.next 329 - setting cursor to the next row
+2018-12-11 23:00:44,819  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 23:00:44,819  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.next 329 - setting cursor to the next row
+2018-12-11 23:00:44,819  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 23:00:44,819  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.next 325 - cursor is in the last row
+2018-12-11 23:00:44,819  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 23:00:44,819  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.getMetaData 178 - MetaData returned successfully
+2018-12-11 23:00:44,819  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.MetaData.<init> 33 - resultSetMetaData is created
+2018-12-11 23:00:44,835  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.MetaData.getColumnCount 58 - columns count returned 3
+2018-12-11 23:00:44,835  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.close 109 - Closing connection
+2018-12-11 23:00:44,835  INFO [main] - java.sql.Driver.connect 16 - Trying to connect
+2018-12-11 23:00:44,835  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.<init> 34 - Establishing a new Connection
+2018-12-11 23:00:44,835  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 23:00:44,835  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 23:00:44,881  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.close 109 - Closing connection
+2018-12-11 23:00:44,881  INFO [main] - java.sql.Driver.connect 16 - Trying to connect
+2018-12-11 23:00:44,881  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.<init> 34 - Establishing a new Connection
+2018-12-11 23:00:44,881  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 23:00:44,881  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 23:00:44,897  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.close 109 - Closing connection
+2018-12-11 23:00:44,913  INFO [main] - java.sql.Driver.connect 16 - Trying to connect
+2018-12-11 23:00:44,913  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.<init> 34 - Establishing a new Connection
+2018-12-11 23:00:44,913  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 23:00:44,913  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 23:00:44,919  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.close 109 - Closing connection
+2018-12-11 23:00:44,935  INFO [main] - java.sql.Driver.connect 16 - Trying to connect
+2018-12-11 23:00:44,935  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.<init> 34 - Establishing a new Connection
+2018-12-11 23:00:44,935  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 23:00:44,935  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 23:00:44,966  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.close 109 - Closing connection
+2018-12-11 23:00:44,982  INFO [main] - java.sql.Driver.connect 16 - Trying to connect
+2018-12-11 23:00:44,982  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.<init> 34 - Establishing a new Connection
+2018-12-11 23:00:44,982  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 23:00:44,982  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 23:00:44,982  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 23:00:44,997  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 23:00:44,997  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 23:00:45,019  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 23:00:45,097  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 23:00:45,104  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 23:00:45,119  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 23:00:45,135  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.close 109 - Closing connection
+2018-12-11 23:00:45,135  INFO [main] - java.sql.Driver.connect 16 - Trying to connect
+2018-12-11 23:00:45,135  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.<init> 34 - Establishing a new Connection
+2018-12-11 23:00:45,135  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 23:00:45,135  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 23:00:45,182  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.close 109 - Closing connection
+2018-12-11 23:00:45,182  INFO [main] - java.sql.Driver.connect 16 - Trying to connect
+2018-12-11 23:00:45,182  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.<init> 34 - Establishing a new Connection
+2018-12-11 23:00:45,182  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 23:00:45,182  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 23:00:45,220  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.close 109 - Closing connection
+2018-12-11 23:00:45,220  INFO [main] - java.sql.Driver.connect 16 - Trying to connect
+2018-12-11 23:00:45,220  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.<init> 34 - Establishing a new Connection
+2018-12-11 23:00:45,220  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 23:00:45,220  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 23:00:45,251  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.close 109 - Closing connection
+2018-12-11 23:00:45,282  INFO [main] - java.sql.Driver.connect 16 - Trying to connect
+2018-12-11 23:00:45,282  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.<init> 34 - Establishing a new Connection
+2018-12-11 23:00:45,282  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 23:00:45,282  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 23:00:45,351  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.<init> 48 - resultSet is created
+2018-12-11 23:00:45,351  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 23:00:45,351  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.next 329 - setting cursor to the next row
+2018-12-11 23:00:45,351  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 23:00:45,351  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.next 325 - cursor is in the last row
+2018-12-11 23:00:45,351  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 23:00:45,351  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.getMetaData 178 - MetaData returned successfully
+2018-12-11 23:00:45,351  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.MetaData.<init> 33 - resultSetMetaData is created
+2018-12-11 23:00:45,351  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.MetaData.getColumnCount 58 - columns count returned 3
+2018-12-11 23:00:45,367  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.<init> 48 - resultSet is created
+2018-12-11 23:00:45,367  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 23:00:45,367  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.next 329 - setting cursor to the next row
+2018-12-11 23:00:45,367  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 23:00:45,367  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.next 329 - setting cursor to the next row
+2018-12-11 23:00:45,367  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 23:00:45,367  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.next 325 - cursor is in the last row
+2018-12-11 23:00:45,382  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 23:00:45,382  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.getMetaData 178 - MetaData returned successfully
+2018-12-11 23:00:45,382  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.MetaData.<init> 33 - resultSetMetaData is created
+2018-12-11 23:00:45,382  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.MetaData.getColumnCount 58 - columns count returned 3
+2018-12-11 23:00:45,382  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 23:00:45,382  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.previous 344 - setting cursor to the previous row
+2018-12-11 23:00:45,382  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 23:00:45,382  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.previous 344 - setting cursor to the previous row
+2018-12-11 23:00:45,382  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 23:00:45,382  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.previous 344 - setting cursor to the previous row
+2018-12-11 23:00:45,382  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 23:00:45,382  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.previous 340 - cursor is in the first row
+2018-12-11 23:00:45,382  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 23:00:45,382  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.next 329 - setting cursor to the next row
+2018-12-11 23:00:45,382  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 23:00:45,382  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.getObject 191 - object in this column is returned successfully
+2018-12-11 23:00:45,382  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.close 109 - Closing connection
+2018-12-11 23:07:55,732  INFO [main] - java.sql.Driver.connect 16 - Trying to connect
+2018-12-11 23:07:55,732  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.<init> 34 - Establishing a new Connection
+2018-12-11 23:07:55,732  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 23:07:55,732  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.<init> 31 - Statement Created
+2018-12-11 23:07:55,732  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.execute 118 - Query executed successfully
+2018-12-11 23:07:55,732  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.execute 118 - Query executed successfully
+2018-12-11 23:07:55,732  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.close 81 - statement closed
+2018-12-11 23:07:55,732  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 23:07:55,732  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.<init> 31 - Statement Created
+2018-12-11 23:07:55,814  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.execute 118 - Query executed successfully
+2018-12-11 23:07:55,845  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.executeUpdate 185 - Updated query executed , edited rows = 1
+2018-12-11 23:07:55,861  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.executeUpdate 185 - Updated query executed , edited rows = 1
+2018-12-11 23:07:55,861  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.executeUpdate 185 - Updated query executed , edited rows = 1
+2018-12-11 23:07:55,892  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.executeUpdate 185 - Updated query executed , edited rows = 1
+2018-12-11 23:07:55,930  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.executeQuery 172 - Select query executed
+2018-12-11 23:07:55,930  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.<init> 48 - resultSet is created
+2018-12-11 23:07:55,930  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 23:07:55,930  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.next 329 - setting cursor to the next row
+2018-12-11 23:07:55,930  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 23:07:55,930  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.next 329 - setting cursor to the next row
+2018-12-11 23:07:55,930  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 23:07:55,930  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.next 325 - cursor is in the last row
+2018-12-11 23:07:55,930  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 23:07:55,930  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.getMetaData 178 - MetaData returned successfully
+2018-12-11 23:07:55,930  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.MetaData.<init> 33 - resultSetMetaData is created
+2018-12-11 23:07:55,930  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.MetaData.getColumnCount 58 - columns count returned 1
+2018-12-11 23:07:55,930  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.close 81 - statement closed
+2018-12-11 23:07:55,930  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.close 109 - Closing connection
+2018-12-11 23:07:55,946  INFO [main] - java.sql.Driver.connect 16 - Trying to connect
+2018-12-11 23:07:55,946  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.<init> 34 - Establishing a new Connection
+2018-12-11 23:07:55,946  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 23:07:55,946  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.<init> 31 - Statement Created
+2018-12-11 23:07:55,946  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.execute 118 - Query executed successfully
+2018-12-11 23:07:55,946  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.execute 118 - Query executed successfully
+2018-12-11 23:07:55,946  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.close 81 - statement closed
+2018-12-11 23:07:55,946  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 23:07:55,946  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.<init> 31 - Statement Created
+2018-12-11 23:07:55,946  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.execute 118 - Query executed successfully
+2018-12-11 23:07:55,961  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.executeUpdate 185 - Updated query executed , edited rows = 1
+2018-12-11 23:07:55,961  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.executeUpdate 185 - Updated query executed , edited rows = 1
+2018-12-11 23:07:55,977  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.executeUpdate 185 - Updated query executed , edited rows = 1
+2018-12-11 23:07:55,993  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.executeUpdate 185 - Updated query executed , edited rows = 2
+2018-12-11 23:07:55,993  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.close 81 - statement closed
+2018-12-11 23:07:55,993  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.close 109 - Closing connection
+2018-12-11 23:07:56,008  INFO [main] - java.sql.Driver.connect 16 - Trying to connect
+2018-12-11 23:07:56,008  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.<init> 34 - Establishing a new Connection
+2018-12-11 23:07:56,008  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 23:07:56,008  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.<init> 31 - Statement Created
+2018-12-11 23:07:56,008  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.execute 118 - Query executed successfully
+2018-12-11 23:07:56,015  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.execute 118 - Query executed successfully
+2018-12-11 23:07:56,015  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.close 81 - statement closed
+2018-12-11 23:07:56,015  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 23:07:56,015  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.<init> 31 - Statement Created
+2018-12-11 23:07:56,015  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.execute 118 - Query executed successfully
+2018-12-11 23:07:56,015  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.executeUpdate 185 - Updated query executed , edited rows = 1
+2018-12-11 23:07:56,030  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.executeUpdate 185 - Updated query executed , edited rows = 1
+2018-12-11 23:07:56,030  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.execute 118 - Query executed successfully
+2018-12-11 23:07:56,046  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.executeUpdate 185 - Updated query executed , edited rows = 1
+2018-12-11 23:07:56,046  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.executeUpdate 185 - Updated query executed , edited rows = 1
+2018-12-11 23:07:56,077  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.execute 118 - Query executed successfully
+2018-12-11 23:07:56,077  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.execute 121 - Failed to execute query
+2018-12-11 23:07:56,093  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.close 81 - statement closed
+2018-12-11 23:07:56,093  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.close 109 - Closing connection
+2018-12-11 23:07:56,093  INFO [main] - java.sql.Driver.connect 16 - Trying to connect
+2018-12-11 23:07:56,093  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.<init> 34 - Establishing a new Connection
+2018-12-11 23:07:56,093  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 23:07:56,093  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.<init> 31 - Statement Created
+2018-12-11 23:07:56,093  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.execute 118 - Query executed successfully
+2018-12-11 23:07:56,093  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.execute 118 - Query executed successfully
+2018-12-11 23:07:56,093  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.close 81 - statement closed
+2018-12-11 23:07:56,093  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 23:07:56,093  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.<init> 31 - Statement Created
+2018-12-11 23:07:56,108  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.execute 118 - Query executed successfully
+2018-12-11 23:07:56,115  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.executeUpdate 185 - Updated query executed , edited rows = 0
+2018-12-11 23:07:56,115  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.close 81 - statement closed
+2018-12-11 23:07:56,115  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 23:07:56,115  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.<init> 31 - Statement Created
+2018-12-11 23:07:56,115  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.close 109 - Closing connection
+2018-12-11 23:07:56,115  INFO [main] - java.sql.Driver.connect 16 - Trying to connect
+2018-12-11 23:07:56,115  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.<init> 34 - Establishing a new Connection
+2018-12-11 23:07:56,115  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 23:07:56,115  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.<init> 31 - Statement Created
+2018-12-11 23:07:56,115  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.execute 118 - Query executed successfully
+2018-12-11 23:07:56,115  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.execute 118 - Query executed successfully
+2018-12-11 23:07:56,115  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.execute 118 - Query executed successfully
+2018-12-11 23:07:56,115  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.close 81 - statement closed
+2018-12-11 23:07:56,115  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 23:07:56,115  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.<init> 31 - Statement Created
+2018-12-11 23:07:56,115  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.execute 118 - Query executed successfully
+2018-12-11 23:07:56,115  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.execute 118 - Query executed successfully
+2018-12-11 23:07:56,115  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.execute 118 - Query executed successfully
+2018-12-11 23:07:56,115  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.close 81 - statement closed
+2018-12-11 23:07:56,131  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.close 109 - Closing connection
+2018-12-11 23:07:56,131  INFO [main] - java.sql.Driver.connect 16 - Trying to connect
+2018-12-11 23:07:56,131  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.<init> 34 - Establishing a new Connection
+2018-12-11 23:07:56,131  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 23:07:56,131  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.<init> 31 - Statement Created
+2018-12-11 23:07:56,131  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.execute 118 - Query executed successfully
+2018-12-11 23:07:56,131  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.execute 118 - Query executed successfully
+2018-12-11 23:07:56,131  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.close 81 - statement closed
+2018-12-11 23:07:56,131  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 23:07:56,131  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.<init> 31 - Statement Created
+2018-12-11 23:07:56,146  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.execute 118 - Query executed successfully
+2018-12-11 23:07:56,146  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.close 81 - statement closed
+2018-12-11 23:07:56,146  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 23:07:56,146  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.<init> 31 - Statement Created
+2018-12-11 23:07:56,146  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.execute 121 - Failed to execute query
+2018-12-11 23:07:56,146  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 23:07:56,146  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.<init> 31 - Statement Created
+2018-12-11 23:07:56,146  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.close 109 - Closing connection
+2018-12-11 23:07:56,146  INFO [main] - java.sql.Driver.connect 16 - Trying to connect
+2018-12-11 23:07:56,146  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.<init> 34 - Establishing a new Connection
+2018-12-11 23:07:56,146  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 23:07:56,146  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.<init> 31 - Statement Created
+2018-12-11 23:07:56,146  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.execute 118 - Query executed successfully
+2018-12-11 23:07:56,146  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.execute 118 - Query executed successfully
+2018-12-11 23:07:56,146  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.close 81 - statement closed
+2018-12-11 23:07:56,146  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 23:07:56,146  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.<init> 31 - Statement Created
+2018-12-11 23:07:56,162  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.execute 118 - Query executed successfully
+2018-12-11 23:07:56,177  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.executeUpdate 185 - Updated query executed , edited rows = 1
+2018-12-11 23:07:56,177  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.close 81 - statement closed
+2018-12-11 23:07:56,177  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.close 109 - Closing connection
+2018-12-11 23:07:56,177  INFO [main] - java.sql.Driver.connect 16 - Trying to connect
+2018-12-11 23:07:56,177  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.<init> 34 - Establishing a new Connection
+2018-12-11 23:07:56,177  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 23:07:56,177  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.<init> 31 - Statement Created
+2018-12-11 23:07:56,177  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.execute 118 - Query executed successfully
+2018-12-11 23:07:56,177  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.execute 118 - Query executed successfully
+2018-12-11 23:07:56,177  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.close 81 - statement closed
+2018-12-11 23:07:56,177  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 23:07:56,177  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.<init> 31 - Statement Created
+2018-12-11 23:07:56,193  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.execute 118 - Query executed successfully
+2018-12-11 23:07:56,193  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.executeUpdate 185 - Updated query executed , edited rows = 1
+2018-12-11 23:07:56,193  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.executeUpdate 185 - Updated query executed , edited rows = 1
+2018-12-11 23:07:56,215  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.executeUpdate 185 - Updated query executed , edited rows = 1
+2018-12-11 23:07:56,215  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.executeUpdate 185 - Updated query executed , edited rows = 3
+2018-12-11 23:07:56,215  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.close 81 - statement closed
+2018-12-11 23:07:56,215  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.close 109 - Closing connection
+2018-12-11 23:07:56,215  INFO [main] - java.sql.Driver.connect 16 - Trying to connect
+2018-12-11 23:07:56,215  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.<init> 34 - Establishing a new Connection
+2018-12-11 23:07:56,231  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 23:07:56,231  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.<init> 31 - Statement Created
+2018-12-11 23:07:56,231  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.execute 118 - Query executed successfully
+2018-12-11 23:07:56,232  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.execute 118 - Query executed successfully
+2018-12-11 23:07:56,232  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.close 81 - statement closed
+2018-12-11 23:07:56,233  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 23:07:56,233  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.<init> 31 - Statement Created
+2018-12-11 23:07:56,236  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.execute 118 - Query executed successfully
+2018-12-11 23:07:56,236  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.executeUpdate 185 - Updated query executed , edited rows = 1
+2018-12-11 23:07:56,236  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.close 81 - statement closed
+2018-12-11 23:07:56,236  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.close 109 - Closing connection
+2018-12-11 23:07:56,236  INFO [main] - java.sql.Driver.connect 16 - Trying to connect
+2018-12-11 23:07:56,236  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.<init> 34 - Establishing a new Connection
+2018-12-11 23:07:56,236  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 23:07:56,251  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.<init> 31 - Statement Created
+2018-12-11 23:07:56,251  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.execute 118 - Query executed successfully
+2018-12-11 23:07:56,251  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.execute 118 - Query executed successfully
+2018-12-11 23:07:56,251  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.close 81 - statement closed
+2018-12-11 23:07:56,251  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 23:07:56,251  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.<init> 31 - Statement Created
+2018-12-11 23:07:56,251  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.execute 118 - Query executed successfully
+2018-12-11 23:07:56,267  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.executeUpdate 185 - Updated query executed , edited rows = 1
+2018-12-11 23:07:56,267  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.executeUpdate 185 - Updated query executed , edited rows = 1
+2018-12-11 23:07:56,267  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.executeUpdate 185 - Updated query executed , edited rows = 1
+2018-12-11 23:07:56,282  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.executeUpdate 185 - Updated query executed , edited rows = 1
+2018-12-11 23:07:56,298  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.executeQuery 172 - Select query executed
+2018-12-11 23:07:56,298  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.<init> 48 - resultSet is created
+2018-12-11 23:07:56,298  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 23:07:56,298  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.next 329 - setting cursor to the next row
+2018-12-11 23:07:56,298  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 23:07:56,298  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.next 329 - setting cursor to the next row
+2018-12-11 23:07:56,298  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 23:07:56,298  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.next 329 - setting cursor to the next row
+2018-12-11 23:07:56,298  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 23:07:56,298  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.next 329 - setting cursor to the next row
+2018-12-11 23:07:56,298  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 23:07:56,298  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.next 325 - cursor is in the last row
+2018-12-11 23:07:56,298  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 23:07:56,298  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.getMetaData 178 - MetaData returned successfully
+2018-12-11 23:07:56,298  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.MetaData.<init> 33 - resultSetMetaData is created
+2018-12-11 23:07:56,298  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.MetaData.getColumnCount 58 - columns count returned 3
+2018-12-11 23:07:56,298  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.close 81 - statement closed
+2018-12-11 23:07:56,298  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.close 109 - Closing connection
+2018-12-11 23:07:56,298  INFO [main] - java.sql.Driver.connect 16 - Trying to connect
+2018-12-11 23:07:56,298  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.<init> 34 - Establishing a new Connection
+2018-12-11 23:07:56,298  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 23:07:56,298  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.<init> 31 - Statement Created
+2018-12-11 23:07:56,298  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.execute 118 - Query executed successfully
+2018-12-11 23:07:56,298  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.execute 118 - Query executed successfully
+2018-12-11 23:07:56,298  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.close 81 - statement closed
+2018-12-11 23:07:56,298  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 23:07:56,298  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.<init> 31 - Statement Created
+2018-12-11 23:07:56,315  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.execute 118 - Query executed successfully
+2018-12-11 23:07:56,315  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.executeUpdate 185 - Updated query executed , edited rows = 1
+2018-12-11 23:07:56,331  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.executeUpdate 185 - Updated query executed , edited rows = 1
+2018-12-11 23:07:56,346  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.executeUpdate 185 - Updated query executed , edited rows = 1
+2018-12-11 23:07:56,362  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.executeUpdate 185 - Updated query executed , edited rows = 3
+2018-12-11 23:07:56,362  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.close 81 - statement closed
+2018-12-11 23:07:56,362  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.close 109 - Closing connection
+2018-12-11 23:07:56,378  INFO [main] - java.sql.Driver.connect 16 - Trying to connect
+2018-12-11 23:07:56,378  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.<init> 34 - Establishing a new Connection
+2018-12-11 23:07:56,378  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 23:07:56,378  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.<init> 31 - Statement Created
+2018-12-11 23:07:56,378  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.execute 118 - Query executed successfully
+2018-12-11 23:07:56,378  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.execute 118 - Query executed successfully
+2018-12-11 23:07:56,378  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.close 81 - statement closed
+2018-12-11 23:07:56,378  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 23:07:56,378  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.<init> 31 - Statement Created
+2018-12-11 23:07:56,378  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.execute 118 - Query executed successfully
+2018-12-11 23:07:56,393  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.executeUpdate 185 - Updated query executed , edited rows = 1
+2018-12-11 23:07:56,393  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.close 109 - Closing connection
+2018-12-11 23:07:56,393  INFO [main] - java.sql.Driver.connect 16 - Trying to connect
+2018-12-11 23:07:56,393  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.<init> 34 - Establishing a new Connection
+2018-12-11 23:07:56,393  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 23:07:56,393  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.<init> 31 - Statement Created
+2018-12-11 23:07:56,393  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.execute 118 - Query executed successfully
+2018-12-11 23:07:56,393  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.execute 118 - Query executed successfully
+2018-12-11 23:07:56,393  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.close 81 - statement closed
+2018-12-11 23:07:56,393  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 23:07:56,393  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.<init> 31 - Statement Created
+2018-12-11 23:07:56,415  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.execute 118 - Query executed successfully
+2018-12-11 23:07:56,415  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.executeUpdate 185 - Updated query executed , edited rows = 1
+2018-12-11 23:07:56,415  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.close 109 - Closing connection
+2018-12-11 23:07:56,415  INFO [main] - java.sql.Driver.connect 16 - Trying to connect
+2018-12-11 23:07:56,415  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.<init> 34 - Establishing a new Connection
+2018-12-11 23:07:56,415  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 23:07:56,415  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.<init> 31 - Statement Created
+2018-12-11 23:07:56,415  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.execute 118 - Query executed successfully
+2018-12-11 23:07:56,431  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.execute 118 - Query executed successfully
+2018-12-11 23:07:56,431  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.close 81 - statement closed
+2018-12-11 23:07:56,431  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 23:07:56,431  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.<init> 31 - Statement Created
+2018-12-11 23:07:56,431  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.execute 118 - Query executed successfully
+2018-12-11 23:07:56,447  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.executeUpdate 185 - Updated query executed , edited rows = 1
+2018-12-11 23:07:56,447  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.executeUpdate 185 - Updated query executed , edited rows = 1
+2018-12-11 23:07:56,462  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.executeUpdate 185 - Updated query executed , edited rows = 1
+2018-12-11 23:07:56,462  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.executeUpdate 185 - Updated query executed , edited rows = 2
+2018-12-11 23:07:56,462  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.close 81 - statement closed
+2018-12-11 23:07:56,462  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.close 109 - Closing connection
+2018-12-11 23:07:56,462  INFO [main] - java.sql.Driver.connect 16 - Trying to connect
+2018-12-11 23:07:56,462  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.<init> 34 - Establishing a new Connection
+2018-12-11 23:07:56,462  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 23:07:56,462  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.<init> 31 - Statement Created
+2018-12-11 23:07:56,462  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.execute 118 - Query executed successfully
+2018-12-11 23:07:56,462  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.execute 118 - Query executed successfully
+2018-12-11 23:07:56,462  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.close 81 - statement closed
+2018-12-11 23:07:56,462  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 23:07:56,462  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.<init> 31 - Statement Created
+2018-12-11 23:07:56,478  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.execute 118 - Query executed successfully
+2018-12-11 23:07:56,478  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.close 81 - statement closed
+2018-12-11 23:07:56,478  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 23:07:56,478  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.<init> 31 - Statement Created
+2018-12-11 23:07:56,478  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.execute 118 - Query executed successfully
+2018-12-11 23:07:56,478  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 23:07:56,478  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.<init> 31 - Statement Created
+2018-12-11 23:07:56,494  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.execute 118 - Query executed successfully
+2018-12-11 23:07:56,494  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 23:07:56,494  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.<init> 31 - Statement Created
+2018-12-11 23:07:56,494  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.execute 118 - Query executed successfully
+2018-12-11 23:07:56,516  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.executeUpdate 185 - Updated query executed , edited rows = 1
+2018-12-11 23:07:56,516  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 23:07:56,516  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.<init> 31 - Statement Created
+2018-12-11 23:07:56,516  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.execute 118 - Query executed successfully
+2018-12-11 23:07:56,547  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.executeUpdate 185 - Updated query executed , edited rows = 1
+2018-12-11 23:07:56,563  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.executeUpdate 185 - Updated query executed , edited rows = 1
+2018-12-11 23:07:56,563  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.close 81 - statement closed
+2018-12-11 23:07:56,563  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 23:07:56,563  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.<init> 31 - Statement Created
+2018-12-11 23:07:56,594  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.execute 118 - Query executed successfully
+2018-12-11 23:07:56,594  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 23:07:56,594  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.<init> 31 - Statement Created
+2018-12-11 23:07:56,616  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.execute 118 - Query executed successfully
+2018-12-11 23:07:56,616  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 23:07:56,616  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.<init> 31 - Statement Created
+2018-12-11 23:07:56,616  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.close 109 - Closing connection
+2018-12-11 23:07:56,632  INFO [main] - java.sql.Driver.connect 16 - Trying to connect
+2018-12-11 23:07:56,632  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.<init> 34 - Establishing a new Connection
+2018-12-11 23:07:56,632  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 23:07:56,632  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.<init> 31 - Statement Created
+2018-12-11 23:07:56,632  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.execute 118 - Query executed successfully
+2018-12-11 23:07:56,632  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.execute 118 - Query executed successfully
+2018-12-11 23:07:56,632  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.close 81 - statement closed
+2018-12-11 23:07:56,632  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 23:07:56,632  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.<init> 31 - Statement Created
+2018-12-11 23:07:56,632  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.execute 118 - Query executed successfully
+2018-12-11 23:07:57,380  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.executeUpdate 185 - Updated query executed , edited rows = 1
+2018-12-11 23:07:57,418  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.executeUpdate 185 - Updated query executed , edited rows = 1
+2018-12-11 23:07:57,449  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.executeUpdate 185 - Updated query executed , edited rows = 1
+2018-12-11 23:07:57,480  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.executeUpdate 185 - Updated query executed , edited rows = 2
+2018-12-11 23:07:57,480  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.close 81 - statement closed
+2018-12-11 23:07:57,480  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.close 109 - Closing connection
+2018-12-11 23:07:57,518  INFO [main] - java.sql.Driver.connect 16 - Trying to connect
+2018-12-11 23:07:57,534  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.<init> 34 - Establishing a new Connection
+2018-12-11 23:07:57,534  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 23:07:57,534  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.<init> 31 - Statement Created
+2018-12-11 23:07:57,534  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.execute 118 - Query executed successfully
+2018-12-11 23:07:57,534  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.execute 118 - Query executed successfully
+2018-12-11 23:07:57,534  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.close 81 - statement closed
+2018-12-11 23:07:57,534  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 23:07:57,534  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.<init> 31 - Statement Created
+2018-12-11 23:07:57,549  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.execute 118 - Query executed successfully
+2018-12-11 23:07:57,565  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.executeUpdate 185 - Updated query executed , edited rows = 1
+2018-12-11 23:07:57,581  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.executeUpdate 185 - Updated query executed , edited rows = 1
+2018-12-11 23:07:57,581  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.executeUpdate 185 - Updated query executed , edited rows = 1
+2018-12-11 23:07:57,581  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.execute 118 - Query executed successfully
+2018-12-11 23:07:57,581  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.close 81 - statement closed
+2018-12-11 23:07:57,581  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.close 109 - Closing connection
+2018-12-11 23:07:57,596  INFO [main] - java.sql.Driver.connect 16 - Trying to connect
+2018-12-11 23:07:57,596  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.<init> 34 - Establishing a new Connection
+2018-12-11 23:07:57,596  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 23:07:57,596  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.<init> 31 - Statement Created
+2018-12-11 23:07:57,596  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.execute 118 - Query executed successfully
+2018-12-11 23:07:57,596  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.execute 118 - Query executed successfully
+2018-12-11 23:07:57,596  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.close 81 - statement closed
+2018-12-11 23:07:57,596  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 23:07:57,596  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.<init> 31 - Statement Created
+2018-12-11 23:07:57,612  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.execute 118 - Query executed successfully
+2018-12-11 23:07:57,618  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.executeUpdate 185 - Updated query executed , edited rows = 1
+2018-12-11 23:07:57,618  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.executeUpdate 185 - Updated query executed , edited rows = 1
+2018-12-11 23:07:57,634  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.executeUpdate 185 - Updated query executed , edited rows = 1
+2018-12-11 23:07:57,634  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.executeUpdate 185 - Updated query executed , edited rows = 2
+2018-12-11 23:07:57,650  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.executeUpdate 185 - Updated query executed , edited rows = 0
+2018-12-11 23:07:57,650  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.close 81 - statement closed
+2018-12-11 23:07:57,650  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.close 109 - Closing connection
+2018-12-11 23:07:57,650  INFO [main] - java.sql.Driver.connect 16 - Trying to connect
+2018-12-11 23:07:57,650  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.<init> 34 - Establishing a new Connection
+2018-12-11 23:07:57,650  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 23:07:57,650  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.<init> 31 - Statement Created
+2018-12-11 23:07:57,650  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.execute 118 - Query executed successfully
+2018-12-11 23:07:57,665  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.execute 118 - Query executed successfully
+2018-12-11 23:07:57,665  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.close 81 - statement closed
+2018-12-11 23:07:57,665  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 23:07:57,681  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.<init> 31 - Statement Created
+2018-12-11 23:07:57,681  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.execute 118 - Query executed successfully
+2018-12-11 23:07:57,696  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.executeUpdate 185 - Updated query executed , edited rows = 1
+2018-12-11 23:07:57,696  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.executeUpdate 185 - Updated query executed , edited rows = 1
+2018-12-11 23:07:57,696  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.executeUpdate 185 - Updated query executed , edited rows = 1
+2018-12-11 23:07:57,712  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.executeUpdate 185 - Updated query executed , edited rows = 1
+2018-12-11 23:07:57,719  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.executeQuery 172 - Select query executed
+2018-12-11 23:07:57,719  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.<init> 48 - resultSet is created
+2018-12-11 23:07:57,719  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 23:07:57,719  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.next 329 - setting cursor to the next row
+2018-12-11 23:07:57,719  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 23:07:57,719  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.next 325 - cursor is in the last row
+2018-12-11 23:07:57,719  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 23:07:57,719  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.getMetaData 178 - MetaData returned successfully
+2018-12-11 23:07:57,719  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.MetaData.<init> 33 - resultSetMetaData is created
+2018-12-11 23:07:57,719  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.MetaData.getColumnCount 58 - columns count returned 3
+2018-12-11 23:07:57,719  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.executeUpdate 185 - Updated query executed , edited rows = 1
+2018-12-11 23:07:57,750  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.executeQuery 172 - Select query executed
+2018-12-11 23:07:57,750  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.<init> 48 - resultSet is created
+2018-12-11 23:07:57,750  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 23:07:57,750  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.next 329 - setting cursor to the next row
+2018-12-11 23:07:57,750  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 23:07:57,750  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.next 329 - setting cursor to the next row
+2018-12-11 23:07:57,750  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 23:07:57,750  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.next 325 - cursor is in the last row
+2018-12-11 23:07:57,750  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 23:07:57,750  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.getMetaData 178 - MetaData returned successfully
+2018-12-11 23:07:57,750  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.MetaData.<init> 33 - resultSetMetaData is created
+2018-12-11 23:07:57,750  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.MetaData.getColumnCount 58 - columns count returned 3
+2018-12-11 23:07:57,750  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 23:07:57,750  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.previous 344 - setting cursor to the previous row
+2018-12-11 23:07:57,750  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 23:07:57,750  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.previous 344 - setting cursor to the previous row
+2018-12-11 23:07:57,750  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 23:07:57,750  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.previous 344 - setting cursor to the previous row
+2018-12-11 23:07:57,750  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 23:07:57,750  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.previous 340 - cursor is in the first row
+2018-12-11 23:07:57,750  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 23:07:57,750  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.next 329 - setting cursor to the next row
+2018-12-11 23:07:57,750  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 23:07:57,750  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.getObject 191 - object in this column is returned successfully
+2018-12-11 23:07:57,750  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteStatement.close 81 - statement closed
+2018-12-11 23:07:57,750  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.close 109 - Closing connection
