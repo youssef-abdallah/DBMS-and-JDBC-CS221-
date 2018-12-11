@@ -1,0 +1,3 @@
+<! ELEMENT t (row)*>
+<! ELEMENT row (name)>
+<! ELEMENT name (#PCDATA)>
