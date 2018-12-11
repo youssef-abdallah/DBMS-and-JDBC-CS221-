@@ -18,22 +18,29 @@ public class ExecuteStatement {
 	}
 	
 	public Vector<Vector<String>> runQuery(String mQuery) throws SQLException{
-		Vector<Vector<String>> mResults = new Vector<Vector<String>>();
+		Vector<Vector<String>> results = new Vector<Vector<String>>();
 		Statement statement = (Statement) this.connection.createStatement();
 		ResultSet resultSet = statement.executeQuery(mQuery);
+		resultSet.absolute(0);
 		metaData = resultSet.getMetaData();
 		
-		int mNumColumns = metaData.getColumnCount();
-		setColumns(mNumColumns,metaData);
-		
-		while(resultSet.next()){
+		int numColumns = metaData.getColumnCount();
+		setColumns(numColumns,metaData);
+		int len = 0;
+		while(resultSet.next()) {
+			len++;
+		}
+		resultSet.absolute(1);
+		for (int c = 0; c < len - 1; c++) {
 			Vector<String> mRow = new Vector<String>();
-			for(int i = 1; i <= mNumColumns; i++){
+			for(int i = 1; i <= numColumns; i++){
+				System.out.println(resultSet.getObject(i));
 				mRow.add(String.valueOf(resultSet.getObject(i)));
 			}
-			mResults.add(mRow);
+			resultSet.next();
+			results.add(mRow);
 		}
-		return mResults;
+		return results;
 	}
 	
 	public Vector<String> getColumns() throws SQLException{
@@ -54,5 +61,13 @@ public class ExecuteStatement {
 		for(int i = 1; i <= mNumColumns; i++){
 			columns.add(mMetaData.getColumnName(i));
 		}
+	}
+	
+	public void takeQueries(String[] queries) throws SQLException {
+		Statement statement = this.connection.createStatement();
+		for(String query : queries) {
+			statement.addBatch(query);
+		}
+		statement.executeBatch();
 	}
 }

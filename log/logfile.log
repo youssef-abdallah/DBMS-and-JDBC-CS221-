@@ -285,3 +285,515 @@
 2018-12-11 18:29:21,253  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
 2018-12-11 18:29:21,253  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.next 325 - cursor is in the last row
 2018-12-11 18:29:33,411  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.close 109 - Closing connection
+2018-12-11 18:32:51,508  INFO [main] - java.sql.Driver.connect 16 - Trying to connect
+2018-12-11 18:32:51,508  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.<init> 34 - Establishing a new Connection
+2018-12-11 18:32:51,508  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 18:33:05,015  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 18:33:11,075  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 18:33:21,360  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 18:33:32,595  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 18:33:36,122  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.<init> 48 - resultSet is created
+2018-12-11 18:33:38,746  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 18:33:38,746  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.absolute 70 - setting cursor to 0
+2018-12-11 18:33:38,757  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 18:33:38,757  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.getObject 198 - out of resultSet boundries, a null object is returned
+2018-12-11 18:33:38,757  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 18:36:11,260  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.<init> 48 - resultSet is created
+2018-12-11 18:36:13,867  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 18:36:13,874  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.absolute 59 - setting cursor to the front of resultSet
+2018-12-11 18:36:13,877  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 18:36:13,877  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.getObject 198 - out of resultSet boundries, a null object is returned
+2018-12-11 18:36:13,877  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 18:36:47,936  INFO [main] - java.sql.Driver.connect 16 - Trying to connect
+2018-12-11 18:36:47,952  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.<init> 34 - Establishing a new Connection
+2018-12-11 18:36:47,952  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 18:36:58,401  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 18:37:12,187  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 18:37:21,512  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 18:37:38,833  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 18:37:42,360  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.<init> 48 - resultSet is created
+2018-12-11 18:37:46,375  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 18:37:50,088  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 18:37:53,995  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 18:37:56,382  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 18:38:10,003  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.<init> 48 - resultSet is created
+2018-12-11 18:38:12,988  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 18:38:12,988  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.absolute 70 - setting cursor to 0
+2018-12-11 18:38:12,988  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 18:38:12,994  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.getObject 191 - object in this column is returned successfully
+2018-12-11 18:38:12,994  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 18:39:09,004  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.<init> 48 - resultSet is created
+2018-12-11 18:39:14,164  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 18:39:14,164  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.absolute 70 - setting cursor to 0
+2018-12-11 18:39:14,164  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 18:39:14,164  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.getObject 198 - out of resultSet boundries, a null object is returned
+2018-12-11 18:39:14,164  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 18:50:01,881  INFO [AWT-EventQueue-0] - java.sql.Driver.connect 16 - Trying to connect
+2018-12-11 18:50:02,049  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.<init> 34 - Establishing a new Connection
+2018-12-11 18:50:03,052  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 18:50:17,406  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 18:50:28,851  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 18:50:37,916  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 18:50:37,970  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.<init> 48 - resultSet is created
+2018-12-11 18:50:37,970  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 18:50:37,971  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.getMetaData 178 - MetaData returned successfully
+2018-12-11 18:50:37,972  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.MetaData.<init> 33 - resultSetMetaData is created
+2018-12-11 18:50:37,972  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.MetaData.getColumnCount 58 - columns count returned 1
+2018-12-11 18:50:37,972  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.MetaData.getColumnName 75 - column name returned
+2018-12-11 18:50:37,972  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 18:50:37,973  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.next 329 - setting cursor to the next row
+2018-12-11 18:50:37,973  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 18:50:37,973  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.getObject 191 - object in this column is returned successfully
+2018-12-11 18:51:03,090  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 18:51:03,106  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.<init> 48 - resultSet is created
+2018-12-11 18:51:03,107  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 18:51:03,107  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.getMetaData 178 - MetaData returned successfully
+2018-12-11 18:51:03,107  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.MetaData.<init> 33 - resultSetMetaData is created
+2018-12-11 18:51:03,107  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.MetaData.getColumnCount 58 - columns count returned 1
+2018-12-11 18:51:03,108  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.MetaData.getColumnName 75 - column name returned
+2018-12-11 18:51:03,108  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 18:51:03,108  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.next 329 - setting cursor to the next row
+2018-12-11 18:51:03,108  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 18:51:03,108  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.getObject 191 - object in this column is returned successfully
+2018-12-11 18:51:10,353  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.close 109 - Closing connection
+2018-12-11 19:08:26,349  INFO [AWT-EventQueue-0] - java.sql.Driver.connect 16 - Trying to connect
+2018-12-11 19:08:26,360  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.<init> 34 - Establishing a new Connection
+2018-12-11 19:08:27,078  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 19:08:48,676  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 19:08:48,859  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 19:09:10,056  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 19:09:22,827  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 19:09:37,959  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 19:09:37,982  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.<init> 48 - resultSet is created
+2018-12-11 19:09:37,983  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 19:09:37,983  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.getMetaData 178 - MetaData returned successfully
+2018-12-11 19:09:37,984  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.MetaData.<init> 33 - resultSetMetaData is created
+2018-12-11 19:09:37,984  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.MetaData.getColumnCount 58 - columns count returned 2
+2018-12-11 19:09:37,984  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.MetaData.getColumnName 75 - column name returned
+2018-12-11 19:09:37,984  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.MetaData.getColumnName 75 - column name returned
+2018-12-11 19:09:37,984  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 19:09:37,986  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.next 329 - setting cursor to the next row
+2018-12-11 19:09:37,986  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 19:09:37,986  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.getObject 191 - object in this column is returned successfully
+2018-12-11 19:09:37,986  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 19:09:37,987  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.getObject 198 - out of resultSet boundries, a null object is returned
+2018-12-11 19:09:37,987  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 19:09:37,987  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.next 329 - setting cursor to the next row
+2018-12-11 19:09:37,987  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 19:09:37,988  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.getObject 191 - object in this column is returned successfully
+2018-12-11 19:09:46,316  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 19:09:46,332  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.<init> 48 - resultSet is created
+2018-12-11 19:09:46,332  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 19:09:46,332  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.getMetaData 178 - MetaData returned successfully
+2018-12-11 19:09:46,332  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.MetaData.<init> 33 - resultSetMetaData is created
+2018-12-11 19:09:46,332  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.MetaData.getColumnCount 58 - columns count returned 1
+2018-12-11 19:09:46,333  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.MetaData.getColumnName 75 - column name returned
+2018-12-11 19:09:46,333  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 19:09:46,333  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.next 329 - setting cursor to the next row
+2018-12-11 19:09:46,333  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 19:09:46,333  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.getObject 198 - out of resultSet boundries, a null object is returned
+2018-12-11 19:09:46,333  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 19:09:46,333  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.next 329 - setting cursor to the next row
+2018-12-11 19:09:46,333  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 19:09:46,334  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.getObject 198 - out of resultSet boundries, a null object is returned
+2018-12-11 19:09:46,334  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 19:09:46,334  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.next 325 - cursor is in the last row
+2018-12-11 19:10:02,033  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 19:10:02,049  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.<init> 48 - resultSet is created
+2018-12-11 19:10:02,049  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 19:10:02,049  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.getMetaData 178 - MetaData returned successfully
+2018-12-11 19:10:02,049  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.MetaData.<init> 33 - resultSetMetaData is created
+2018-12-11 19:10:02,049  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.MetaData.getColumnCount 58 - columns count returned 1
+2018-12-11 19:10:02,050  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.MetaData.getColumnName 75 - column name returned
+2018-12-11 19:10:02,050  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 19:10:02,050  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.next 329 - setting cursor to the next row
+2018-12-11 19:10:02,050  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 19:10:02,050  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.getObject 198 - out of resultSet boundries, a null object is returned
+2018-12-11 19:10:02,051  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 19:10:02,051  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.next 329 - setting cursor to the next row
+2018-12-11 19:10:02,051  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 19:10:02,051  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.getObject 198 - out of resultSet boundries, a null object is returned
+2018-12-11 19:10:02,051  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 19:10:02,051  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.next 325 - cursor is in the last row
+2018-12-11 19:10:20,953  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.close 109 - Closing connection
+2018-12-11 19:16:13,144  INFO [AWT-EventQueue-0] - java.sql.Driver.connect 16 - Trying to connect
+2018-12-11 19:16:13,154  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.<init> 34 - Establishing a new Connection
+2018-12-11 19:16:13,780  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 19:16:30,219  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 19:16:39,898  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 19:16:46,337  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 19:16:46,364  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.<init> 48 - resultSet is created
+2018-12-11 19:16:46,364  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 19:16:46,365  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.absolute 59 - setting cursor to the front of resultSet
+2018-12-11 19:16:46,365  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 19:16:46,365  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.getMetaData 178 - MetaData returned successfully
+2018-12-11 19:16:46,366  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.MetaData.<init> 33 - resultSetMetaData is created
+2018-12-11 19:16:46,367  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.MetaData.getColumnCount 58 - columns count returned 1
+2018-12-11 19:16:46,367  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.MetaData.getColumnName 75 - column name returned
+2018-12-11 19:16:46,367  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 19:16:46,367  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.next 329 - setting cursor to the next row
+2018-12-11 19:16:46,369  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 19:16:46,370  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.getObject 191 - object in this column is returned successfully
+2018-12-11 19:16:46,370  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 19:16:46,370  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.next 329 - setting cursor to the next row
+2018-12-11 19:16:46,370  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 19:16:46,371  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.getObject 191 - object in this column is returned successfully
+2018-12-11 19:17:24,799  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.close 109 - Closing connection
+2018-12-11 19:17:37,131  INFO [main] - java.sql.Driver.connect 16 - Trying to connect
+2018-12-11 19:17:37,140  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.<init> 34 - Establishing a new Connection
+2018-12-11 19:17:37,144  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 19:17:43,489  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 19:17:46,986  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 19:17:55,223  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 19:18:05,067  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 19:18:10,607  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 19:18:16,855  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.<init> 48 - resultSet is created
+2018-12-11 19:18:19,567  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 19:18:19,568  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.absolute 70 - setting cursor to 0
+2018-12-11 19:18:19,568  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 19:18:19,568  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.getObject 191 - object in this column is returned successfully
+2018-12-11 19:18:19,568  INFO [main] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 19:20:49,194  INFO [AWT-EventQueue-0] - java.sql.Driver.connect 16 - Trying to connect
+2018-12-11 19:20:49,207  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.<init> 34 - Establishing a new Connection
+2018-12-11 19:20:49,649  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 19:21:05,391  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 19:21:17,570  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 19:21:25,058  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 19:21:25,084  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.<init> 48 - resultSet is created
+2018-12-11 19:21:25,085  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 19:21:25,085  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.absolute 59 - setting cursor to the front of resultSet
+2018-12-11 19:21:25,085  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 19:21:25,085  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.getMetaData 178 - MetaData returned successfully
+2018-12-11 19:21:25,087  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.MetaData.<init> 33 - resultSetMetaData is created
+2018-12-11 19:21:25,087  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.MetaData.getColumnCount 58 - columns count returned 1
+2018-12-11 19:21:25,087  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.MetaData.getColumnName 75 - column name returned
+2018-12-11 19:21:25,088  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 19:21:25,088  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.next 329 - setting cursor to the next row
+2018-12-11 19:21:25,090  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 19:21:25,090  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.getObject 191 - object in this column is returned successfully
+2018-12-11 19:21:25,091  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 19:21:25,091  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.getObject 191 - object in this column is returned successfully
+2018-12-11 19:21:25,091  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 19:21:25,091  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.next 329 - setting cursor to the next row
+2018-12-11 19:21:25,092  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 19:21:25,092  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.getObject 191 - object in this column is returned successfully
+2018-12-11 19:22:05,767  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.close 109 - Closing connection
+2018-12-11 19:39:45,945  INFO [AWT-EventQueue-0] - java.sql.Driver.connect 16 - Trying to connect
+2018-12-11 19:39:45,955  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.<init> 34 - Establishing a new Connection
+2018-12-11 19:39:46,442  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 19:40:03,043  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 19:40:10,169  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 19:40:19,539  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 19:40:26,249  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 19:40:33,559  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 19:40:33,589  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.<init> 48 - resultSet is created
+2018-12-11 19:40:33,590  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 19:40:33,590  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.absolute 59 - setting cursor to the front of resultSet
+2018-12-11 19:40:33,590  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 19:40:33,590  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.getMetaData 178 - MetaData returned successfully
+2018-12-11 19:40:33,591  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.MetaData.<init> 33 - resultSetMetaData is created
+2018-12-11 19:40:33,592  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.MetaData.getColumnCount 58 - columns count returned 0
+2018-12-11 19:40:33,592  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 19:40:33,594  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.next 329 - setting cursor to the next row
+2018-12-11 19:40:33,595  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 19:40:33,595  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.next 329 - setting cursor to the next row
+2018-12-11 19:40:33,595  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 19:40:33,595  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.next 329 - setting cursor to the next row
+2018-12-11 19:40:33,595  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 19:40:33,596  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.next 325 - cursor is in the last row
+2018-12-11 19:40:33,596  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 19:40:33,596  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.absolute 59 - setting cursor to the front of resultSet
+2018-12-11 19:40:33,596  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 19:40:33,596  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.next 329 - setting cursor to the next row
+2018-12-11 19:40:33,597  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 19:40:33,597  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.next 329 - setting cursor to the next row
+2018-12-11 19:40:33,597  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 19:40:33,597  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.next 329 - setting cursor to the next row
+2018-12-11 19:40:51,121  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 19:40:51,132  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.<init> 48 - resultSet is created
+2018-12-11 19:40:51,132  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 19:40:51,132  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.absolute 59 - setting cursor to the front of resultSet
+2018-12-11 19:40:51,132  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 19:40:51,132  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.getMetaData 178 - MetaData returned successfully
+2018-12-11 19:40:51,133  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.MetaData.<init> 33 - resultSetMetaData is created
+2018-12-11 19:40:51,133  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.MetaData.getColumnCount 58 - columns count returned 1
+2018-12-11 19:40:51,133  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.MetaData.getColumnName 75 - column name returned
+2018-12-11 19:40:51,133  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 19:40:51,133  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.next 329 - setting cursor to the next row
+2018-12-11 19:40:51,133  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 19:40:51,133  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.next 329 - setting cursor to the next row
+2018-12-11 19:40:51,133  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 19:40:51,134  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.next 329 - setting cursor to the next row
+2018-12-11 19:40:51,134  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 19:40:51,134  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.next 325 - cursor is in the last row
+2018-12-11 19:40:51,134  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 19:40:51,134  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.absolute 59 - setting cursor to the front of resultSet
+2018-12-11 19:40:51,134  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 19:40:51,134  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.next 329 - setting cursor to the next row
+2018-12-11 19:40:51,135  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 19:40:51,135  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.getObject 191 - object in this column is returned successfully
+2018-12-11 19:40:51,135  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 19:40:51,135  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.getObject 191 - object in this column is returned successfully
+2018-12-11 19:40:51,136  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 19:40:51,136  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.next 329 - setting cursor to the next row
+2018-12-11 19:40:51,136  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 19:40:51,136  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.getObject 191 - object in this column is returned successfully
+2018-12-11 19:40:51,136  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 19:40:51,137  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.getObject 191 - object in this column is returned successfully
+2018-12-11 19:40:51,137  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 19:40:51,137  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.next 329 - setting cursor to the next row
+2018-12-11 19:40:51,137  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 19:40:51,138  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.getObject 191 - object in this column is returned successfully
+2018-12-11 19:41:25,293  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 19:41:25,307  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.<init> 48 - resultSet is created
+2018-12-11 19:41:25,307  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 19:41:25,307  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.absolute 59 - setting cursor to the front of resultSet
+2018-12-11 19:41:25,307  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 19:41:25,307  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.getMetaData 178 - MetaData returned successfully
+2018-12-11 19:41:25,308  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.MetaData.<init> 33 - resultSetMetaData is created
+2018-12-11 19:41:25,308  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.MetaData.getColumnCount 58 - columns count returned 0
+2018-12-11 19:41:25,308  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 19:41:25,308  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.next 329 - setting cursor to the next row
+2018-12-11 19:41:25,308  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 19:41:25,309  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.next 329 - setting cursor to the next row
+2018-12-11 19:41:25,309  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 19:41:25,309  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.next 329 - setting cursor to the next row
+2018-12-11 19:41:25,309  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 19:41:25,309  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.next 325 - cursor is in the last row
+2018-12-11 19:41:25,310  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 19:41:25,310  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.absolute 59 - setting cursor to the front of resultSet
+2018-12-11 19:41:25,310  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 19:41:25,310  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.next 329 - setting cursor to the next row
+2018-12-11 19:41:25,310  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 19:41:25,310  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.next 329 - setting cursor to the next row
+2018-12-11 19:41:25,311  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 19:41:25,311  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.next 329 - setting cursor to the next row
+2018-12-11 19:41:46,706  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.close 109 - Closing connection
+2018-12-11 19:45:14,614  INFO [AWT-EventQueue-0] - java.sql.Driver.connect 16 - Trying to connect
+2018-12-11 19:45:14,624  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.<init> 34 - Establishing a new Connection
+2018-12-11 19:45:15,144  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 19:45:30,018  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 19:45:44,655  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 19:45:54,127  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 19:46:01,157  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 19:46:01,188  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.<init> 48 - resultSet is created
+2018-12-11 19:46:01,188  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 19:46:01,188  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.absolute 59 - setting cursor to the front of resultSet
+2018-12-11 19:46:01,188  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 19:46:01,188  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.getMetaData 178 - MetaData returned successfully
+2018-12-11 19:46:01,188  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.MetaData.<init> 33 - resultSetMetaData is created
+2018-12-11 19:46:01,188  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.MetaData.getColumnCount 58 - columns count returned 1
+2018-12-11 19:46:01,188  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.MetaData.getColumnName 75 - column name returned
+2018-12-11 19:46:01,188  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 19:46:01,194  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.next 329 - setting cursor to the next row
+2018-12-11 19:46:01,194  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 19:46:01,194  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.next 329 - setting cursor to the next row
+2018-12-11 19:46:01,194  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 19:46:01,194  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.next 329 - setting cursor to the next row
+2018-12-11 19:46:01,194  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 19:46:01,194  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.next 325 - cursor is in the last row
+2018-12-11 19:46:01,194  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 19:46:01,194  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.absolute 70 - setting cursor to 0
+2018-12-11 19:46:01,194  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 19:46:01,194  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.getObject 191 - object in this column is returned successfully
+2018-12-11 19:46:01,198  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 19:46:01,198  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.getObject 191 - object in this column is returned successfully
+2018-12-11 19:46:01,198  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 19:46:01,198  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.next 329 - setting cursor to the next row
+2018-12-11 19:46:01,198  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 19:46:01,198  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.getObject 191 - object in this column is returned successfully
+2018-12-11 19:46:01,198  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 19:46:01,198  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.getObject 191 - object in this column is returned successfully
+2018-12-11 19:46:01,198  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 19:46:01,198  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.next 329 - setting cursor to the next row
+2018-12-11 19:46:08,994  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 19:46:09,019  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.<init> 48 - resultSet is created
+2018-12-11 19:46:09,019  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 19:46:09,019  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.absolute 59 - setting cursor to the front of resultSet
+2018-12-11 19:46:09,019  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 19:46:09,019  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.getMetaData 178 - MetaData returned successfully
+2018-12-11 19:46:09,019  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.MetaData.<init> 33 - resultSetMetaData is created
+2018-12-11 19:46:09,019  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.MetaData.getColumnCount 58 - columns count returned 2
+2018-12-11 19:46:09,019  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.MetaData.getColumnName 75 - column name returned
+2018-12-11 19:46:09,019  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.MetaData.getColumnName 75 - column name returned
+2018-12-11 19:46:09,019  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 19:46:09,019  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.next 329 - setting cursor to the next row
+2018-12-11 19:46:09,019  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 19:46:09,019  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.next 329 - setting cursor to the next row
+2018-12-11 19:46:09,019  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 19:46:09,019  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.next 329 - setting cursor to the next row
+2018-12-11 19:46:09,019  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 19:46:09,019  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.next 325 - cursor is in the last row
+2018-12-11 19:46:09,019  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 19:46:09,019  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.absolute 70 - setting cursor to 0
+2018-12-11 19:46:09,019  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 19:46:09,019  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.getObject 191 - object in this column is returned successfully
+2018-12-11 19:46:09,024  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 19:46:09,024  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.getObject 191 - object in this column is returned successfully
+2018-12-11 19:46:09,024  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 19:46:09,024  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.getObject 191 - object in this column is returned successfully
+2018-12-11 19:46:09,024  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 19:46:09,024  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.getObject 191 - object in this column is returned successfully
+2018-12-11 19:46:09,024  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 19:46:09,024  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.next 329 - setting cursor to the next row
+2018-12-11 19:46:09,024  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 19:46:09,024  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.getObject 191 - object in this column is returned successfully
+2018-12-11 19:46:09,024  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 19:46:09,024  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.getObject 191 - object in this column is returned successfully
+2018-12-11 19:46:09,024  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 19:46:09,024  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.getObject 191 - object in this column is returned successfully
+2018-12-11 19:46:09,024  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 19:46:09,024  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.getObject 191 - object in this column is returned successfully
+2018-12-11 19:46:09,024  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 19:46:09,024  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.next 329 - setting cursor to the next row
+2018-12-11 19:46:36,544  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 19:46:36,565  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.<init> 48 - resultSet is created
+2018-12-11 19:46:36,565  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 19:46:36,565  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.absolute 59 - setting cursor to the front of resultSet
+2018-12-11 19:46:36,565  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 19:46:36,565  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.getMetaData 178 - MetaData returned successfully
+2018-12-11 19:46:36,565  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.MetaData.<init> 33 - resultSetMetaData is created
+2018-12-11 19:46:36,565  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.MetaData.getColumnCount 58 - columns count returned 1
+2018-12-11 19:46:36,565  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.MetaData.getColumnName 75 - column name returned
+2018-12-11 19:46:36,565  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 19:46:36,565  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.next 329 - setting cursor to the next row
+2018-12-11 19:46:36,565  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 19:46:36,565  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.next 329 - setting cursor to the next row
+2018-12-11 19:46:36,565  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 19:46:36,565  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.next 329 - setting cursor to the next row
+2018-12-11 19:46:36,565  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 19:46:36,565  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.next 325 - cursor is in the last row
+2018-12-11 19:46:36,565  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 19:46:36,565  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.absolute 70 - setting cursor to 0
+2018-12-11 19:46:36,565  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 19:46:36,565  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.getObject 191 - object in this column is returned successfully
+2018-12-11 19:46:36,569  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 19:46:36,569  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.getObject 191 - object in this column is returned successfully
+2018-12-11 19:46:36,569  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 19:46:36,569  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.next 329 - setting cursor to the next row
+2018-12-11 19:46:36,569  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 19:46:36,569  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.getObject 191 - object in this column is returned successfully
+2018-12-11 19:46:36,569  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 19:46:36,569  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.getObject 191 - object in this column is returned successfully
+2018-12-11 19:46:36,569  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 19:46:36,569  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.next 329 - setting cursor to the next row
+2018-12-11 19:50:40,644  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.close 109 - Closing connection
+2018-12-11 20:04:29,413  INFO [AWT-EventQueue-0] - java.sql.Driver.connect 16 - Trying to connect
+2018-12-11 20:04:29,426  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.<init> 34 - Establishing a new Connection
+2018-12-11 20:04:41,333  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 20:05:00,992  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 20:05:14,223  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.close 109 - Closing connection
+2018-12-11 20:05:23,773  INFO [AWT-EventQueue-0] - java.sql.Driver.connect 16 - Trying to connect
+2018-12-11 20:05:23,783  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.<init> 34 - Establishing a new Connection
+2018-12-11 20:05:24,803  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 20:06:23,353  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 20:07:01,562  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 20:07:01,643  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 20:07:14,863  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 20:07:14,893  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.<init> 48 - resultSet is created
+2018-12-11 20:07:14,893  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 20:07:14,893  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.absolute 59 - setting cursor to the front of resultSet
+2018-12-11 20:07:14,893  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 20:07:14,893  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.getMetaData 178 - MetaData returned successfully
+2018-12-11 20:07:14,896  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.MetaData.<init> 33 - resultSetMetaData is created
+2018-12-11 20:07:14,896  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.MetaData.getColumnCount 58 - columns count returned 1
+2018-12-11 20:07:14,896  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.MetaData.getColumnName 75 - column name returned
+2018-12-11 20:07:14,896  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 20:07:14,896  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.next 329 - setting cursor to the next row
+2018-12-11 20:07:14,896  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 20:07:14,896  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.next 329 - setting cursor to the next row
+2018-12-11 20:07:14,896  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 20:07:14,896  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.next 329 - setting cursor to the next row
+2018-12-11 20:07:14,896  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 20:07:14,896  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.next 329 - setting cursor to the next row
+2018-12-11 20:07:14,896  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 20:07:14,896  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.next 329 - setting cursor to the next row
+2018-12-11 20:07:14,896  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 20:07:14,896  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.next 325 - cursor is in the last row
+2018-12-11 20:07:14,896  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 20:07:14,896  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.absolute 70 - setting cursor to 0
+2018-12-11 20:07:14,896  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 20:07:14,896  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.getObject 191 - object in this column is returned successfully
+2018-12-11 20:07:14,896  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 20:07:14,896  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.getObject 191 - object in this column is returned successfully
+2018-12-11 20:07:14,896  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 20:07:14,896  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.next 329 - setting cursor to the next row
+2018-12-11 20:07:14,896  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 20:07:14,896  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.getObject 191 - object in this column is returned successfully
+2018-12-11 20:07:14,896  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 20:07:14,903  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.getObject 191 - object in this column is returned successfully
+2018-12-11 20:07:14,903  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 20:07:14,903  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.next 329 - setting cursor to the next row
+2018-12-11 20:07:14,903  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 20:07:14,903  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.getObject 191 - object in this column is returned successfully
+2018-12-11 20:07:14,903  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 20:07:14,903  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.getObject 191 - object in this column is returned successfully
+2018-12-11 20:07:14,903  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 20:07:14,903  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.next 329 - setting cursor to the next row
+2018-12-11 20:07:14,903  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 20:07:14,903  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.getObject 191 - object in this column is returned successfully
+2018-12-11 20:07:14,903  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 20:07:14,903  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.getObject 191 - object in this column is returned successfully
+2018-12-11 20:07:14,903  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 20:07:14,903  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.next 329 - setting cursor to the next row
+2018-12-11 20:08:33,666  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.close 109 - Closing connection
+2018-12-11 20:08:46,213  INFO [AWT-EventQueue-0] - java.sql.Driver.connect 16 - Trying to connect
+2018-12-11 20:08:46,225  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.<init> 34 - Establishing a new Connection
+2018-12-11 20:08:47,284  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 20:09:01,366  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 20:09:20,594  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 20:09:20,632  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 20:09:34,852  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.close 109 - Closing connection
+2018-12-11 20:09:58,512  INFO [AWT-EventQueue-0] - java.sql.Driver.connect 16 - Trying to connect
+2018-12-11 20:09:58,522  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.<init> 34 - Establishing a new Connection
+2018-12-11 20:09:59,006  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 20:10:11,375  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 20:10:55,154  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 20:11:01,592  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.createStatement 60 - Creatting statement
+2018-12-11 20:11:01,626  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.<init> 48 - resultSet is created
+2018-12-11 20:11:01,626  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 20:11:01,626  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.absolute 59 - setting cursor to the front of resultSet
+2018-12-11 20:11:01,626  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 20:11:01,626  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.getMetaData 178 - MetaData returned successfully
+2018-12-11 20:11:01,626  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.MetaData.<init> 33 - resultSetMetaData is created
+2018-12-11 20:11:01,626  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.MetaData.getColumnCount 58 - columns count returned 1
+2018-12-11 20:11:01,626  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.MetaData.getColumnName 75 - column name returned
+2018-12-11 20:11:01,626  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 20:11:01,626  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.next 329 - setting cursor to the next row
+2018-12-11 20:11:01,626  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 20:11:01,626  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.next 329 - setting cursor to the next row
+2018-12-11 20:11:01,626  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 20:11:01,626  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.next 329 - setting cursor to the next row
+2018-12-11 20:11:01,626  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 20:11:01,626  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.next 329 - setting cursor to the next row
+2018-12-11 20:11:01,626  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 20:11:01,632  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.next 329 - setting cursor to the next row
+2018-12-11 20:11:01,632  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 20:11:01,632  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.next 325 - cursor is in the last row
+2018-12-11 20:11:01,632  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 20:11:01,632  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.absolute 70 - setting cursor to 0
+2018-12-11 20:11:01,632  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 20:11:01,632  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.getObject 191 - object in this column is returned successfully
+2018-12-11 20:11:01,632  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 20:11:01,632  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.getObject 191 - object in this column is returned successfully
+2018-12-11 20:11:01,632  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 20:11:01,632  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.next 329 - setting cursor to the next row
+2018-12-11 20:11:01,632  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 20:11:01,632  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.getObject 191 - object in this column is returned successfully
+2018-12-11 20:11:01,632  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 20:11:01,632  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.getObject 191 - object in this column is returned successfully
+2018-12-11 20:11:01,632  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 20:11:01,632  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.next 329 - setting cursor to the next row
+2018-12-11 20:11:01,632  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 20:11:01,632  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.getObject 191 - object in this column is returned successfully
+2018-12-11 20:11:01,632  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 20:11:01,636  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.getObject 191 - object in this column is returned successfully
+2018-12-11 20:11:01,636  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 20:11:01,636  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.next 329 - setting cursor to the next row
+2018-12-11 20:11:01,636  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 20:11:01,636  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.getObject 191 - object in this column is returned successfully
+2018-12-11 20:11:01,636  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 20:11:01,636  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.getObject 191 - object in this column is returned successfully
+2018-12-11 20:11:01,636  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.isClosed 274 - resultSet is not closed
+2018-12-11 20:11:01,636  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.Resultset.next 329 - setting cursor to the next row
+2018-12-11 20:11:06,792  INFO [AWT-EventQueue-0] - eg.edu.alexu.csd.oop.jdbc.cs32.model.ConcreteConnection.close 109 - Closing connection

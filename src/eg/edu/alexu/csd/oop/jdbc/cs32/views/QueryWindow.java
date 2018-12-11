@@ -182,23 +182,32 @@ public class QueryWindow {
 		executeButton.addActionListener(new ActionListener(){
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				String mQuery = sQLCommandArea.getText();
+				String query = sQLCommandArea.getText();
 				executeStatement = new ExecuteStatement(connection);
 				Vector<String> mColumns = new Vector<String>();
 				Vector<Vector<String>> mResults = new Vector<Vector<String>>();
-
-				if(mQuery.toLowerCase().startsWith("select")){
+				String[] splittedQueries = query.split("\n");
+				if (splittedQueries.length > 1) {
 					try {
-						mResults = executeStatement.runQuery(mQuery);
+						executeStatement.takeQueries(splittedQueries);
+						return;
+					} catch(Exception e) {
+						JOptionPane.showMessageDialog(mainPanel, "Could not execute queries!");
+					}
+				}
+
+				if(query.toLowerCase().startsWith("select")){
+					try {
+						mResults = executeStatement.runQuery(query);
 						mColumns = executeStatement.getColumns();
 						sQLResultsArea.setModel(new DefaultTableModel(mResults,mColumns));
 					} catch (SQLException e) {
 						JOptionPane.showMessageDialog(mainPanel, "Could not execute query!");
 						//e.printStackTrace();
 					}
-				} else if (mQuery.toLowerCase().startsWith("create")) {
+				} else if (query.toLowerCase().startsWith("create")) {
 					try {
-						executeStatement.runCreate(mQuery);
+						executeStatement.runCreate(query);
 					} catch (SQLException e) {
 						JOptionPane.showMessageDialog(mainPanel, "Could not execute query!");
 						//e.printStackTrace();
@@ -206,7 +215,7 @@ public class QueryWindow {
 				}
 				else{
 					try {
-						executeStatement.runUpdate(mQuery);
+						executeStatement.runUpdate(query);
 						sQLResultsArea.setModel(new DefaultTableModel(new String[][]{new String[]{"Row Updated!"}},new String[]{""}));
 					} catch (SQLException e) {
 						JOptionPane.showMessageDialog(mainPanel, "Could not execute query!");

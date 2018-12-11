@@ -186,7 +186,7 @@ public class Resultset implements ResultSet {
 			log.info("resultSet already closed, a SQLException is thrown");
 			throw new SQLException();
 		}
-		if (arg0 < result[0].length && num >= 0) {
+		if (arg0 <= result[0].length && num >= 0) {
 			try {
 				log.info("object in this column is returned successfully");
 				return (int) (result[num][arg0 - 1]);
